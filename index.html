@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chúc mừng Thùy Dương · Trúng tuyển ĐH Giao thông Vận tải — Ngành Kinh tế (GHA03)</title>
+<meta name="description" content="Kết quả trúng tuyển và lộ trình 4 năm ngành Kinh tế (GHA03) — Trường Đại học Giao thông Vận tải, dành cho Nguyễn Ngọc Thùy Dương.">
+<meta property="og:title" content="Chúc mừng Nguyễn Ngọc Thùy Dương — Trúng tuyển ĐH Giao thông Vận tải">
+<meta property="og:description" content="Ngành Kinh tế (GHA03) · Lộ trình 4 năm và bản đồ nghề nghiệp.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%93%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  color-scheme: light;
+  --surface-0:#f6f5f1;
+  --surface-1:#fcfcfb;
+  --surface-2:#f0efec;
+  --line:#e0ded7;
+  --line-strong:#c9c6bc;
+  --text-primary:#0b0b0b;
+  --text-secondary:#52514e;
+  --text-muted:#7a7873;
+  --brand:#0d366b;
+  --brand-soft:#e8f0fb;
+  --accent:#8f2c2c;
+  --accent-soft:#fbeceb;
+  --gold:#8a6410;
+  --gold-soft:#fbf3df;
+
+  /* categorical slots — validated (light, surface #fcfcfb): all checks pass.
+     Contrast WARN on slots 3 & 4 -> relief rule satisfied by visible direct labels. */
+  --p1:#2a78d6;  /* Năm 1 — blue   */
+  --p2:#eb6834;  /* Năm 2 — orange */
+  --p3:#1baf7a;  /* Năm 3 — aqua   */
+  --p4:#eda100;  /* Năm 4 — yellow */
+  --p0:#4a3aa7;  /* Giai đoạn 0 — violet */
+  --p5:#008300;  /* Sau tốt nghiệp — green */
+
+  --radius:14px;
+  --shadow:0 1px 2px rgba(11,11,11,.05), 0 8px 24px -12px rgba(11,11,11,.18);
+  --maxw:1080px;
+}
+@media (prefers-color-scheme: dark){
+  :root:where(:not([data-theme="light"])){
+    color-scheme: dark;
+    --surface-0:#141413;
+    --surface-1:#1a1a19;
+    --surface-2:#242422;
+    --line:#33332f;
+    --line-strong:#4a4a45;
+    --text-primary:#ffffff;
+    --text-secondary:#c3c2b7;
+    --text-muted:#95948b;
+    --brand:#86b6ef;
+    --brand-soft:#182b45;
+    --accent:#e88a86;
+    --accent-soft:#3a1f1e;
+    --gold:#d8b45a;
+    --gold-soft:#33291318;
+    --p1:#3987e5; --p2:#d95926; --p3:#199e70; --p4:#c98500; --p0:#9085e9; --p5:#008300;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.6);
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; -webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--surface-0); color:var(--text-primary);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans","Helvetica Neue",Arial,sans-serif;
+  font-size:16.5px; line-height:1.68; letter-spacing:-.005em;
+}
+img{max-width:100%}
+a{color:var(--brand)}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 20px}
+
+/* ---------- top bar ---------- */
+.topbar{
+  position:sticky; top:0; z-index:50; backdrop-filter:saturate(180%) blur(12px);
+  background:color-mix(in srgb, var(--surface-1) 88%, transparent);
+  border-bottom:1px solid var(--line);
+}
+.topbar .wrap{display:flex; align-items:center; gap:18px; height:56px}
+.brandmark{display:flex; align-items:center; gap:9px; font-weight:700; font-size:14.5px; letter-spacing:-.01em; white-space:nowrap}
+.brandmark .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);flex:none}
+.navlinks{display:flex; gap:4px; margin-left:auto; overflow-x:auto; scrollbar-width:none}
+.navlinks::-webkit-scrollbar{display:none}
+.navlinks a{
+  color:var(--text-secondary); text-decoration:none; font-size:13.5px; font-weight:500;
+  padding:6px 11px; border-radius:99px; white-space:nowrap;
+}
+.navlinks a:hover{background:var(--surface-2); color:var(--text-primary)}
+
+/* ---------- hero ---------- */
+.hero{position:relative; overflow:hidden; padding:56px 0 44px; border-bottom:1px solid var(--line);
+  background:
+    radial-gradient(1200px 380px at 12% -12%, var(--brand-soft) 0%, transparent 62%),
+    radial-gradient(900px 320px at 92% 0%, var(--gold-soft) 0%, transparent 60%),
+    var(--surface-1);
+}
+.eyebrow{display:inline-flex; align-items:center; gap:8px; font-size:12px; font-weight:700;
+  letter-spacing:.13em; text-transform:uppercase; color:var(--accent);
+  background:var(--accent-soft); border:1px solid color-mix(in srgb, var(--accent) 22%, transparent);
+  padding:5px 13px; border-radius:99px}
+h1{font-size:clamp(31px,5.4vw,54px); line-height:1.1; letter-spacing:-.032em; margin:18px 0 6px; font-weight:800}
+.hero .sub{font-size:clamp(16px,2.2vw,19.5px); color:var(--text-secondary); max-width:56ch; margin:0 0 22px}
+.hero .sub b{color:var(--text-primary); font-weight:650}
+.chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:6px}
+.chip{display:inline-flex; align-items:center; gap:7px; font-size:13px; font-weight:600;
+  background:var(--surface-2); border:1px solid var(--line); color:var(--text-secondary);
+  padding:6px 12px; border-radius:99px}
+.chip b{color:var(--text-primary); font-weight:700}
+.chip .k{color:var(--text-muted); font-weight:500}
+
+.resultcard{
+  margin-top:30px; background:var(--surface-1); border:1px solid var(--line);
+  border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden;
+}
+.resultcard .rc-head{display:flex; flex-wrap:wrap; align-items:baseline; gap:10px;
+  padding:16px 20px; border-bottom:1px solid var(--line); background:var(--surface-2)}
+.rc-head .big{font-size:19px; font-weight:800; color:var(--accent); letter-spacing:-.01em}
+.rc-head .small{font-size:13px; color:var(--text-muted)}
+.rc-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:0}
+.rc-cell{padding:15px 20px; border-right:1px solid var(--line); border-bottom:1px solid var(--line)}
+.rc-cell:last-child{border-right:none}
+.rc-cell .lab{font-size:11.5px; text-transform:uppercase; letter-spacing:.09em; color:var(--text-muted); font-weight:650}
+.rc-cell .val{font-size:16px; font-weight:700; margin-top:3px; letter-spacing:-.01em}
+.rc-cell .val small{font-weight:500; color:var(--text-secondary); font-size:13.5px; display:block; margin-top:1px}
+
+/* ---------- sections ---------- */
+section{padding:52px 0; border-bottom:1px solid var(--line)}
+section:nth-of-type(even){background:var(--surface-1)}
+.sec-eyebrow{font-size:11.5px; font-weight:750; letter-spacing:.14em; text-transform:uppercase; color:var(--text-muted)}
+h2{font-size:clamp(23px,3.4vw,33px); line-height:1.18; letter-spacing:-.026em; margin:8px 0 10px; font-weight:800}
+h3{font-size:18px; letter-spacing:-.015em; margin:0 0 6px; font-weight:750}
+.lede{color:var(--text-secondary); max-width:68ch; margin:0 0 26px; font-size:16.5px}
+
+/* ---------- urgent / countdown ---------- */
+.urgent{
+  border:1.5px solid color-mix(in srgb, var(--accent) 40%, transparent);
+  background:var(--accent-soft); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow);
+}
+.urgent .u-top{display:flex; flex-wrap:wrap; gap:14px; align-items:center; justify-content:space-between}
+.urgent h3{font-size:20px; color:var(--accent); margin:0}
+.deadline{font-size:15px; font-weight:700; color:var(--text-primary)}
+.cd{display:flex; gap:8px; margin:18px 0 4px; flex-wrap:wrap}
+.cd-unit{background:var(--surface-1); border:1px solid var(--line); border-radius:11px;
+  padding:10px 6px; min-width:76px; text-align:center; flex:1 1 76px}
+.cd-unit .n{font-size:27px; font-weight:800; letter-spacing:-.03em; font-variant-numeric:tabular-nums; line-height:1.1}
+.cd-unit .u{font-size:11px; text-transform:uppercase; letter-spacing:.09em; color:var(--text-muted); font-weight:650}
+.cd-note{font-size:13.5px; color:var(--text-secondary); margin-top:10px}
+
+.steps{counter-reset:s; display:grid; gap:10px; margin-top:22px}
+.step{display:flex; gap:13px; align-items:flex-start; background:var(--surface-1);
+  border:1px solid var(--line); border-radius:11px; padding:13px 15px}
+.step::before{counter-increment:s; content:counter(s);
+  flex:none; width:25px; height:25px; border-radius:50%; background:var(--accent); color:#fff;
+  font-size:13px; font-weight:750; display:grid; place-items:center; margin-top:1px}
+.step .t{font-size:14.8px}
+.step .t b{font-weight:700}
+.step code{background:var(--surface-2); border:1px solid var(--line); border-radius:5px;
+  padding:1px 6px; font-size:13px; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; word-break:break-all}
+
+/* ---------- stat tiles ---------- */
+.tiles{display:grid; grid-template-columns:repeat(auto-fit,minmax(178px,1fr)); gap:12px; margin:26px 0 6px}
+.tile{background:var(--surface-1); border:1px solid var(--line); border-radius:var(--radius); padding:17px 18px}
+section:nth-of-type(even) .tile{background:var(--surface-0)}
+.tile .lab{font-size:11.5px; text-transform:uppercase; letter-spacing:.09em; color:var(--text-muted); font-weight:650}
+.tile .num{font-size:29px; font-weight:800; letter-spacing:-.035em; margin:5px 0 2px; font-variant-numeric:tabular-nums;
+  display:flex; align-items:baseline; gap:5px}
+.tile .num .unit{font-size:14.5px; font-weight:650; color:var(--text-secondary); letter-spacing:-.01em}
+.tile .foot{font-size:12.5px; color:var(--text-muted); line-height:1.45}
+
+/* ---------- two specialisations ---------- */
+.cols2{display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:14px; margin-top:8px}
+.card{background:var(--surface-1); border:1px solid var(--line); border-radius:var(--radius); padding:20px; box-shadow:var(--shadow)}
+section:nth-of-type(even) .card{background:var(--surface-0)}
+.card .tag{display:inline-block; font-size:11.5px; font-weight:700; letter-spacing:.07em; text-transform:uppercase;
+  padding:3px 9px; border-radius:99px; margin-bottom:9px}
+.card ul{margin:10px 0 0; padding-left:19px; color:var(--text-secondary); font-size:14.8px}
+.card li{margin:5px 0}
+.card li b{color:var(--text-primary); font-weight:650}
+
+/* ---------- timeline ---------- */
+.timeline{position:relative; margin-top:30px; padding-left:0}
+.phase{position:relative; padding-left:38px; padding-bottom:30px}
+.phase::before{content:""; position:absolute; left:11px; top:26px; bottom:-4px; width:2px; background:var(--line)}
+.phase:last-child::before{display:none}
+.phase .node{position:absolute; left:0; top:6px; width:24px; height:24px; border-radius:50%;
+  background:var(--phase); border:3px solid var(--surface-1); box-shadow:0 0 0 2px var(--phase)}
+section:nth-of-type(even) .phase .node{border-color:var(--surface-1)}
+.phase-head{display:flex; flex-wrap:wrap; gap:9px; align-items:baseline; margin-bottom:4px}
+.phase-label{font-size:11.5px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:#fff;
+  background:var(--phase); padding:3px 10px; border-radius:99px}
+.phase-when{font-size:13px; color:var(--text-muted); font-weight:600; font-variant-numeric:tabular-nums}
+.phase h3{font-size:20px; margin:2px 0 4px}
+.phase .goal{font-size:14.8px; color:var(--text-secondary); margin:0 0 14px; max-width:64ch}
+.pgrid{display:grid; grid-template-columns:repeat(auto-fit,minmax(232px,1fr)); gap:11px}
+.pbox{background:var(--surface-1); border:1px solid var(--line); border-radius:11px; padding:14px 15px}
+section:nth-of-type(even) .pbox{background:var(--surface-0)}
+.pbox h4{margin:0 0 7px; font-size:12px; text-transform:uppercase; letter-spacing:.09em; color:var(--text-muted); font-weight:700}
+.pbox ul{margin:0; padding-left:17px; font-size:14.3px; color:var(--text-secondary)}
+.pbox li{margin:4px 0}
+.pbox li b{color:var(--text-primary); font-weight:650}
+.kpi{display:inline-flex; align-items:center; gap:6px; font-size:12.5px; font-weight:700;
+  background:var(--surface-2); border:1px solid var(--line); border-radius:7px; padding:3px 9px; margin:8px 6px 0 0}
+.kpi .k{color:var(--text-muted); font-weight:550}
+
+/* ---------- skill meters ---------- */
+.meters{display:grid; gap:14px; margin-top:24px}
+.meter-row{display:grid; grid-template-columns:170px 1fr; gap:16px; align-items:center}
+.meter-row .name{font-size:14.5px; font-weight:650}
+.meter-row .name small{display:block; font-weight:500; color:var(--text-muted); font-size:12.3px}
+.track{position:relative; height:34px; background:var(--surface-2); border:1px solid var(--line); border-radius:9px;
+  display:grid; grid-template-columns:repeat(4,1fr); overflow:hidden}
+.seg{position:relative; display:grid; place-items:center; font-size:12.2px; font-weight:650;
+  color:var(--text-primary); border-right:2px solid var(--surface-0)}
+.seg:last-child{border-right:none}
+section:nth-of-type(even) .seg{border-right-color:var(--surface-1)}
+.seg span{position:relative; z-index:1; padding:0 4px; text-align:center; line-height:1.15}
+.seg::before{content:""; position:absolute; inset:0; background:var(--segc); opacity:.20}
+.meter-legend{display:flex; gap:14px; flex-wrap:wrap; margin-top:6px; font-size:12.5px; color:var(--text-muted)}
+.meter-legend i{display:inline-block; width:10px;height:10px;border-radius:3px;margin-right:5px; vertical-align:-1px}
+
+/* ---------- careers ---------- */
+.careers{display:grid; grid-template-columns:repeat(auto-fit,minmax(272px,1fr)); gap:13px; margin-top:24px}
+.career{background:var(--surface-1); border:1px solid var(--line); border-radius:var(--radius); padding:18px; position:relative; overflow:hidden}
+section:nth-of-type(even) .career{background:var(--surface-0)}
+.career::after{content:""; position:absolute; left:0; top:0; bottom:0; width:3px; background:var(--cc)}
+.career h3{font-size:16.5px; margin-bottom:5px; padding-left:2px}
+.career p{margin:0 0 10px; font-size:14.3px; color:var(--text-secondary)}
+.career .where{font-size:12.8px; color:var(--text-muted)}
+.career .where b{color:var(--text-secondary); font-weight:650}
+.fitbar{display:flex; gap:5px; margin-top:11px; align-items:center; font-size:12px; color:var(--text-muted)}
+.fitbar .pips{display:flex; gap:3px}
+.fitbar .pip{width:16px; height:5px; border-radius:99px; background:var(--line-strong)}
+.fitbar .pip.on{background:var(--cc)}
+
+/* ---------- salary ---------- */
+.salary{margin-top:22px; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; background:var(--surface-1)}
+section:nth-of-type(even) .salary{background:var(--surface-0)}
+.salary table{width:100%; border-collapse:collapse; font-size:14.5px}
+.salary th{text-align:left; font-size:11.5px; text-transform:uppercase; letter-spacing:.08em; color:var(--text-muted);
+  font-weight:700; padding:11px 16px; border-bottom:1px solid var(--line); background:var(--surface-2)}
+.salary td{padding:12px 16px; border-bottom:1px solid var(--line); vertical-align:middle}
+.salary tr:last-child td{border-bottom:none}
+.salary td.n{font-weight:750; font-variant-numeric:tabular-nums; white-space:nowrap}
+.barcell{min-width:130px}
+.bar{height:9px; border-radius:99px; background:var(--p1); opacity:.85}
+
+/* ---------- checklist ---------- */
+.checklist{display:grid; gap:9px; margin-top:22px}
+.check{display:flex; gap:12px; align-items:flex-start; background:var(--surface-1); border:1px solid var(--line);
+  border-radius:11px; padding:13px 15px; cursor:pointer; transition:border-color .12s ease, background .12s ease}
+section:nth-of-type(even) .check{background:var(--surface-0)}
+.check:hover{border-color:var(--line-strong)}
+.check input{margin:3px 0 0; width:17px; height:17px; accent-color:var(--p5); flex:none; cursor:pointer}
+.check .txt{font-size:14.8px}
+.check .txt small{display:block; color:var(--text-muted); font-size:13px; margin-top:2px}
+.check.done .txt > span{text-decoration:line-through; color:var(--text-muted)}
+.progress-wrap{display:flex; align-items:center; gap:12px; margin-top:16px; font-size:13.5px; color:var(--text-secondary)}
+.progress-outer{flex:1; height:8px; background:var(--surface-2); border:1px solid var(--line); border-radius:99px; overflow:hidden}
+.progress-inner{height:100%; width:0%; background:var(--p5); border-radius:99px; transition:width .25s ease}
+
+/* ---------- callout ---------- */
+.callout{border:1px solid var(--line); border-left:3px solid var(--gold); background:var(--gold-soft);
+  border-radius:10px; padding:16px 18px; margin-top:22px; font-size:14.8px; color:var(--text-secondary)}
+.callout b{color:var(--text-primary)}
+.callout h3{color:var(--text-primary); margin-bottom:6px}
+.callout ul{margin:10px 0 0; padding-left:19px}
+.callout li{margin:6px 0}
+
+/* ---------- footer ---------- */
+footer{padding:40px 0 60px; background:var(--surface-1); font-size:13.5px; color:var(--text-muted)}
+footer h4{font-size:12px; text-transform:uppercase; letter-spacing:.1em; color:var(--text-secondary); margin:0 0 10px; font-weight:700}
+footer ul{margin:0; padding-left:18px}
+footer li{margin:4px 0}
+footer a{color:var(--text-secondary)}
+.disclaimer{margin-top:22px; padding-top:18px; border-top:1px solid var(--line); font-size:12.8px; line-height:1.6}
+
+@media (max-width:640px){
+  body{font-size:16px}
+  .rc-cell{border-right:none}
+  .meter-row{grid-template-columns:1fr; gap:6px}
+  .track{grid-template-columns:repeat(2,1fr); height:auto}
+  .seg{padding:9px 2px; border-bottom:2px solid var(--surface-0)}
+  section{padding:40px 0}
+}
+@media print{
+  .topbar,.navlinks{display:none}
+  body{background:#fff; font-size:11pt}
+  section{page-break-inside:avoid; border-bottom:1px solid #ddd}
+  .phase{page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="brandmark"><span class="dot"></span> Lộ trình của Thùy Dương</div>
+    <nav class="navlinks">
+      <a href="#gap">Việc gấp</a>
+      <a href="#nganh">Ngành GHA03</a>
+      <a href="#lotrinh">Lộ trình 4 năm</a>
+      <a href="#kynang">Kỹ năng</a>
+      <a href="#nghe">Nghề nghiệp</a>
+      <a href="#canhac">Cân nhắc</a>
+      <a href="#checklist">Checklist</a>
+    </nav>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Kết quả xét tuyển đại học 2026</span>
+    <h1>Chúc mừng Thùy Dương<br>đã trúng tuyển!</h1>
+    <p class="sub">Nguyễn Ngọc Thùy Dương (25/01/2008) chính thức trúng tuyển <b>Trường Đại học Giao thông Vận tải</b> — mã tuyển sinh <b>GHA03</b>, tức <b>ngành Kinh tế</b>, do Khoa Vận tải – Kinh tế đào tạo.</p>
+    <div class="chips">
+      <span class="chip"><span class="k">Mã trường</span> <b>GHA</b></span>
+      <span class="chip"><span class="k">Mã tuyển sinh</span> <b>GHA03</b></span>
+      <span class="chip"><span class="k">Mã ngành</span> <b>7310101</b></span>
+      <span class="chip"><span class="k">Nguyện vọng</span> <b>4</b></span>
+      <span class="chip"><span class="k">Cơ sở</span> <b>Hà Nội</b></span>
+    </div>
+
+    <div class="resultcard">
+      <div class="rc-head">
+        <span class="big">KẾT QUẢ XÉT TUYỂN: TRÚNG TUYỂN</span>
+        <span class="small">Theo phiếu báo kết quả trên Hệ thống tuyển sinh của Bộ GD&amp;ĐT</span>
+      </div>
+      <div class="rc-grid">
+        <div class="rc-cell"><div class="lab">Họ tên</div><div class="val">Nguyễn Ngọc Thùy Dương</div></div>
+        <div class="rc-cell"><div class="lab">Ngày sinh</div><div class="val">25/01/2008</div></div>
+        <div class="rc-cell"><div class="lab">Trường</div><div class="val">ĐH Giao thông Vận tải<small>Số 3 Cầu Giấy, Hà Nội</small></div></div>
+        <div class="rc-cell"><div class="lab">Ngành trúng tuyển</div><div class="val">Kinh tế<small>KT &amp; quản lý đầu tư · KT bưu chính viễn thông</small></div></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ VIỆC GẤP ============ -->
+<section id="gap">
+  <div class="wrap">
+    <div class="sec-eyebrow">Bước 1 — làm ngay, đừng để lỡ</div>
+    <h2>Xác nhận nhập học trực tuyến</h2>
+    <p class="lede">Trúng tuyển chưa phải là xong. Dương phải bấm xác nhận nhập học trên Hệ thống của Bộ GD&amp;ĐT. Quá hạn mà không xác nhận thì <b>bị coi là từ chối nhập học</b> — mất suất, dù đã trúng tuyển.</p>
+
+    <div class="urgent">
+      <div class="u-top">
+        <h3>Hạn chót xác nhận nhập học</h3>
+        <div class="deadline">17h00 · Thứ Sáu 21/8/2026</div>
+      </div>
+      <div class="cd" id="cd">
+        <div class="cd-unit"><div class="n" id="cd-d">–</div><div class="u">Ngày</div></div>
+        <div class="cd-unit"><div class="n" id="cd-h">–</div><div class="u">Giờ</div></div>
+        <div class="cd-unit"><div class="n" id="cd-m">–</div><div class="u">Phút</div></div>
+        <div class="cd-unit"><div class="n" id="cd-s">–</div><div class="u">Giây</div></div>
+      </div>
+      <div class="cd-note" id="cd-note">Theo Công văn 2304/BGDĐT-GDĐH năm 2026: tất cả thí sinh trúng tuyển (kể cả tuyển thẳng) phải xác nhận nhập học trên Hệ thống trước 17h00 ngày 21/8/2026.</div>
+    </div>
+
+    <div class="steps">
+      <div class="step"><div class="t">Truy cập Hệ thống hỗ trợ tuyển sinh chung: <code>thisinh.thitotnghiepthpt.edu.vn</code></div></div>
+      <div class="step"><div class="t">Đăng nhập bằng <b>số CCCD</b>, mã đăng nhập và mã xác nhận đã được cấp.</div></div>
+      <div class="step"><div class="t">Vào mục <b>Tra cứu → Tra cứu kết quả xét tuyển</b>, kiểm tra lại đúng trường và nguyện vọng trúng tuyển.</div></div>
+      <div class="step"><div class="t">Chọn nguyện vọng trúng tuyển muốn nhập học (GHA03 – ĐH Giao thông Vận tải), bấm <b>Xác nhận</b>.</div></div>
+      <div class="step"><div class="t">Bấm <b>Đồng ý</b>, rồi kiểm tra lại trạng thái. Khi màn hình hiện <b>“Đã nhập học”</b> là xong — nên chụp màn hình lưu lại.</div></div>
+    </div>
+
+    <div class="callout">
+      <h3>Ngay sau đó: hồ sơ nhập học tại trường</h3>
+      Trường sẽ có thông báo nhập học riêng với lịch và danh mục hồ sơ cụ thể — Dương theo dõi <b>tuyensinh.utc.edu.vn</b>. Bộ giấy tờ thường được yêu cầu:
+      <ul>
+        <li>Giấy báo trúng tuyển / phiếu xác nhận nhập học (bản in)</li>
+        <li>Học bạ THPT (bản chính + bản sao công chứng)</li>
+        <li>Bằng tốt nghiệp THPT hoặc <b>giấy chứng nhận tốt nghiệp tạm thời</b></li>
+        <li>Căn cước công dân + giấy khai sinh (bản sao)</li>
+        <li>Giấy chứng nhận ưu tiên/khu vực nếu có; hồ sơ chuyển sinh hoạt Đoàn</li>
+        <li>Ảnh 3×4 hoặc 4×6 (6–8 chiếc), giấy khám sức khỏe</li>
+        <li>Học phí học kỳ 1 + bảo hiểm y tế + các khoản đầu khóa</li>
+      </ul>
+      Luôn đối chiếu với thông báo chính thức của trường trước khi đi nộp.
+    </div>
+  </div>
+</section>
+
+<!-- ============ NGÀNH ============ -->
+<section id="nganh">
+  <div class="wrap">
+    <div class="sec-eyebrow">Bước 2 — hiểu rõ mình học gì</div>
+    <h2>GHA03 là ngành Kinh tế</h2>
+    <p class="lede">Ngành Kinh tế (mã 7310101) của UTC do <b>Khoa Vận tải – Kinh tế</b> phụ trách, gồm hai chuyên ngành. Sinh viên học chung nền tảng ở hai năm đầu, rồi rẽ nhánh chuyên ngành.</p>
+
+    <div class="tiles">
+      <div class="tile">
+        <div class="lab">Điểm chuẩn 2025</div>
+        <div class="num">25,15<span class="unit">/30</span></div>
+        <div class="foot">Tổ hợp A00 · A01 · D01 · D07</div>
+      </div>
+      <div class="tile">
+        <div class="lab">Chỉ tiêu ngành</div>
+        <div class="num">~75<span class="unit">sinh viên</span></div>
+        <div class="foot">Toàn ngành Kinh tế, cơ sở Hà Nội</div>
+      </div>
+      <div class="tile">
+        <div class="lab">Học phí (chương trình chuẩn)</div>
+        <div class="num">14–16<span class="unit">triệu/năm</span></div>
+        <div class="foot">Đơn giá tham khảo ≈ 398.060 đ/tín chỉ (khối ngành III). Cần đối chiếu thông báo học phí chính thức của trường.</div>
+      </div>
+      <div class="tile">
+        <div class="lab">Thời gian đào tạo</div>
+        <div class="num">4<span class="unit">năm · 8 học kỳ</span></div>
+        <div class="foot">Tốt nghiệp dự kiến giữa năm 2030</div>
+      </div>
+    </div>
+
+    <div class="cols2" style="margin-top:26px">
+      <div class="card">
+        <span class="tag" style="background:var(--brand-soft); color:var(--brand)">Chuyên ngành A</span>
+        <h3>Kinh tế và quản lý đầu tư</h3>
+        <p style="margin:0; color:var(--text-secondary); font-size:14.8px">Học cách trả lời một câu hỏi rất đắt tiền: <i>dự án này có nên bỏ tiền vào không, và bỏ bao nhiêu?</i></p>
+        <ul>
+          <li><b>Lõi nghề:</b> lập &amp; thẩm định dự án đầu tư, NPV/IRR, phân tích rủi ro</li>
+          <li><b>Bổ trợ:</b> đấu thầu, quản lý hợp đồng, quản lý dự án, kinh tế xây dựng</li>
+          <li><b>Ra trường làm:</b> ban quản lý dự án, tập đoàn hạ tầng – xây dựng, ngân hàng (thẩm định tín dụng dự án), quỹ đầu tư, cơ quan nhà nước</li>
+          <li><b>Hợp với ai:</b> thích con số có hệ quả thật, thích công trình – hạ tầng, chịu được hồ sơ giấy tờ</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="tag" style="background:var(--gold-soft); color:var(--gold)">Chuyên ngành B</span>
+        <h3>Kinh tế bưu chính viễn thông</h3>
+        <p style="margin:0; color:var(--text-secondary); font-size:14.8px">Kinh tế học đặt vào một ngành cụ thể: viễn thông, bưu chính và dịch vụ số — nơi giá cước, hạ tầng mạng và hành vi người dùng gặp nhau.</p>
+        <ul>
+          <li><b>Lõi nghề:</b> kinh tế &amp; quản trị doanh nghiệp viễn thông, định giá dịch vụ, phân tích thị trường</li>
+          <li><b>Bổ trợ:</b> marketing dịch vụ số, phân tích dữ liệu khách hàng, quản trị kinh doanh</li>
+          <li><b>Ra trường làm:</b> Viettel, VNPT, MobiFone, FPT Telecom, các công ty công nghệ – thương mại điện tử – logistics</li>
+          <li><b>Hợp với ai:</b> thích công nghệ và dữ liệu, thích thị trường chuyển động nhanh, muốn ngồi gần khối kinh doanh</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout">
+      <b>Bộ môn Kinh tế bưu chính viễn thông</b> (thành lập 06/01/2011, thuộc Khoa Vận tải – Kinh tế) phụ trách cả hai chuyên ngành trên, tuyển khoảng <b>80–100 sinh viên chính quy mỗi năm</b> tại Hà Nội và đã đào tạo hơn 1.000 cử nhân. Đây sẽ là “nhà” của Dương trong 4 năm tới — nên làm quen với thầy cô bộ môn sớm.
+    </div>
+  </div>
+</section>
+
+<!-- ============ LỘ TRÌNH ============ -->
+<section id="lotrinh">
+  <div class="wrap">
+    <div class="sec-eyebrow">Bước 3 — kế hoạch 4 năm</div>
+    <h2>Lộ trình từ hôm nay đến ngày đi làm</h2>
+    <p class="lede">Bằng đại học ngành Kinh tế là điều kiện cần, không phải điều kiện đủ. Cái quyết định là ba thứ tích lũy song song: <b>điểm số</b>, <b>công cụ</b> (Excel – SQL – tiếng Anh), và <b>kinh nghiệm thật</b>. Lộ trình dưới đây sắp xếp ba thứ đó theo thời gian.</p>
+
+    <div class="timeline">
+
+      <!-- GĐ 0 -->
+      <div class="phase" style="--phase:var(--p0)">
+        <span class="node"></span>
+        <div class="phase-head">
+          <span class="phase-label">Giai đoạn 0</span>
+          <span class="phase-when">08/2026 – 09/2026 · trước khi nhập học</span>
+        </div>
+        <h3>Chốt suất &amp; khởi động</h3>
+        <p class="goal">Mục tiêu: giữ chắc suất học, chuẩn bị xong hậu cần, và bước vào giảng đường với một chút lợi thế thay vì bắt đầu từ con số không.</p>
+        <div class="pgrid">
+          <div class="pbox"><h4>Bắt buộc</h4><ul>
+            <li>Xác nhận nhập học online <b>trước 17h 21/8</b></li>
+            <li>Chuẩn bị đủ hồ sơ giấy theo thông báo của trường</li>
+            <li>Dự trù tài chính đầu khóa (học phí HK1 + BHYT + phí nhập học)</li>
+          </ul></div>
+          <div class="pbox"><h4>Hậu cần</h4><ul>
+            <li>Đăng ký ký túc xá hoặc tìm trọ khu Cầu Giấy – Láng – Nghĩa Tân</li>
+            <li>Mở tài khoản ngân hàng, làm quen đường đi lại</li>
+            <li>Máy tính cá nhân chạy được Excel mượt</li>
+          </ul></div>
+          <div class="pbox"><h4>Học trước cho nhẹ năm 1</h4><ul>
+            <li>Excel căn bản: hàm, lọc, PivotTable</li>
+            <li>Thi thử TOEIC/IELTS để biết mình đang ở đâu</li>
+            <li>Đọc 1–2 cuốn nhập môn kinh tế học phổ thông</li>
+            <li>Gõ 10 ngón + Google Sheets/Docs thành thạo</li>
+          </ul></div>
+        </div>
+        <span class="kpi"><span class="k">Mốc:</span> Màn hình hiện “Đã nhập học”</span>
+      </div>
+
+      <!-- NĂM 1 -->
+      <div class="phase" style="--phase:var(--p1)">
+        <span class="node"></span>
+        <div class="phase-head">
+          <span class="phase-label">Năm 1</span>
+          <span class="phase-when">2026 – 2027</span>
+        </div>
+        <h3>Nền móng: điểm số và thói quen</h3>
+        <p class="goal">Học kỳ 1 là học kỳ dễ lấy điểm cao nhất trong cả 4 năm — và nó kéo GPA suốt phần còn lại. Đừng “thả trôi năm nhất”.</p>
+        <div class="pgrid">
+          <div class="pbox"><h4>Môn học chính</h4><ul>
+            <li>Toán cao cấp, Xác suất – thống kê</li>
+            <li>Kinh tế vi mô, Kinh tế vĩ mô</li>
+            <li>Pháp luật đại cương, Tin học đại cương</li>
+            <li>Các môn lý luận chính trị, GDTC, GDQP</li>
+          </ul></div>
+          <div class="pbox"><h4>Mục tiêu đo được</h4><ul>
+            <li><b>GPA ≥ 3.2/4.0</b> ngay từ HK1</li>
+            <li><b>TOEIC 550+</b> (hoặc IELTS 5.5) cuối năm</li>
+            <li>Excel: thành thạo PivotTable, VLOOKUP/XLOOKUP</li>
+          </ul></div>
+          <div class="pbox"><h4>Ngoài giờ học</h4><ul>
+            <li>Vào <b>một</b> câu lạc bộ và làm cho tử tế (CLB kinh tế, tiếng Anh, hoặc Đoàn – Hội)</li>
+            <li>Làm thêm nhẹ (gia sư, trợ giảng), giữ ≤ 12h/tuần</li>
+            <li>Làm quen 3–5 anh chị khóa trên cùng bộ môn</li>
+          </ul></div>
+        </div>
+        <span class="kpi"><span class="k">Bẫy cần tránh:</span> nợ môn đại cương</span>
+        <span class="kpi"><span class="k">Bẫy cần tránh:</span> làm thêm quá giờ</span>
+      </div>
+
+      <!-- NĂM 2 -->
+      <div class="phase" style="--phase:var(--p2)">
+        <span class="node"></span>
+        <div class="phase-head">
+          <span class="phase-label">Năm 2</span>
+          <span class="phase-when">2027 – 2028</span>
+        </div>
+        <h3>Chọn hướng đi &amp; lắp công cụ</h3>
+        <p class="goal">Đây là năm Dương phải chọn chuyên ngành. Cách chọn đúng không phải ngồi đoán, mà là đi thử: nói chuyện với người đang làm nghề, và làm một việc thật trong hè.</p>
+        <div class="pgrid">
+          <div class="pbox"><h4>Môn học chính</h4><ul>
+            <li>Nguyên lý kế toán, Nguyên lý thống kê</li>
+            <li>Tài chính – tiền tệ, Marketing căn bản</li>
+            <li>Quản trị học, Kinh tế lượng</li>
+          </ul></div>
+          <div class="pbox"><h4>Quyết định lớn</h4><ul>
+            <li>Chọn <b>Kinh tế &amp; quản lý đầu tư</b> hay <b>Kinh tế bưu chính viễn thông</b></li>
+            <li>Trước khi chọn: phỏng vấn ít nhất 3 người đang làm ở mỗi hướng</li>
+            <li>Hỏi thầy cô bộ môn về đầu ra thực tế của từng chuyên ngành</li>
+          </ul></div>
+          <div class="pbox"><h4>Công cụ &amp; chứng chỉ</h4><ul>
+            <li>Excel nâng cao + <b>SQL cơ bản</b> + Power BI</li>
+            <li>Python hoặc R phục vụ Kinh tế lượng</li>
+            <li><b>TOEIC 650+</b> / IELTS 6.0; MOS Excel nếu có điều kiện</li>
+          </ul></div>
+          <div class="pbox"><h4>Kinh nghiệm đầu tiên</h4><ul>
+            <li>Nghiên cứu khoa học sinh viên hoặc một cuộc thi phân tích tình huống</li>
+            <li>Hè năm 2: <b>thực tập/part-time đầu tiên</b> — ngân hàng, công ty tư vấn đầu tư, doanh nghiệp viễn thông</li>
+          </ul></div>
+        </div>
+        <span class="kpi"><span class="k">Mốc:</span> có 1 dòng kinh nghiệm thật trong CV</span>
+      </div>
+
+      <!-- NĂM 3 -->
+      <div class="phase" style="--phase:var(--p3)">
+        <span class="node"></span>
+        <div class="phase-head">
+          <span class="phase-label">Năm 3</span>
+          <span class="phase-when">2028 – 2029</span>
+        </div>
+        <h3>Chuyên sâu &amp; thực chiến</h3>
+        <p class="goal">Năm quyết định. Kiến thức chuyên ngành và kinh nghiệm đi làm phải chạy song song — nhà tuyển dụng năm 4 sẽ hỏi về đúng năm này.</p>
+        <div class="pgrid">
+          <div class="pbox"><h4>Môn chuyên ngành</h4><ul>
+            <li><i>Hướng đầu tư:</i> lập &amp; thẩm định dự án, quản lý dự án, đấu thầu, kinh tế đầu tư, tài chính doanh nghiệp</li>
+            <li><i>Hướng viễn thông:</i> kinh tế viễn thông, quản trị kinh doanh dịch vụ BCVT, định giá dịch vụ</li>
+          </ul></div>
+          <div class="pbox"><h4>Kỹ năng “ăn tiền”</h4><ul>
+            <li><b>Financial modeling</b> trên Excel: dòng tiền, NPV, IRR, độ nhạy</li>
+            <li>Viết báo cáo phân tích 5–10 trang có số liệu</li>
+            <li>Trình bày trước hội đồng/khách hàng</li>
+          </ul></div>
+          <div class="pbox"><h4>Chứng chỉ theo hướng</h4><ul>
+            <li>Nghiệp vụ <b>đấu thầu</b> (hướng đầu tư – dự án)</li>
+            <li><b>CFA Level 1</b> nếu quyết theo tài chính – đầu tư</li>
+            <li>Google Data Analytics / Power BI (hướng dữ liệu)</li>
+            <li><b>TOEIC 750+</b> hoặc IELTS 6.5</li>
+          </ul></div>
+          <div class="pbox"><h4>Đi làm thật</h4><ul>
+            <li>Thực tập bán thời gian có trả lương 3–6 tháng</li>
+            <li>Xây LinkedIn, giữ liên lạc với cựu sinh viên khoa</li>
+            <li>Tìm 1 người mentor trong nghề</li>
+          </ul></div>
+        </div>
+        <span class="kpi"><span class="k">Mốc:</span> 6 tháng kinh nghiệm có trả lương</span>
+      </div>
+
+      <!-- NĂM 4 -->
+      <div class="phase" style="--phase:var(--p4)">
+        <span class="node"></span>
+        <div class="phase-head">
+          <span class="phase-label">Năm 4</span>
+          <span class="phase-when">2029 – 2030</span>
+        </div>
+        <h3>Chuyển hóa 4 năm thành một lời mời làm việc</h3>
+        <p class="goal">Mục tiêu duy nhất: <b>có offer trước khi nhận bằng</b>. Mọi thứ trong năm 4 nên phục vụ mục tiêu đó, kể cả đề tài khóa luận.</p>
+        <div class="pgrid">
+          <div class="pbox"><h4>Học kỳ 1</h4><ul>
+            <li>Thực tập tốt nghiệp tại <b>doanh nghiệp mục tiêu</b>, không phải nơi dễ xin dấu</li>
+            <li>Chốt đề tài khóa luận gắn với dữ liệu thật của nơi thực tập</li>
+            <li>Nộp hồ sơ <b>Management Trainee</b> (thường mở tháng 8–10)</li>
+          </ul></div>
+          <div class="pbox"><h4>Học kỳ 2</h4><ul>
+            <li>Hoàn thành đồ án/khóa luận tốt nghiệp</li>
+            <li>Rải CV theo đợt tuyển dụng ngân hàng &amp; tập đoàn</li>
+            <li>Luyện phỏng vấn: case, test IQ/EQ, phỏng vấn tiếng Anh</li>
+          </ul></div>
+          <div class="pbox"><h4>Bộ hồ sơ cần có</h4><ul>
+            <li>CV 1 trang + LinkedIn hoàn chỉnh</li>
+            <li><b>Portfolio 3 sản phẩm</b>: 1 mô hình tài chính, 1 báo cáo phân tích, 1 dashboard</li>
+            <li>Chứng chỉ tiếng Anh còn hạn</li>
+            <li>2–3 người sẵn sàng làm người tham chiếu</li>
+          </ul></div>
+        </div>
+        <span class="kpi"><span class="k">Mốc:</span> nhận offer trước lễ tốt nghiệp</span>
+      </div>
+
+      <!-- SAU -->
+      <div class="phase" style="--phase:var(--p5)">
+        <span class="node"></span>
+        <div class="phase-head">
+          <span class="phase-label">Sau tốt nghiệp</span>
+          <span class="phase-when">2030 – 2033</span>
+        </div>
+        <h3>Ba năm đầu đi làm</h3>
+        <p class="goal">Giai đoạn đổi kinh nghiệm lấy chiều sâu. Chọn nơi cho học nghề tử tế thay vì nơi trả cao hơn 2 triệu.</p>
+        <div class="pgrid">
+          <div class="pbox"><h4>Năm 1–2 đi làm</h4><ul>
+            <li>Bám một mảng đủ lâu để thành “người biết việc”</li>
+            <li>Hoàn thiện chứng chỉ nghề còn dở (đấu thầu, CFA, phân tích dữ liệu)</li>
+          </ul></div>
+          <div class="pbox"><h4>Năm 3 trở đi</h4><ul>
+            <li>Lên chuyên viên chính / trưởng nhóm nhỏ</li>
+            <li>Cân nhắc cao học nếu muốn đi hướng nghiên cứu, giảng dạy hoặc khu vực công</li>
+          </ul></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ KỸ NĂNG ============ -->
+<section id="kynang">
+  <div class="wrap">
+    <div class="sec-eyebrow">Bộ công cụ</div>
+    <h2>Năm thứ mấy thì phải giỏi cái gì</h2>
+    <p class="lede">Bảng này để dán lên bàn học. Mỗi ô là mục tiêu cần đạt <i>xong</i> trong năm đó — không phải bắt đầu học trong năm đó.</p>
+
+    <div class="meters">
+      <div class="meter-row">
+        <div class="name">Tiếng Anh<small>Rào cản lớn nhất khi vào doanh nghiệp lớn</small></div>
+        <div class="track">
+          <div class="seg" style="--segc:var(--p1)"><span>TOEIC 550</span></div>
+          <div class="seg" style="--segc:var(--p2)"><span>TOEIC 650</span></div>
+          <div class="seg" style="--segc:var(--p3)"><span>TOEIC 750 / IELTS 6.5</span></div>
+          <div class="seg" style="--segc:var(--p4)"><span>Phỏng vấn được bằng tiếng Anh</span></div>
+        </div>
+      </div>
+      <div class="meter-row">
+        <div class="name">Excel &amp; mô hình tài chính<small>Công cụ dùng hằng ngày của nghề này</small></div>
+        <div class="track">
+          <div class="seg" style="--segc:var(--p1)"><span>Hàm, PivotTable</span></div>
+          <div class="seg" style="--segc:var(--p2)"><span>Excel nâng cao, biểu đồ</span></div>
+          <div class="seg" style="--segc:var(--p3)"><span>Mô hình dòng tiền, NPV/IRR</span></div>
+          <div class="seg" style="--segc:var(--p4)"><span>Mô hình thẩm định hoàn chỉnh</span></div>
+        </div>
+      </div>
+      <div class="meter-row">
+        <div class="name">Dữ liệu<small>Thứ tách một cử nhân kinh tế khỏi phần còn lại</small></div>
+        <div class="track">
+          <div class="seg" style="--segc:var(--p1)"><span>Google Sheets, thống kê mô tả</span></div>
+          <div class="seg" style="--segc:var(--p2)"><span>SQL cơ bản, Power BI</span></div>
+          <div class="seg" style="--segc:var(--p3)"><span>Python/R + kinh tế lượng</span></div>
+          <div class="seg" style="--segc:var(--p4)"><span>Dashboard cho bài toán thật</span></div>
+        </div>
+      </div>
+      <div class="meter-row">
+        <div class="name">Viết &amp; nói<small>Kỹ năng bị đánh giá thấp nhất, trả lương cao nhất</small></div>
+        <div class="track">
+          <div class="seg" style="--segc:var(--p1)"><span>Thuyết trình nhóm</span></div>
+          <div class="seg" style="--segc:var(--p2)"><span>Báo cáo có số liệu</span></div>
+          <div class="seg" style="--segc:var(--p3)"><span>Báo cáo phân tích 5–10 trang</span></div>
+          <div class="seg" style="--segc:var(--p4)"><span>Bảo vệ luận điểm trước hội đồng</span></div>
+        </div>
+      </div>
+      <div class="meter-row">
+        <div class="name">Kinh nghiệm thật<small>Nhà tuyển dụng đọc dòng này đầu tiên</small></div>
+        <div class="track">
+          <div class="seg" style="--segc:var(--p1)"><span>CLB, gia sư</span></div>
+          <div class="seg" style="--segc:var(--p2)"><span>Thực tập hè đầu tiên</span></div>
+          <div class="seg" style="--segc:var(--p3)"><span>Part-time có lương 3–6 tháng</span></div>
+          <div class="seg" style="--segc:var(--p4)"><span>Thực tập tốt nghiệp + offer</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="meter-legend">
+      <span><i style="background:var(--p1)"></i>Năm 1</span>
+      <span><i style="background:var(--p2)"></i>Năm 2</span>
+      <span><i style="background:var(--p3)"></i>Năm 3</span>
+      <span><i style="background:var(--p4)"></i>Năm 4</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NGHỀ NGHIỆP ============ -->
+<section id="nghe">
+  <div class="wrap">
+    <div class="sec-eyebrow">Đầu ra</div>
+    <h2>Sáu hướng nghề Dương có thể đi</h2>
+    <p class="lede">Ngành Kinh tế của UTC gắn với hạ tầng, giao thông, đầu tư công và viễn thông — đó vừa là đặc thù vừa là lợi thế cạnh tranh so với sinh viên kinh tế trường khác. Các thanh dưới mỗi thẻ thể hiện mức độ liên quan trực tiếp tới chương trình học.</p>
+
+    <div class="careers">
+      <div class="career" style="--cc:var(--p1)">
+        <h3>Thẩm định &amp; phân tích dự án đầu tư</h3>
+        <p>Tính toán xem một dự án có khả thi về tài chính không, rủi ro nằm ở đâu, vốn nên vào theo cấu trúc nào.</p>
+        <div class="where"><b>Nơi làm:</b> ban quản lý dự án, tập đoàn hạ tầng – xây dựng, khối thẩm định của ngân hàng, quỹ đầu tư</div>
+        <div class="fitbar"><span>Sát chương trình học</span><span class="pips"><i class="pip on"></i><i class="pip on"></i><i class="pip on"></i><i class="pip on"></i><i class="pip on"></i></span></div>
+      </div>
+      <div class="career" style="--cc:var(--p2)">
+        <h3>Đấu thầu &amp; quản lý hợp đồng</h3>
+        <p>Lập hồ sơ mời thầu/dự thầu, đánh giá thầu, theo dõi hợp đồng và thanh quyết toán. Nghề rất cần người ở khu vực đầu tư công.</p>
+        <div class="where"><b>Nơi làm:</b> nhà thầu xây lắp, ban QLDA, doanh nghiệp nhà nước, cơ quan quản lý</div>
+        <div class="fitbar"><span>Sát chương trình học</span><span class="pips"><i class="pip on"></i><i class="pip on"></i><i class="pip on"></i><i class="pip on"></i><i class="pip"></i></span></div>
+      </div>
+      <div class="career" style="--cc:var(--p3)">
+        <h3>Phân tích tài chính – đầu tư</h3>
+        <p>Phân tích doanh nghiệp, định giá, theo dõi danh mục. Đòi hỏi tiếng Anh tốt và thường cần CFA để đi xa.</p>
+        <div class="where"><b>Nơi làm:</b> công ty chứng khoán, ngân hàng, quỹ, bộ phận tài chính doanh nghiệp</div>
+        <div class="fitbar"><span>Sát chương trình học</span><span class="pips"><i class="pip on"></i><i class="pip on"></i><i class="pip on"></i><i class="pip"></i><i class="pip"></i></span></div>
+      </div>
+      <div class="career" style="--cc:var(--p4)">
+        <h3>Kinh doanh &amp; phân tích dịch vụ viễn thông</h3>
+        <p>Phân tích thị trường, định giá gói cước, đo hiệu quả kênh bán, phát triển sản phẩm số.</p>
+        <div class="where"><b>Nơi làm:</b> Viettel, VNPT, MobiFone, FPT Telecom, công ty công nghệ &amp; thương mại điện tử</div>
+        <div class="fitbar"><span>Sát chương trình học</span><span class="pips"><i class="pip on"></i><i class="pip on"></i><i class="pip on"></i><i class="pip on"></i><i class="pip on"></i></span></div>
+      </div>
+      <div class="career" style="--cc:var(--p0)">
+        <h3>Business Analyst / Data Analyst</h3>
+        <p>Biến dữ liệu thành quyết định kinh doanh. Cửa mở rộng nếu Dương chịu học SQL – Power BI – Python từ năm 2.</p>
+        <div class="where"><b>Nơi làm:</b> gần như mọi ngành: bán lẻ, logistics, fintech, sản xuất</div>
+        <div class="fitbar"><span>Sát chương trình học</span><span class="pips"><i class="pip on"></i><i class="pip on"></i><i class="pip on"></i><i class="pip"></i><i class="pip"></i></span></div>
+      </div>
+      <div class="career" style="--cc:var(--p5)">
+        <h3>Khu vực công &amp; nghiên cứu</h3>
+        <p>Quản lý đầu tư công, chính sách hạ tầng – giao thông, giảng dạy và nghiên cứu. Con đường ổn định, thường cần học lên cao học.</p>
+        <div class="where"><b>Nơi làm:</b> sở/ban ngành về tài chính – kế hoạch – xây dựng, viện nghiên cứu, trường đại học</div>
+        <div class="fitbar"><span>Sát chương trình học</span><span class="pips"><i class="pip on"></i><i class="pip on"></i><i class="pip on"></i><i class="pip"></i><i class="pip"></i></span></div>
+      </div>
+    </div>
+
+    <div class="salary">
+      <table>
+        <caption style="text-align:left; padding:14px 16px 0; font-size:12.5px; color:var(--text-muted)">Khoảng thu nhập <b>tham khảo</b> tại Hà Nội (2026) — ước tính thị trường, không phải cam kết. Chênh lệch lớn theo doanh nghiệp và năng lực cá nhân.</caption>
+        <thead><tr><th>Giai đoạn</th><th>Vị trí điển hình</th><th>Thu nhập tham khảo</th><th class="barcell"></th></tr></thead>
+        <tbody>
+          <tr><td>Mới ra trường (0–1 năm)</td><td>Thực tập sinh → nhân viên</td><td class="n">8 – 14 tr/tháng</td><td class="barcell"><div class="bar" style="width:26%"></div></td></tr>
+          <tr><td>2–3 năm</td><td>Chuyên viên</td><td class="n">15 – 25 tr/tháng</td><td class="barcell"><div class="bar" style="width:50%"></div></td></tr>
+          <tr><td>4–6 năm</td><td>Chuyên viên chính / trưởng nhóm</td><td class="n">25 – 40 tr/tháng</td><td class="barcell"><div class="bar" style="width:76%"></div></td></tr>
+          <tr><td>7 năm trở lên</td><td>Trưởng phòng / quản lý</td><td class="n">40 tr/tháng trở lên</td><td class="barcell"><div class="bar" style="width:100%"></div></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CÂN NHẮC ============ -->
+<section id="canhac">
+  <div class="wrap">
+    <div class="sec-eyebrow">Nói thẳng</div>
+    <h2>Nếu Dương còn phân vân vì đây là nguyện vọng 4</h2>
+    <p class="lede">Trúng NV4 nghĩa là ba nguyện vọng trên chưa đạt. Nếu trong lòng còn tiếc, tốt nhất là đưa nó ra bàn ngay trong tuần này — vì sau 17h ngày 21/8 thì lựa chọn sẽ khép lại.</p>
+
+    <div class="cols2">
+      <div class="card">
+        <h3>Điều cần biết trước khi bấm xác nhận</h3>
+        <ul>
+          <li>Khi đã xác nhận nhập học ở một trường, thí sinh <b>không được tham gia xét tuyển ở nơi khác trong năm đó</b>, trừ khi hiệu trưởng cho phép.</li>
+          <li>Không xác nhận đúng hạn thì bị coi là <b>từ chối nhập học</b> — suất trúng tuyển mất, không lấy lại được.</li>
+          <li>Xét tuyển bổ sung có tồn tại nhưng chỉ tiêu ít, điểm thường không thấp hơn đợt 1 và không có gì bảo đảm.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Ba lựa chọn, nhìn cho rõ</h3>
+        <ul>
+          <li><b>Nhập học.</b> Chắc chắn nhất. Trong trường vẫn còn đường: học tốt để xét chuyển ngành hoặc học cùng lúc hai chương trình — cần hỏi phòng đào tạo về quy chế cụ thể.</li>
+          <li><b>Bỏ, chờ xét tuyển bổ sung.</b> Rủi ro cao, chỉ nên tính nếu đã xác định rõ trường/ngành còn tuyển và đủ điểm.</li>
+          <li><b>Gap year, thi lại năm sau.</b> Mất một năm, cần kế hoạch học tập nghiêm túc và sự đồng thuận của gia đình.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout">
+      <h3>Một góc nhìn cân bằng</h3>
+      Ngành học không quyết định tất cả. Trong ba năm đầu đi làm, nhà tuyển dụng nhìn <b>kỹ năng và kinh nghiệm</b> nhiều hơn tên ngành trong bằng. Ngành Kinh tế lại là ngành nền rộng: từ đây rẽ sang tài chính, dữ liệu, kinh doanh, đầu tư công đều được — miễn là công cụ và kinh nghiệm được tích lũy đúng lịch như phần lộ trình ở trên. Ngược lại, nếu Dương thực sự không hợp và biết rõ mình muốn gì khác, thì thẳng thắn với gia đình lúc này vẫn rẻ hơn nhiều so với nhận ra ở năm ba.
+    </div>
+  </div>
+</section>
+
+<!-- ============ CHECKLIST ============ -->
+<section id="checklist">
+  <div class="wrap">
+    <div class="sec-eyebrow">Bắt đầu</div>
+    <h2>Việc cần làm trong tuần này</h2>
+    <p class="lede">Tích vào từng ô khi xong. (Danh sách này chỉ lưu trong phiên xem hiện tại — tải lại trang sẽ trở về ban đầu.)</p>
+
+    <div class="checklist" id="cl">
+      <label class="check"><input type="checkbox"><span class="txt"><span>Xác nhận nhập học trực tuyến trên hệ thống của Bộ</span><small>Hạn 17h00 ngày 21/8/2026 — việc quan trọng nhất trong danh sách</small></span></label>
+      <label class="check"><input type="checkbox"><span class="txt"><span>Chụp màn hình trạng thái “Đã nhập học” và lưu lại</span><small>Bằng chứng phòng khi hệ thống lỗi</small></span></label>
+      <label class="check"><input type="checkbox"><span class="txt"><span>Vào tuyensinh.utc.edu.vn đọc thông báo nhập học chính thức</span><small>Lấy đúng danh mục hồ sơ, lịch và mức học phí của trường</small></span></label>
+      <label class="check"><input type="checkbox"><span class="txt"><span>Chuẩn bị hồ sơ giấy: học bạ, giấy chứng nhận tốt nghiệp tạm thời, CCCD, ảnh thẻ</span></span></label>
+      <label class="check"><input type="checkbox"><span class="txt"><span>Chốt phương án chỗ ở: ký túc xá hay thuê trọ</span><small>Đăng ký KTX thường có hạn riêng, làm sớm</small></span></label>
+      <label class="check"><input type="checkbox"><span class="txt"><span>Ngồi với gia đình lập ngân sách năm nhất</span><small>Học phí + sinh hoạt phí + khoản đầu khóa</small></span></label>
+      <label class="check"><input type="checkbox"><span class="txt"><span>Thi thử TOEIC hoặc IELTS để biết điểm xuất phát</span></span></label>
+      <label class="check"><input type="checkbox"><span class="txt"><span>Đặt lịch học Excel 30 phút mỗi ngày từ giờ đến khai giảng</span></span></label>
+      <label class="check"><input type="checkbox"><span class="txt"><span>Nhắn hỏi 1 anh/chị đang học Khoa Vận tải – Kinh tế</span><small>Hỏi về hai chuyên ngành và cách học năm nhất</small></span></label>
+    </div>
+
+    <div class="progress-wrap">
+      <div class="progress-outer"><div class="progress-inner" id="pi"></div></div>
+      <div><b id="pc">0</b>/<span id="pt">9</span> việc</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <h4>Nguồn tham khảo</h4>
+    <ul>
+      <li>Danh mục mã tuyển sinh &amp; điểm chuẩn UTC — <a href="https://diemthi.tuyensinh247.com/thong-tin-dai-hoc-giao-thong-van-tai-co-so-phia-bac-GHA.html">tuyensinh247</a></li>
+      <li>Hạn xác nhận nhập học 2026 (Công văn 2304/BGDĐT-GDĐH) — <a href="https://aigiaoduc.thuvienphapluat.vn/lich-nhap-hoc-dai-hoc-2026-khi-nao-het-han-xac-nhan-nhap-hoc-dai-hoc-2026-tren-he-thong-cua-bo-5195tt.html">Thư viện pháp luật</a> · <a href="https://dantri.com.vn/giao-duc/5-buoc-xac-nhan-nhap-hoc-truc-tuyen-tren-he-thong-cua-bo-gddt-20260809165258136.htm">Dân trí</a></li>
+      <li>Bộ môn Kinh tế bưu chính viễn thông, Khoa Vận tải – Kinh tế — <a href="https://fte.utc.edu.vn/?q=bo-mon/kinh-te-buu-chinh-vien-thong/gioi-thieu">fte.utc.edu.vn</a></li>
+      <li>Thông tin ngành Kinh tế 7310101 tại UTC — <a href="https://unipath.vn/truong/GHA/7310101">unipath.vn</a></li>
+      <li>Điểm chuẩn UTC 2026 — <a href="https://vietnamnet.vn/diem-chuan-truong-dh-giao-thong-van-tai-nam-2026-2543620.html">VietNamNet</a></li>
+      <li>Trang tuyển sinh chính thức của trường — <a href="https://tuyensinh.utc.edu.vn/">tuyensinh.utc.edu.vn</a></li>
+    </ul>
+    <div class="disclaimer">
+      Trang này được tổng hợp ngày 10/8/2026 để phục vụ riêng trường hợp của Nguyễn Ngọc Thùy Dương. Điểm chuẩn, chỉ tiêu, học phí và danh mục hồ sơ có thể thay đổi — <b>luôn lấy thông báo chính thức của Trường Đại học Giao thông Vận tải và của Bộ GD&amp;ĐT làm căn cứ cuối cùng</b>. Các con số về thu nhập là ước tính thị trường mang tính tham khảo, không phải cam kết. Lộ trình học tập là gợi ý, không thay thế tư vấn của cố vấn học tập tại trường.
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // ----- countdown to 17:00 21/08/2026 (UTC+7) -----
+  var target = new Date('2026-08-21T17:00:00+07:00').getTime();
+  var el = {d:document.getElementById('cd-d'), h:document.getElementById('cd-h'),
+            m:document.getElementById('cd-m'), s:document.getElementById('cd-s')};
+  var note = document.getElementById('cd-note');
+  var baseNote = note.textContent;
+  function pad(n){ return n<10 ? '0'+n : ''+n; }
+  function tick(){
+    var diff = target - Date.now();
+    if(diff <= 0){
+      el.d.textContent = el.h.textContent = el.m.textContent = el.s.textContent = '0';
+      note.textContent = 'Đã quá hạn xác nhận nhập học theo lịch chung của Bộ GD&ĐT (17h00 ngày 21/8/2026). Nếu chưa xác nhận được, liên hệ ngay phòng tuyển sinh của trường để được hướng dẫn.';
+      clearInterval(timer);
+      return;
+    }
+    var s = Math.floor(diff/1000);
+    el.d.textContent = Math.floor(s/86400);
+    el.h.textContent = pad(Math.floor(s%86400/3600));
+    el.m.textContent = pad(Math.floor(s%3600/60));
+    el.s.textContent = pad(s%60);
+    if(s < 86400*3){ note.textContent = 'Còn rất ít thời gian — nên xác nhận ngay hôm nay. ' + baseNote; }
+  }
+  tick();
+  var timer = setInterval(tick, 1000);
+
+  // ----- checklist progress (in-memory only) -----
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('#cl input[type=checkbox]'));
+  var pi = document.getElementById('pi'), pc = document.getElementById('pc');
+  document.getElementById('pt').textContent = boxes.length;
+  function sync(){
+    var n = 0;
+    boxes.forEach(function(b){
+      var row = b.closest('.check');
+      if(b.checked){ n++; row.classList.add('done'); } else { row.classList.remove('done'); }
+    });
+    pc.textContent = n;
+    pi.style.width = (boxes.length ? (n/boxes.length*100) : 0) + '%';
+  }
+  boxes.forEach(function(b){ b.addEventListener('change', sync); });
+  sync();
+})();
+</script>
+</body>
+</html>

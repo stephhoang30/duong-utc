@@ -268,6 +268,18 @@ section:nth-of-type(even) .check{background:var(--surface-0)}
 .callout ul{margin:10px 0 0; padding-left:19px}
 .callout li{margin:6px 0}
 
+/* ---------- hỏi đáp ---------- */
+.faq{display:grid; gap:11px; margin-top:22px}
+.faq-item{background:var(--surface-1); border:1px solid var(--line); border-radius:var(--radius); padding:16px 18px}
+section:nth-of-type(even) .faq-item{background:var(--surface-0)}
+.faq-q{display:flex; gap:11px; align-items:flex-start; font-size:15.5px; font-weight:700; letter-spacing:-.012em}
+.faq-q .qn{flex:none; width:23px; height:23px; border-radius:50%; background:var(--brand-soft); color:var(--brand);
+  font-size:12.5px; font-weight:750; display:grid; place-items:center; margin-top:1px}
+.faq-a{margin-top:8px; padding-left:34px; font-size:14.8px; color:var(--text-secondary)}
+.faq-a b{color:var(--text-primary); font-weight:650}
+.faq-tag{display:inline-block; font-size:11px; font-weight:750; letter-spacing:.06em; text-transform:uppercase;
+  padding:2px 9px; border-radius:99px; margin-left:8px; vertical-align:2px; white-space:nowrap}
+
 /* ---------- footer ---------- */
 footer{padding:40px 0 60px; background:var(--surface-1); font-size:13.5px; color:var(--text-muted)}
 footer h4{font-size:12px; text-transform:uppercase; letter-spacing:.1em; color:var(--text-secondary); margin:0 0 10px; font-weight:700}
@@ -299,6 +311,7 @@ footer a{color:var(--text-secondary)}
     <div class="brandmark"><span class="dot"></span> Lộ trình của Thùy Dương</div>
     <nav class="navlinks">
       <a href="#gap">Việc gấp</a>
+      <a href="#hoidap">Hỏi đáp</a>
       <a href="#nganh">Ngành GHA03</a>
       <a href="#lotrinh">Lộ trình 4 năm</a>
       <a href="#kynang">Kỹ năng</a>
@@ -322,6 +335,7 @@ footer a{color:var(--text-secondary)}
       <span class="chip"><span class="k">Mã ngành</span> <b>7310101</b></span>
       <span class="chip"><span class="k">Nguyện vọng</span> <b>4</b></span>
       <span class="chip"><span class="k">Cơ sở</span> <b>Hà Nội</b></span>
+      <span class="chip"><span class="k">Khóa</span> <b>K67</b></span>
       <span class="chip"><span class="k">Nhập học tại trường</span> <b>20–21/8</b></span>
       <span class="chip"><span class="k">Bắt đầu năm học</span> <b>24/8</b></span>
     </div>
@@ -362,7 +376,7 @@ footer a{color:var(--text-secondary)}
       <div class="tile">
         <div class="lab">Nhập học trực tiếp</div>
         <div class="num">20–21/8</div>
-        <div class="foot">Đến trường làm thủ tục, nộp hồ sơ giấy</div>
+        <div class="foot">Ngày cụ thể ghi trên Giấy báo nhập học — hôm đó chỉ mang Đơn nhập học</div>
       </div>
       <div class="tile">
         <div class="lab">Bắt đầu năm học</div>
@@ -391,24 +405,92 @@ footer a{color:var(--text-secondary)}
       <div class="step"><div class="t">Vào mục <b>Tra cứu → Tra cứu kết quả xét tuyển</b>, kiểm tra lại đúng trường và nguyện vọng trúng tuyển.</div></div>
       <div class="step"><div class="t">Chọn nguyện vọng trúng tuyển muốn nhập học (GHA03 – ĐH Giao thông Vận tải), bấm <b>Xác nhận</b>.</div></div>
       <div class="step"><div class="t">Bấm <b>Đồng ý</b>, rồi kiểm tra lại trạng thái. Khi màn hình hiện <b>“Đã nhập học”</b> là xong — nên chụp màn hình lưu lại.</div></div>
-      <div class="step"><div class="t"><b>Xong bước trên mới sang bước của trường:</b> vào <code>nhaphoc.utc.edu.vn</code> để khai hồ sơ nhập học tại Trường ĐH GTVT. In lại các giấy tờ mà hệ thống của trường yêu cầu để mang đi.</div></div>
-      <div class="step"><div class="t">Đến trường làm thủ tục trực tiếp trong <b>hai ngày 20 và 21/8/2026</b>, mang theo hồ sơ giấy. <b>Năm học mới bắt đầu từ 24/8/2026.</b></div></div>
+      <div class="step"><div class="t"><b>Xong bước trên mới sang bước của trường:</b> vào <code>nhaphoc.utc.edu.vn</code> kê khai thông tin nhập học. Khai online là đủ — <b>không phải làm sơ yếu lý lịch</b>.</div></div>
+      <div class="step"><div class="t">Khai xong, hệ thống sẽ hiện <b>Giấy báo nhập học</b>. <b>Ngày lên trường của Dương ghi trên tờ giấy báo này</b> — đọc kỹ, đừng đoán. In ra và giữ lại.</div></div>
+      <div class="step"><div class="t">Lên trường đúng ngày ghi trên giấy báo (trường tổ chức trong hai ngày <b>20 và 21/8/2026</b>). Hôm đó <b>chỉ cần mang Đơn nhập học</b>. <b>Năm học mới bắt đầu từ 24/8/2026.</b></div></div>
     </div>
 
     <div class="callout">
-      <h3>Ngay sau đó: hồ sơ nhập học tại trường</h3>
-      Trường đã chốt lịch: khai hồ sơ online tại <b>nhaphoc.utc.edu.vn</b>, rồi <b>đến trường nhập học trực tiếp ngày 20 và 21/8/2026</b>, năm học bắt đầu <b>24/8/2026</b>.
-      <b>Nên xác nhận trên hệ thống của Bộ sớm, trong khoảng 13–18/8</b>: hạn chót 17h00 ngày 21/8 trùng đúng ngày cuối đi nhập học trực tiếp, để sát quá là dễ rối. Xong sớm thì ngày 20/8 lên trường thong thả, còn dư ngày 21/8 phòng khi thiếu giấy tờ. Bộ giấy tờ thường được yêu cầu:
+      <h3>Vì sao phải làm online thật sớm</h3>
+      <b>Ngày lên trường không do Dương chọn</b> — nó nằm trên Giấy báo nhập học, mà giấy báo chỉ hiện ra <i>sau khi</i> đã xác nhận trên hệ thống của Bộ và kê khai xong ở <b>nhaphoc.utc.edu.vn</b>. Trường chỉ tổ chức trong hai ngày 20 và 21/8. Nếu để đến gần hạn 17h00 ngày 21/8 mới làm, rất dễ rơi vào cảnh giấy báo ghi ngày 20/8 mà ngày đó đã trôi qua mất rồi.
       <ul>
-        <li>Giấy báo trúng tuyển / phiếu xác nhận nhập học (bản in)</li>
-        <li>Học bạ THPT (bản chính + bản sao công chứng)</li>
-        <li>Bằng tốt nghiệp THPT hoặc <b>giấy chứng nhận tốt nghiệp tạm thời</b></li>
-        <li>Căn cước công dân + giấy khai sinh (bản sao)</li>
-        <li>Giấy chứng nhận ưu tiên/khu vực nếu có; hồ sơ chuyển sinh hoạt Đoàn</li>
-        <li>Ảnh 3×4 hoặc 4×6 (6–8 chiếc), giấy khám sức khỏe</li>
-        <li>Học phí học kỳ 1 + bảo hiểm y tế + các khoản đầu khóa</li>
+        <li><b>Làm online ngay từ 13/8</b>, chậm nhất là 15–16/8. Xong sớm thì còn thời gian xoay xở nếu hệ thống lỗi hoặc thiếu thông tin.</li>
+        <li>Ngày lên trường <b>chỉ mang Đơn nhập học</b> — nhẹ nhàng, không phải vác cả tập hồ sơ.</li>
+        <li>Bộ <b>9 loại giấy tờ</b> nộp sau, vào <b>ngày sinh hoạt công dân</b>. Cứ chuẩn bị dần ở nhà cho đủ, nhưng không cần mang đi hôm 20–21/8.</li>
       </ul>
-      Luôn đối chiếu với thông báo chính thức của trường trước khi đi nộp.
+    </div>
+
+    <div class="cols2" style="margin-top:16px">
+      <div class="card">
+        <h3>Chuẩn bị dần ở nhà cho ngày sinh hoạt công dân</h3>
+        <ul>
+          <li>Giấy báo trúng tuyển / phiếu xác nhận nhập học (bản in)</li>
+          <li>Học bạ THPT (bản chính + bản sao công chứng)</li>
+          <li>Bằng tốt nghiệp THPT hoặc <b>giấy chứng nhận tốt nghiệp tạm thời</b></li>
+          <li>Căn cước công dân + giấy khai sinh (bản sao)</li>
+          <li>Giấy chứng nhận ưu tiên/khu vực nếu có; hồ sơ chuyển sinh hoạt Đoàn</li>
+          <li>Ảnh 3×4 hoặc 4×6 (6–8 chiếc), giấy khám sức khỏe</li>
+          <li><b>Không cần sơ yếu lý lịch</b> — đã kê khai online rồi</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Các khoản tiền đầu khóa</h3>
+        <ul>
+          <li><b>Học phí học kỳ 1</b> — xem mức cụ thể trên hệ thống nhập học của trường.</li>
+          <li><b>Bảo hiểm y tế: bắt buộc.</b> Nếu Dương đã có BHYT ở địa phương (hộ nghèo, thân nhân quân đội, chính sách…) thì vẫn đóng, trường <b>hoàn trả lại trong năm học</b>.</li>
+          <li><b>Bảo hiểm thân thể: không bắt buộc.</b> 230.000đ cho cả 4 năm, chi trả viện phí hoặc bồi thường tiền mặt khi có sự cố. Rẻ, nhà trường khuyến khích mua — gia đình cân nhắc.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HỎI ĐÁP NHẬP HỌC ============ -->
+<section id="hoidap">
+  <div class="wrap">
+    <div class="sec-eyebrow">Nhà trường giải đáp cho K67</div>
+    <h2>Sáu câu tân sinh viên hỏi nhiều nhất</h2>
+    <p class="lede">Tổng hợp từ phần hỏi đáp chính thức của Trường ĐH Giao thông Vận tải dành cho khóa 67. Đọc trước cho đỡ lo và đỡ chuẩn bị thừa.</p>
+
+    <div class="faq">
+      <div class="faq-item">
+        <div class="faq-q"><span class="qn">1</span><span>Có cần làm sơ yếu lý lịch không?<span class="faq-tag" style="background:var(--accent-soft); color:var(--accent)">Không cần</span></span></div>
+        <div class="faq-a">Không. Chỉ cần kê khai thông tin online trên website nhập học của trường: <b>nhaphoc.utc.edu.vn</b>. Không phải xin dấu xác nhận của xã/phường như hồi nộp hồ sơ thi.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q"><span class="qn">2</span><span>Đã có chứng chỉ tiếng Anh thì có phải thi khảo sát đầu vào không?<span class="faq-tag" style="background:var(--accent-soft); color:var(--accent)">Không cần</span></span></div>
+        <div class="faq-a">Không phải đăng ký thi. Sinh viên đã có chứng chỉ tiếng Anh sẽ được <b>quy đổi điểm</b>. Nếu Dương chưa có chứng chỉ nào thì cứ đăng ký thi khảo sát bình thường — bài thi này chỉ để xếp lớp, không phải để đánh trượt ai.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q"><span class="qn">3</span><span>Đã có BHYT ở địa phương thì có phải mua BHYT của trường không?<span class="faq-tag" style="background:var(--brand-soft); color:var(--brand)">Bắt buộc</span></span></div>
+        <div class="faq-a">BHYT là khoản <b>bắt buộc</b>, vẫn phải đóng theo trường. Trường hợp đã có BHYT tại địa phương (diện chính sách, thân nhân quân đội…) thì <b>được hoàn trả trong năm học</b> — nhớ giữ lại giấy tờ chứng minh để làm thủ tục hoàn.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q"><span class="qn">4</span><span>Làm sao biết mình nhập học ngày nào?</span></div>
+        <div class="faq-a">Sau khi hoàn thành thủ tục nhập học online, hệ thống sẽ hiện <b>Giấy báo nhập học</b>, trên đó <b>ghi rõ ngày nhập học của từng người</b>. Đây là lý do phải làm online sớm: ngày trên giấy báo có thể rơi vào 20/8, làm muộn là lỡ.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q"><span class="qn">5</span><span>Hôm nhập học có phải mang đủ 9 loại giấy tờ không?<span class="faq-tag" style="background:var(--accent-soft); color:var(--accent)">Không cần</span></span></div>
+        <div class="faq-a">Không. Ngày lên trường nhập học trực tiếp <b>chỉ cần mang Đơn nhập học</b>. Bộ hồ sơ 9 loại giấy tờ nộp sau, vào <b>ngày sinh hoạt công dân</b>. Cứ chuẩn bị dần ở nhà, nhưng đừng vác cả tập đi hôm 20–21/8.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q"><span class="qn">6</span><span>Bảo hiểm thân thể có bắt buộc không?<span class="faq-tag" style="background:var(--accent-soft); color:var(--accent)">Tự nguyện</span></span></div>
+        <div class="faq-a">Không bắt buộc, nhưng nhà trường khuyến khích: <b>230.000đ cho cả 4 năm</b>, hỗ trợ chi trả viện phí hoặc bồi thường bằng tiền mặt khi có sự cố. Tính ra chưa tới 5.000đ/tháng — gia đình cân nhắc, nhưng ở mức giá đó thì mua cũng hợp lý.</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <h3>Hai đường link cần lưu</h3>
+      <ul>
+        <li><b>Tra cứu kết quả xét tuyển:</b> <a href="https://xettuyen.utc.edu.vn/tra-cuu">xettuyen.utc.edu.vn/tra-cuu</a></li>
+        <li><b>Hướng dẫn và kê khai nhập học:</b> <a href="https://nhaphoc.utc.edu.vn/">nhaphoc.utc.edu.vn</a></li>
+      </ul>
+      Còn thắc mắc gì khác, hỏi thẳng dưới bài đăng của trường hoặc gọi phòng đào tạo — hỏi sớm bao giờ cũng rẻ hơn đoán mò.
     </div>
   </div>
 </section>
@@ -894,7 +976,7 @@ footer a{color:var(--text-secondary)}
       <div class="card">
         <h3>Mẹo cho tân sinh viên</h3>
         <ul>
-          <li><b>Đi thử một lần trước ngày 24/8</b> — tiện nhất là ghép luôn vào hôm lên trường nhập học trực tiếp <b>20/8</b>. Bấm giờ thật từ lúc ra khỏi nhà; đó mới là con số để lên lịch, không phải con số ước tính trên mạng.</li>
+          <li><b>Đi thử một lần trước ngày 24/8</b> — tiện nhất là ghép luôn vào hôm lên trường nhập học (ngày ghi trên Giấy báo, 20 hoặc 21/8). Bấm giờ thật từ lúc ra khỏi nhà; đó mới là con số để lên lịch, không phải con số ước tính trên mạng.</li>
           <li><b>Vé tháng ưu tiên</b> cho học sinh – sinh viên của mạng buýt Hà Nội hiện khoảng <b>70.000đ/tháng một tuyến</b> và <b>140.000đ/tháng liên tuyến</b>. Cần thẻ sinh viên và ảnh thẻ, làm ngay sau khi nhập học.</li>
           <li>Cài <b>Tìm Buýt</b> (Transerco) hoặc <b>BusMap</b>, hoặc dùng chế độ phương tiện công cộng của Google Maps để xem xe còn cách bao xa.</li>
           <li>Giờ tan tầm cầu Chương Dương và đoạn Kim Mã – Cầu Giấy tắc nặng. Về sớm trước 16h30 hoặc muộn sau 19h sẽ nhanh hơn nhiều.</li>
@@ -927,14 +1009,14 @@ footer a{color:var(--text-secondary)}
       <label class="check"><input type="checkbox"><span class="txt"><span>Xác nhận nhập học trực tuyến trên hệ thống của Bộ</span><small>Cổng mở từ 13/8, hạn 17h00 ngày 21/8/2026 — việc quan trọng nhất trong danh sách</small></span></label>
       <label class="check"><input type="checkbox"><span class="txt"><span>Chụp màn hình trạng thái “Đã nhập học” và lưu lại</span><small>Bằng chứng phòng khi hệ thống lỗi</small></span></label>
       <label class="check"><input type="checkbox"><span class="txt"><span>Khai hồ sơ nhập học trên nhaphoc.utc.edu.vn</span><small>Làm sau khi đã xác nhận trên hệ thống của Bộ — lấy đúng danh mục hồ sơ và mức học phí của trường</small></span></label>
-      <label class="check"><input type="checkbox"><span class="txt"><span>Lên trường làm thủ tục nhập học trực tiếp ngày 20/8</span><small>Trường nhận trong hai ngày 20 và 21/8 — đi ngày đầu để còn ngày sau dự phòng</small></span></label>
+      <label class="check"><input type="checkbox"><span class="txt"><span>Đọc kỹ Giấy báo nhập học để biết ngày phải lên trường</span><small>Giấy báo hiện ra sau khi khai online xong; trường nhận trong hai ngày 20 và 21/8 — hôm đó chỉ mang Đơn nhập học</small></span></label>
       <label class="check"><input type="checkbox"><span class="txt"><span>Chuẩn bị hồ sơ giấy: học bạ, giấy chứng nhận tốt nghiệp tạm thời, CCCD, ảnh thẻ</span></span></label>
       <label class="check"><input type="checkbox"><span class="txt"><span>Chốt phương án chỗ ở: ký túc xá hay thuê trọ</span><small>Đăng ký KTX thường có hạn riêng, làm sớm</small></span></label>
       <label class="check"><input type="checkbox"><span class="txt"><span>Ngồi với gia đình lập ngân sách năm nhất</span><small>Học phí + sinh hoạt phí + khoản đầu khóa</small></span></label>
       <label class="check"><input type="checkbox"><span class="txt"><span>Thi thử TOEIC hoặc IELTS để biết điểm xuất phát</span></span></label>
       <label class="check"><input type="checkbox"><span class="txt"><span>Đặt lịch học Excel 30 phút mỗi ngày từ giờ đến khai giảng</span></span></label>
       <label class="check"><input type="checkbox"><span class="txt"><span>Nhắn hỏi 1 anh/chị đang học Khoa Vận tải – Kinh tế</span><small>Hỏi về hai chuyên ngành và cách học năm nhất</small></span></label>
-      <label class="check"><input type="checkbox"><span class="txt"><span>Đi thử tuyến buýt Tam Sơn → trường trước ngày 24/8</span><small>Tận dụng luôn hôm lên trường nhập học 20/8: đi tuyến 54 rồi đổi tuyến 34, bấm giờ thật để biết phải rời nhà lúc mấy giờ</small></span></label>
+      <label class="check"><input type="checkbox"><span class="txt"><span>Đi thử tuyến buýt Tam Sơn → trường trước ngày 24/8</span><small>Tận dụng luôn hôm lên trường nhập học: đi tuyến 54 rồi đổi tuyến 34, bấm giờ thật để biết phải rời nhà lúc mấy giờ</small></span></label>
     </div>
 
     <div class="progress-wrap">
@@ -954,7 +1036,8 @@ footer a{color:var(--text-secondary)}
       <li>Thông tin ngành Kinh tế 7310101 tại UTC — <a href="https://unipath.vn/truong/GHA/7310101">unipath.vn</a></li>
       <li>Điểm chuẩn UTC 2026 — <a href="https://vietnamnet.vn/diem-chuan-truong-dh-giao-thong-van-tai-nam-2026-2543620.html">VietNamNet</a></li>
       <li>Tin nhắn thông báo trúng tuyển của Trường ĐH GTVT (đầu số DH_GTVT, 15h08 ngày 11/8/2026) — nguồn của các mốc 13/8, 17h00 ngày 21/8, nhập học trực tiếp 20–21/8 và khai giảng 24/8</li>
-      <li>Cổng khai hồ sơ nhập học của trường — <a href="https://nhaphoc.utc.edu.vn/">nhaphoc.utc.edu.vn</a></li>
+      <li>Cổng khai hồ sơ nhập học của trường — <a href="https://nhaphoc.utc.edu.vn/">nhaphoc.utc.edu.vn</a> · tra cứu kết quả xét tuyển — <a href="https://xettuyen.utc.edu.vn/tra-cuu">xettuyen.utc.edu.vn/tra-cuu</a></li>
+      <li>Bài giải đáp thắc mắc nhập học của Trường ĐH GTVT dành cho K67 — nguồn của phần “Sáu câu tân sinh viên hỏi nhiều nhất” (sơ yếu lý lịch, thi khảo sát tiếng Anh, BHYT, giấy báo nhập học, đơn nhập học, bảo hiểm thân thể)</li>
       <li>Trang tuyển sinh chính thức của trường — <a href="https://tuyensinh.utc.edu.vn/">tuyensinh.utc.edu.vn</a></li>
       <li>Lộ trình, giờ chạy và giá vé tuyến buýt 54 Long Biên – Bắc Ninh — <a href="https://acchanoi.vn/xe-buyt-so-54-ha-noi/">acchanoi.vn</a> · <a href="https://khainamtransport.com/tuyen-xe-buyt-54-long-bien-bac-ninh/">khainamtransport.com</a></li>
       <li>Lộ trình tuyến buýt 34 Bến xe Gia Lâm – Bến xe Mỹ Đình (dừng trước cổng ĐH GTVT) — <a href="https://xe-bus.com/ben-xe-my-dinh-ben-xe-gia-lam/">xe-bus.com</a> · <a href="https://busmap.vn/">BusMap</a></li>

@@ -178,7 +178,11 @@ h1,h2,h3,h4{font-family:var(--display); font-weight:800; letter-spacing:-.01em}
   content:""; position:absolute; inset:0; pointer-events:none; opacity:.5;
   background-image:var(--dots); background-size:26px 26px;
 }
-.hero .wrap{position:relative}
+.hero .wrap{position:relative; z-index:1}
+.hero .deco{filter:drop-shadow(0 4px 6px rgba(58,49,80,.16))}
+.hero .deco.tl{left:auto; right:34px; top:26px; --sz:34px}
+.hero .deco.mr{right:26px; top:auto; bottom:96px; --sz:30px}
+.hero .deco.bl{left:22px; bottom:16px; --sz:26px}
 .eyebrow{
   display:inline-block; font-family:var(--display); font-size:12.5px; font-weight:800;
   letter-spacing:.1em; text-transform:uppercase; color:var(--chip-fg);
@@ -535,6 +539,23 @@ code{
 .kv .k{display:block; font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--text-muted); font-weight:800}
 .kv .v{font-family:var(--display); font-size:16px; font-weight:800; font-variant-numeric:tabular-nums}
 
+/* ---------- sticker trang trí ---------- */
+.deco{
+  position:absolute; z-index:4; line-height:1; pointer-events:none; user-select:none;
+  font-size:var(--sz,30px); transform:rotate(var(--r,0deg));
+  filter:drop-shadow(0 4px 5px rgba(58,49,80,.22));
+  animation:bob 6s ease-in-out infinite; animation-delay:var(--d,0s);
+}
+@keyframes bob{
+  0%,100%{transform:rotate(var(--r,0deg)) translateY(0)}
+  50%    {transform:rotate(var(--r,0deg)) translateY(-7px)}
+}
+.deco.tl{left:-6px;  top:-20px;    --r:-13deg}
+.deco.bl{left:-6px;  bottom:-18px; --r:-15deg; --sz:33px}
+.deco.br{right:-4px; bottom:-16px; --r:12deg}
+.deco.ml{left:-8px;  top:42%;      --r:-9deg;  --sz:26px}
+.deco.mr{right:-6px; top:38%;      --r:10deg;  --sz:26px}
+
 /* ---------- nút vào phòng học online ---------- */
 .joinlink{
   display:inline-flex; align-items:center; gap:8px; margin-top:9px;
@@ -581,6 +602,13 @@ footer a{color:var(--brand)}
   .meter-row{grid-template-columns:1fr; gap:7px}
   .track{grid-template-columns:repeat(2,1fr); height:auto}
   .seg{padding:10px 2px; border-bottom:2.5px solid var(--sheet)}
+  .deco{--sz:24px !important}
+  .deco.bl{left:2px; bottom:-12px}
+  .deco.br{right:2px; bottom:-11px}
+  .deco.tl{left:2px; top:-14px}
+  .deco.ml,.deco.mr{display:none}
+  .hero .deco.tl{right:16px; top:16px}
+  .hero .deco.mr{display:none}
   .sday{grid-template-columns:1fr}
   .sday-when{flex-direction:row; align-items:baseline; gap:10px; padding:12px 17px;
     border-right:none; border-bottom:2.5px dashed var(--day-2,var(--sky-2))}
@@ -593,6 +621,7 @@ footer a{color:var(--brand)}
 
 @media (prefers-reduced-motion: reduce){
   *{transition:none !important; animation:none !important}
+  .deco{transform:rotate(var(--r,0deg))}
   html{scroll-behavior:auto}
   .tile{transform:none}
 }
@@ -601,7 +630,7 @@ footer a{color:var(--brand)}
   .topbar,.navlinks,.themebtn{display:none}
   body{background:#fff; font-size:11pt; background-image:none}
   section,footer,.hero{box-shadow:none; border:1px solid #ddd; page-break-inside:avoid; margin:8px auto}
-  section::before,footer::before,section[data-sticker]::after{display:none}
+  section::before,footer::before,section[data-sticker]::after,.deco{display:none}
   .phase{page-break-inside:avoid}
 }
 
@@ -639,6 +668,9 @@ footer a{color:var(--brand)}
 
 <!-- ============ HERO ============ -->
 <header class="hero">
+  <span class="deco tl" style="--d:0s" aria-hidden="true">✨</span>
+  <span class="deco mr" style="--d:1.6s" aria-hidden="true">🎀</span>
+  <span class="deco bl" style="--d:3.1s" aria-hidden="true">⭐</span>
   <div class="wrap">
     <span class="eyebrow">Kết quả xét tuyển đại học 2026</span>
     <h1>Chúc mừng Thùy Dương<br>đã trúng tuyển!</h1>
@@ -673,6 +705,7 @@ footer a{color:var(--brand)}
 
 <!-- ============ LỊCH SINH HOẠT CÔNG DÂN ============ -->
 <section id="lich" data-sticker="🗓️">
+  <span class="deco bl" style="--d:.2s" aria-hidden="true">🌸</span>
   <div class="wrap">
     <div class="sec-eyebrow">Lịch riêng của Dương — Nhóm 5, lớp KT1</div>
     <h2>Ba ngày phải có mặt</h2>
@@ -831,6 +864,7 @@ footer a{color:var(--brand)}
 
 <!-- ============ VIỆC GẤP ============ -->
 <section id="gap" data-sticker="⏰">
+  <span class="deco br" style="--d:1.1s" aria-hidden="true">🐣</span>
   <div class="wrap">
     <div class="sec-eyebrow">Bước 1 — làm ngay, đừng để lỡ</div>
     <h2>Xác nhận nhập học trực tuyến</h2>
@@ -921,6 +955,7 @@ footer a{color:var(--brand)}
 
 <!-- ============ HỎI ĐÁP NHẬP HỌC ============ -->
 <section id="hoidap" data-sticker="💬">
+  <span class="deco bl" style="--d:2.0s" aria-hidden="true">🌈</span>
   <div class="wrap">
     <div class="sec-eyebrow">Nhà trường giải đáp cho K67</div>
     <h2>Sáu câu tân sinh viên hỏi nhiều nhất</h2>
@@ -971,6 +1006,7 @@ footer a{color:var(--brand)}
 
 <!-- ============ NGÀNH ============ -->
 <section id="nganh" data-sticker="🎓">
+  <span class="deco br" style="--d:.7s" aria-hidden="true">📈</span>
   <div class="wrap">
     <div class="sec-eyebrow">Bước 2 — hiểu rõ mình học gì</div>
     <h2>GHA03 là ngành Kinh tế</h2>
@@ -1032,6 +1068,7 @@ footer a{color:var(--brand)}
 
 <!-- ============ LỘ TRÌNH ============ -->
 <section id="lotrinh" data-sticker="🗺️">
+  <span class="deco bl" style="--d:1.5s" aria-hidden="true">🚀</span>
   <div class="wrap">
     <div class="sec-eyebrow">Bước 3 — kế hoạch 4 năm</div>
     <h2>Lộ trình từ hôm nay đến ngày đi làm</h2>
@@ -1224,6 +1261,7 @@ footer a{color:var(--brand)}
 
 <!-- ============ TIẾNG ANH ĐẦU VÀO ============ -->
 <section id="tienganh" data-sticker="📖">
+  <span class="deco br" style="--d:2.4s" aria-hidden="true">✏️</span>
   <div class="wrap">
     <div class="sec-eyebrow">Đã có lịch thi cụ thể</div>
     <h2>Bài kiểm tra phân loại tiếng Anh — và vì sao nên thi</h2>
@@ -1345,6 +1383,7 @@ footer a{color:var(--brand)}
 
 <!-- ============ KỸ NĂNG ============ -->
 <section id="kynang" data-sticker="🌱">
+  <span class="deco bl" style="--d:.4s" aria-hidden="true">🧸</span>
   <div class="wrap">
     <div class="sec-eyebrow">Bộ công cụ</div>
     <h2>Năm thứ mấy thì phải giỏi cái gì</h2>
@@ -1408,6 +1447,7 @@ footer a{color:var(--brand)}
 
 <!-- ============ NGHỀ NGHIỆP ============ -->
 <section id="nghe" data-sticker="💼">
+  <span class="deco br" style="--d:1.3s" aria-hidden="true">🌟</span>
   <div class="wrap">
     <div class="sec-eyebrow">Đầu ra</div>
     <h2>Sáu hướng nghề Dương có thể đi</h2>
@@ -1469,6 +1509,7 @@ footer a{color:var(--brand)}
 
 <!-- ============ CÂN NHẮC ============ -->
 <section id="canhac" data-sticker="🤔">
+  <span class="deco bl" style="--d:2.2s" aria-hidden="true">🍀</span>
   <div class="wrap">
     <div class="sec-eyebrow">Nói thẳng</div>
     <h2>Nếu Dương còn phân vân vì đây là nguyện vọng 4</h2>
@@ -1502,6 +1543,7 @@ footer a{color:var(--brand)}
 
 <!-- ============ ĐƯỜNG ĐI HỌC ============ -->
 <section id="dilai" data-sticker="🚌">
+  <span class="deco br" style="--d:.9s" aria-hidden="true">🐱</span>
   <div class="wrap">
     <div class="sec-eyebrow">Chuyện đi lại</div>
     <h2>Từ Tam Sơn lên trường bằng xe buýt</h2>
@@ -1595,6 +1637,7 @@ footer a{color:var(--brand)}
 
 <!-- ============ CHECKLIST ============ -->
 <section id="checklist" data-sticker="✅">
+  <span class="deco bl" style="--d:1.8s" aria-hidden="true">🍃</span>
   <div class="wrap">
     <div class="sec-eyebrow">Bắt đầu</div>
     <h2>Việc cần làm trong tuần này</h2>
@@ -1630,6 +1673,7 @@ footer a{color:var(--brand)}
 </section>
 
 <footer>
+  <span class="deco br" style="--d:2.6s" aria-hidden="true">🌙</span>
   <div class="wrap">
     <h4>Nguồn tham khảo</h4>
     <ul>

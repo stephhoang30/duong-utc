@@ -118,7 +118,7 @@ body{
   padding-bottom:26px;
 }
 img{max-width:100%}
-a{color:var(--brand); text-decoration-thickness:2px; text-underline-offset:3px}
+a{color:var(--brand); text-decoration-thickness:2px; text-underline-offset:3px; overflow-wrap:anywhere}
 a:hover{color:var(--accent)}
 .wrap{max-width:var(--maxw); margin:0 auto; padding:0 22px}
 b{font-weight:700}
@@ -221,7 +221,7 @@ h1,h2,h3,h4{font-family:var(--display); font-weight:800; letter-spacing:-.01em}
 .rc-head{display:flex; flex-wrap:wrap; align-items:baseline; gap:10px; padding:20px 22px 15px; border-bottom:2px dashed var(--line)}
 .rc-head .big{font-family:var(--display); font-size:20px; font-weight:800; color:var(--accent)}
 .rc-head .small{font-size:13px; color:var(--text-muted); font-weight:600}
-.rc-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:0}
+.rc-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr)); gap:0}
 .rc-cell{padding:15px 22px; border-right:2px dashed var(--line); border-bottom:2px dashed var(--line)}
 .rc-cell:last-child{border-right:none}
 .rc-cell .lab{font-size:11.5px; text-transform:uppercase; letter-spacing:.1em; color:var(--text-muted); font-weight:800}
@@ -321,7 +321,7 @@ code{
 }
 
 /* ---------- giấy nhớ (tiles) ---------- */
-.tiles{display:grid; grid-template-columns:repeat(auto-fit,minmax(178px,1fr)); gap:14px; margin:26px 0 6px}
+.tiles{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(178px,100%),1fr)); gap:14px; margin:26px 0 6px}
 .tile{
   position:relative; background:var(--note-1,var(--sky-1)); border:2.5px solid var(--note-2,var(--sky-2));
   border-radius:16px; padding:16px 18px 18px; box-shadow:3px 4px 0 var(--note-2,var(--sky-2));
@@ -338,7 +338,7 @@ code{
 .tile .foot{font-size:12.8px; color:var(--text-secondary); line-height:1.5; font-weight:600}
 
 /* ---------- thẻ giấy ---------- */
-.cols2{display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:16px; margin-top:10px}
+.cols2{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); gap:16px; margin-top:10px}
 .card{
   position:relative; background:var(--surface-1); border:2.5px solid var(--line);
   border-radius:var(--radius); padding:22px; box-shadow:var(--shadow)
@@ -374,7 +374,7 @@ code{
 .phase-when{font-size:13px; color:var(--text-muted); font-weight:700; font-variant-numeric:tabular-nums}
 .phase h3{font-size:21px; margin:3px 0 4px}
 .phase .goal{font-size:14.8px; color:var(--text-secondary); margin:0 0 15px; max-width:62ch; font-weight:600}
-.pgrid{display:grid; grid-template-columns:repeat(auto-fit,minmax(232px,1fr)); gap:13px}
+.pgrid{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(232px,100%),1fr)); gap:13px}
 .pbox{background:var(--surface-2); border:2.5px solid var(--line); border-radius:16px; padding:15px 16px}
 .pbox h4{margin:0 0 8px; font-size:12px; text-transform:uppercase; letter-spacing:.09em; color:var(--text-muted); font-weight:800}
 .pbox ul{margin:0; padding-left:2px; list-style:none; font-size:14.2px; color:var(--text-secondary); font-weight:600}
@@ -407,7 +407,7 @@ code{
 .meter-legend i{display:inline-block; width:12px;height:12px;border-radius:4px;margin-right:6px; vertical-align:-1px}
 
 /* ---------- nghề nghiệp ---------- */
-.careers{display:grid; grid-template-columns:repeat(auto-fit,minmax(272px,1fr)); gap:15px; margin-top:26px}
+.careers{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(272px,100%),1fr)); gap:15px; margin-top:26px}
 .career{
   position:relative; background:var(--surface-1); border:2.5px solid var(--line); border-radius:var(--radius);
   padding:19px; overflow:hidden; box-shadow:var(--shadow); transition:transform .18s ease
@@ -528,7 +528,7 @@ code{
 .slot-where b{color:var(--text-primary); font-weight:800}
 .slot-note{font-size:13.3px; color:var(--text-muted); margin-top:6px; font-weight:600}
 .kv{
-  display:grid; grid-template-columns:repeat(auto-fit,minmax(136px,1fr)); gap:2px; margin-top:14px;
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(min(136px,100%),1fr)); gap:2px; margin-top:14px;
   background:var(--line); border:2.5px solid var(--line); border-radius:16px; overflow:hidden
 }
 .kv > div{background:var(--surface-1); padding:11px 13px}
@@ -798,7 +798,7 @@ footer a{color:var(--brand)}
         <h3>Link Teams cho CĐ5 tối 25/8</h3>
         <ul>
           <li><b>Nhóm của Dương là Nhóm 2</b> — gồm KT1 đến KT7, giảng viên Nguyễn Thế Tấn. Đừng vào nhầm link Nhóm 1 (các lớp CK) hay Nhóm 3 (các lớp QT).</li>
-          <li><b>Link phòng Nhóm 2:</b> <a href="https://teams.microsoft.com/meet/42593276849536?p=T5m1FeGqV2WRdp3PrD" target="_blank" rel="noopener">teams.microsoft.com/meet/42593276849536?p=T5m1FeGqV2WRdp3PrD</a> — đã bóc khỏi lớp chuyển hướng của Facebook và bỏ mã theo dõi <code>fbclid</code>. Đoạn <code>?p=…</code> là <b>mã tham gia</b>, cắt đi là không vào được phòng.</li>
+          <li><b>Link phòng Nhóm 2:</b> <a href="https://teams.microsoft.com/meet/42593276849536?p=T5m1FeGqV2WRdp3PrD" target="_blank" rel="noopener">teams.microsoft.com/meet/42593276849536?p=T5m1FeGqV2WRdp3PrD</a></li>
           <li><b>Tối 24/8 không phải lịch của KT1</b> — hôm đó là các lớp CT, MT1-A, XD, QL, ĐT. Đừng vào nhầm rồi tưởng đã học xong.</li>
           <li>Cài sẵn <b>Microsoft Teams</b> và đăng nhập thử trước một hôm; vào bằng trình duyệt cũng được nhưng dễ trục trặc micro và tên hiển thị.</li>
         </ul>

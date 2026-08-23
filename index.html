@@ -535,6 +535,17 @@ code{
 .kv .k{display:block; font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--text-muted); font-weight:800}
 .kv .v{font-family:var(--display); font-size:16px; font-weight:800; font-variant-numeric:tabular-nums}
 
+/* ---------- nút vào phòng học online ---------- */
+.joinlink{
+  display:inline-flex; align-items:center; gap:8px; margin-top:9px;
+  font-family:var(--display); font-size:14.5px; font-weight:800; text-decoration:none;
+  color:var(--mint-3); background:var(--mint-1); border:2.5px solid var(--mint-2);
+  border-radius:999px; padding:6px 16px; box-shadow:2px 2px 0 var(--mint-2); transition:.16s
+}
+.joinlink:hover{color:var(--mint-3); transform:translate(-1px,-1px); box-shadow:3px 3px 0 var(--mint-2)}
+.joinlink:active{transform:translate(1px,1px); box-shadow:1px 1px 0 var(--mint-2)}
+.joinlink:focus-visible{outline:3px solid var(--sky-2); outline-offset:3px}
+
 /* ---------- chân trang ---------- */
 footer{
   position:relative; width:min(var(--sheetw), calc(100% - 22px)); margin:34px auto 0;
@@ -702,7 +713,8 @@ footer a{color:var(--brand)}
             <div class="slot-time">18h30 – 21h20<small>Tối</small></div>
             <div>
               <div class="slot-title">Chuyên đề 5<span class="badge">CĐ5</span><span class="badge b-brand">Nhóm 2</span></div>
-              <div class="slot-where"><b>Microsoft Teams</b> — Nhóm 2 (KT1 → KT7), giảng viên <b>Nguyễn Thế Tấn</b></div>
+              <div class="slot-where"><b>Microsoft Teams</b> — Nhóm 2 (KT1 → KT7), giảng viên <b>Nguyễn Thế Tấn</b><br>
+                <a class="joinlink" href="https://teams.microsoft.com/meet/42593276849536?p=T5m1FeGqV2WRdp3PrD" target="_blank" rel="noopener">▶ Vào phòng học Nhóm 2</a></div>
               <div class="slot-note">Buổi online chia nhóm <b>khác với lịch tổng</b>: KT1 nằm ở Nhóm 5 của lịch chung, nhưng tối 25/8 phải vào <b>link của Nhóm 2</b>. Vào sớm 15 phút, đăng nhập bằng tài khoản trường, đặt tên hiển thị “Họ tên – Mã SV – KT1” để được điểm danh.</div>
             </div>
           </div>
@@ -786,7 +798,7 @@ footer a{color:var(--brand)}
         <h3>Link Teams cho CĐ5 tối 25/8</h3>
         <ul>
           <li><b>Nhóm của Dương là Nhóm 2</b> — gồm KT1 đến KT7, giảng viên Nguyễn Thế Tấn. Đừng vào nhầm link Nhóm 1 (các lớp CK) hay Nhóm 3 (các lớp QT).</li>
-          <li>Link nhà trường đăng bắt đầu bằng <code>teams.microsoft.com/meet/42593276849536…</code> nhưng <b>bị cắt mất phần đuôi</b>. Xin lại link đầy đủ ở bài đăng gốc của trường hoặc hỏi lớp trưởng KT1 trước tối 25/8.</li>
+          <li><b>Link phòng Nhóm 2:</b> <a href="https://teams.microsoft.com/meet/42593276849536?p=T5m1FeGqV2WRdp3PrD" target="_blank" rel="noopener">teams.microsoft.com/meet/42593276849536?p=T5m1FeGqV2WRdp3PrD</a> — đã bóc khỏi lớp chuyển hướng của Facebook và bỏ mã theo dõi <code>fbclid</code>. Đoạn <code>?p=…</code> là <b>mã tham gia</b>, cắt đi là không vào được phòng.</li>
           <li><b>Tối 24/8 không phải lịch của KT1</b> — hôm đó là các lớp CT, MT1-A, XD, QL, ĐT. Đừng vào nhầm rồi tưởng đã học xong.</li>
           <li>Cài sẵn <b>Microsoft Teams</b> và đăng nhập thử trước một hôm; vào bằng trình duyệt cũng được nhưng dễ trục trặc micro và tên hiển thị.</li>
         </ul>
@@ -1590,7 +1602,7 @@ footer a{color:var(--brand)}
 
     <div class="checklist" id="cl">
       <label class="check"><input type="checkbox"><span class="txt"><span>Có mặt ở P.506-A4 trước 12h30 ngày 25/8 để thi phân loại tiếng Anh</span><small>Ca 3, giờ thi 13h00 — mang CCCD, bút bi, bút chì 2B và tẩy</small></span></label>
-      <label class="check"><input type="checkbox"><span class="txt"><span>Xin link Microsoft Teams của Nhóm 2 cho CĐ5 tối 25/8</span><small>18h30–21h20, giảng viên Nguyễn Thế Tấn — link trường đăng bị cắt đuôi, hỏi lớp trưởng KT1 hoặc xem bài gốc. Cài sẵn Teams và đăng nhập thử trước</small></span></label>
+      <label class="check"><input type="checkbox"><span class="txt"><span>Cài Microsoft Teams và bấm thử link phòng Nhóm 2 trước tối 25/8</span><small>18h30–21h20, giảng viên Nguyễn Thế Tấn — link đã có sẵn ở mục Lịch tuần này, bấm thử một lần cho chắc rồi đăng nhập bằng tài khoản trường</small></span></label>
       <label class="check"><input type="checkbox"><span class="txt"><span>Chốt chỗ ngủ đêm 25/8 tại Hà Nội</span><small>Sáng 26/8 phải có mặt ở Hội trường lớn lúc 7h30 — đi từ Tam Sơn sáng hôm đó gần như không kịp</small></span></label>
       <label class="check"><input type="checkbox"><span class="txt"><span>Mang bộ hồ sơ giấy đi nộp tại Hội trường lớn ngày 26/8</span><small>Buổi nộp hồ sơ nhập học — danh mục giấy tờ ở mục Việc gấp</small></span></label>
       <label class="check"><input type="checkbox"><span class="txt"><span>Đi buổi hướng dẫn thư viện đúng khung giờ của KT1: 13h30–14h30 ngày 26/8</span><small>Tầng 6 nhà A8 — KT3, KT4 lúc 14h40; KT5, KT6, KT7 lúc 15h50</small></span></label>

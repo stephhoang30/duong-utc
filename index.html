@@ -316,7 +316,8 @@ h3{font-size:18.5px; margin:0 0 6px}
 .step .t b{font-weight:800; color:var(--text-primary)}
 code{
   font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.88em;
-  background:var(--butter-1); border:2px solid var(--butter-2); border-radius:7px; padding:1px 6px; color:var(--gold)
+  background:var(--butter-1); border:2px solid var(--butter-2); border-radius:7px; padding:1px 6px; color:var(--gold);
+  overflow-wrap:anywhere
 }
 
 /* ---------- giấy nhớ (tiles) ---------- */
@@ -700,9 +701,9 @@ footer a{color:var(--brand)}
           <div class="slot">
             <div class="slot-time">18h30 – 21h20<small>Tối</small></div>
             <div>
-              <div class="slot-title">Chuyên đề 5<span class="badge">CĐ5</span></div>
-              <div class="slot-where"><b>Trực tuyến</b> — theo đường link nhà trường gửi cho Nhóm 5</div>
-              <div class="slot-note">Vào phòng sớm 15 phút và đặt tên hiển thị đúng dạng “Họ tên – Mã SV – KT1” để được điểm danh. Học từ đâu cũng được, miễn mạng ổn định.</div>
+              <div class="slot-title">Chuyên đề 5<span class="badge">CĐ5</span><span class="badge b-brand">Nhóm 2</span></div>
+              <div class="slot-where"><b>Microsoft Teams</b> — Nhóm 2 (KT1 → KT7), giảng viên <b>Nguyễn Thế Tấn</b></div>
+              <div class="slot-note">Buổi online chia nhóm <b>khác với lịch tổng</b>: KT1 nằm ở Nhóm 5 của lịch chung, nhưng tối 25/8 phải vào <b>link của Nhóm 2</b>. Vào sớm 15 phút, đăng nhập bằng tài khoản trường, đặt tên hiển thị “Họ tên – Mã SV – KT1” để được điểm danh.</div>
             </div>
           </div>
         </div>
@@ -781,6 +782,16 @@ footer a{color:var(--brand)}
         </ul>
       </div>
       <div class="card">
+        <div class="tag" style="color:var(--brand)">Vào phòng học online</div>
+        <h3>Link Teams cho CĐ5 tối 25/8</h3>
+        <ul>
+          <li><b>Nhóm của Dương là Nhóm 2</b> — gồm KT1 đến KT7, giảng viên Nguyễn Thế Tấn. Đừng vào nhầm link Nhóm 1 (các lớp CK) hay Nhóm 3 (các lớp QT).</li>
+          <li>Link nhà trường đăng bắt đầu bằng <code>teams.microsoft.com/meet/42593276849536…</code> nhưng <b>bị cắt mất phần đuôi</b>. Xin lại link đầy đủ ở bài đăng gốc của trường hoặc hỏi lớp trưởng KT1 trước tối 25/8.</li>
+          <li><b>Tối 24/8 không phải lịch của KT1</b> — hôm đó là các lớp CT, MT1-A, XD, QL, ĐT. Đừng vào nhầm rồi tưởng đã học xong.</li>
+          <li>Cài sẵn <b>Microsoft Teams</b> và đăng nhập thử trước một hôm; vào bằng trình duyệt cũng được nhưng dễ trục trặc micro và tên hiển thị.</li>
+        </ul>
+      </div>
+      <div class="card">
         <h3>Đi lại hai ngày liền, tính từ Tam Sơn</h3>
         <ul>
           <li><b>Chiều 25/8 — thi 13h00:</b> chặng 54 → 34 mất 1h45–2h15, nên <b>rời nhà khoảng 10h00</b> thì 12h30 đã ngồi trước cửa phòng thi. Xem đường đi chi tiết ở mục <a href="#dilai">Đường đi học</a>.</li>
@@ -801,7 +812,7 @@ footer a{color:var(--brand)}
     </div>
 
     <p style="margin-top:18px; font-size:13.5px; color:var(--text-muted)">
-      Lịch lấy từ thông báo <b>“Lịch sinh hoạt Công dân – Sinh viên K67 — Nhóm 5 (KT1 · KT2 · KT3 · KT4 · KT5 · KT6 · KT7)”</b> của Trường ĐH Giao thông Vận tải, và từ kết quả tra cứu ca thi phân loại tiếng Anh của Phòng Khảo thí (tra cứu ngày 23/8/2026). Nhà trường có thể đổi giờ hoặc đổi phòng — trước mỗi buổi vẫn nên xem lại thông báo của lớp và của trường.
+      Lịch lấy từ thông báo <b>“Lịch sinh hoạt Công dân – Sinh viên K67 — Nhóm 5 (KT1 · KT2 · KT3 · KT4 · KT5 · KT6 · KT7)”</b> của Trường ĐH Giao thông Vận tải, từ thông báo lịch học trực tuyến Chuyên đề 5 qua Microsoft Teams, và từ kết quả tra cứu ca thi phân loại tiếng Anh của Phòng Khảo thí (tra cứu ngày 23/8/2026). Nhà trường có thể đổi giờ hoặc đổi phòng — trước mỗi buổi vẫn nên xem lại thông báo của lớp và của trường.
     </p>
   </div>
 </section>
@@ -1579,7 +1590,7 @@ footer a{color:var(--brand)}
 
     <div class="checklist" id="cl">
       <label class="check"><input type="checkbox"><span class="txt"><span>Có mặt ở P.506-A4 trước 12h30 ngày 25/8 để thi phân loại tiếng Anh</span><small>Ca 3, giờ thi 13h00 — mang CCCD, bút bi, bút chì 2B và tẩy</small></span></label>
-      <label class="check"><input type="checkbox"><span class="txt"><span>Lấy đường link phòng học trực tuyến của CĐ5 tối 25/8</span><small>18h30–21h20, lịch của Nhóm 5 — vào sớm 15 phút, đặt tên hiển thị “Họ tên – Mã SV – KT1” để được điểm danh</small></span></label>
+      <label class="check"><input type="checkbox"><span class="txt"><span>Xin link Microsoft Teams của Nhóm 2 cho CĐ5 tối 25/8</span><small>18h30–21h20, giảng viên Nguyễn Thế Tấn — link trường đăng bị cắt đuôi, hỏi lớp trưởng KT1 hoặc xem bài gốc. Cài sẵn Teams và đăng nhập thử trước</small></span></label>
       <label class="check"><input type="checkbox"><span class="txt"><span>Chốt chỗ ngủ đêm 25/8 tại Hà Nội</span><small>Sáng 26/8 phải có mặt ở Hội trường lớn lúc 7h30 — đi từ Tam Sơn sáng hôm đó gần như không kịp</small></span></label>
       <label class="check"><input type="checkbox"><span class="txt"><span>Mang bộ hồ sơ giấy đi nộp tại Hội trường lớn ngày 26/8</span><small>Buổi nộp hồ sơ nhập học — danh mục giấy tờ ở mục Việc gấp</small></span></label>
       <label class="check"><input type="checkbox"><span class="txt"><span>Đi buổi hướng dẫn thư viện đúng khung giờ của KT1: 13h30–14h30 ngày 26/8</span><small>Tầng 6 nhà A8 — KT3, KT4 lúc 14h40; KT5, KT6, KT7 lúc 15h50</small></span></label>
@@ -1621,6 +1632,7 @@ footer a{color:var(--brand)}
       <li>Kết quả các kỳ thi phân loại tiếng Anh đầu vào khóa K63, K65, K66 — <a href="https://tuyensinh.utc.edu.vn/?q=tin-tuyen-sinh/k%E1%BA%BFt-qu%E1%BA%A3-k%E1%BB%B3-thi-ph%C3%A2n-lo%E1%BA%A1i-ti%E1%BA%BFng-anh-%C4%91%E1%BA%A7u-v%C3%A0o-k65">cổng tuyển sinh UTC</a> · đề mẫu tham chiếu — <a href="https://www.cambridgeenglish.org/exams-and-tests/">Cambridge English</a>, <a href="https://vstep.edu.vn/">VSTEP</a></li>
       <li>Bài giải đáp thắc mắc nhập học của Trường ĐH GTVT dành cho K67 — nguồn của phần “Sáu câu tân sinh viên hỏi nhiều nhất” (sơ yếu lý lịch, thi khảo sát tiếng Anh, BHYT, giấy báo nhập học, đơn nhập học, bảo hiểm thân thể)</li>
       <li>Lịch sinh hoạt Công dân – Sinh viên K67, <b>Nhóm 5 (KT1 → KT7)</b> — thông báo của Trường ĐH Giao thông Vận tải: 25/8 CĐ5 trực tuyến 18h30–21h20; 26/8 CĐ1–4 tại Hội trường lớn 7h30–11h20, hướng dẫn thư viện tầng 6 nhà A8 (KT1, KT2: 13h30–14h30) và nộp hồ sơ nhập học tại Hội trường lớn; 3/9 sinh hoạt chung với Khoa 8h00–10h00</li>
+      <li>Thông báo lịch Sinh hoạt Công dân – Sinh viên K67 <b>Chuyên đề 5</b> học trực tuyến qua Microsoft Teams, 18h30–21h20: Thứ Hai 24/8 (Nhóm 1 các lớp CT · Nhóm 2 CT7, MT1-A, XD, QL · Nhóm 3 các lớp ĐT), <b>Thứ Ba 25/8 (Nhóm 1 các lớp CK và MT1-B · Nhóm 2 KT1 → KT7, GV Nguyễn Thế Tấn · Nhóm 3 các lớp QT1–QT6)</b>, Thứ Tư 26/8 (QT7, QT8, TT1–TT3, CB1-A, CB1-B) — thông báo của Trường ĐH Giao thông Vận tải</li>
       <li>Ca thi kiểm tra phân loại trình độ tiếng Anh — trang tra cứu của Phòng Khảo thí, Trường ĐH Giao thông Vận tải (tra cứu theo mã sinh viên 261800139 ngày 23/8/2026): 25/08/2026, ca 3, 13h00, phòng P.506-A4</li>
       <li>Trang tuyển sinh chính thức của trường — <a href="https://tuyensinh.utc.edu.vn/">tuyensinh.utc.edu.vn</a></li>
       <li>Lộ trình, giờ chạy và giá vé tuyến buýt 54 Long Biên – Bắc Ninh — <a href="https://acchanoi.vn/xe-buyt-so-54-ha-noi/">acchanoi.vn</a> · <a href="https://khainamtransport.com/tuyen-xe-buyt-54-long-bien-bac-ninh/">khainamtransport.com</a></li>
@@ -1664,7 +1676,7 @@ footer a{color:var(--brand)}
   // ----- countdown to the next K67 activity (Nhóm 5 — lớp KT1) -----
   var events = [
     {t:'2026-08-25T13:00:00+07:00', name:'Thi phân loại tiếng Anh — ca 3',  when:'13h00 · Thứ Ba 25/8 · P.506-A4'},
-    {t:'2026-08-25T18:30:00+07:00', name:'Chuyên đề 5 — học trực tuyến',    when:'18h30–21h20 · Thứ Ba 25/8 · Trực tuyến'},
+    {t:'2026-08-25T18:30:00+07:00', name:'Chuyên đề 5 — Teams, Nhóm 2',     when:'18h30–21h20 · Thứ Ba 25/8 · Microsoft Teams'},
     {t:'2026-08-26T07:30:00+07:00', name:'Chuyên đề 1 → 4',                 when:'7h30–11h20 · Thứ Tư 26/8 · Hội trường lớn'},
     {t:'2026-08-26T13:30:00+07:00', name:'Hướng dẫn thư viện — KT1, KT2',   when:'13h30–14h30 · Thứ Tư 26/8 · Tầng 6 nhà A8'},
     {t:'2026-09-03T08:00:00+07:00', name:'Sinh hoạt chung với Khoa',        when:'8h00–10h00 · Thứ Năm 3/9 · Hội trường lớn'}

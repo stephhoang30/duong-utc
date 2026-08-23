@@ -280,6 +280,37 @@ section:nth-of-type(even) .faq-item{background:var(--surface-0)}
 .faq-tag{display:inline-block; font-size:11px; font-weight:750; letter-spacing:.06em; text-transform:uppercase;
   padding:2px 9px; border-radius:99px; margin-left:8px; vertical-align:2px; white-space:nowrap}
 
+/* ---------- lịch sinh hoạt ---------- */
+.sched{display:grid; gap:12px; margin-top:24px}
+.sday{display:grid; grid-template-columns:128px 1fr; background:var(--surface-1);
+  border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden}
+.sday-when{background:var(--brand-soft); color:var(--brand); padding:16px;
+  display:flex; flex-direction:column; justify-content:center; gap:1px; border-right:1px solid var(--line)}
+.sday-when .dow{font-size:11.5px; font-weight:750; letter-spacing:.1em; text-transform:uppercase}
+.sday-when .dnum{font-size:29px; font-weight:800; letter-spacing:-.035em; line-height:1.12;
+  font-variant-numeric:tabular-nums; color:var(--text-primary)}
+.sday-when .dsub{font-size:12px; font-weight:600; color:var(--text-muted)}
+.sday-body{display:grid}
+.slot{display:grid; grid-template-columns:118px 1fr; gap:14px; padding:14px 18px; border-top:1px solid var(--line)}
+.sday-body > .slot:first-child{border-top:none}
+.slot.hi{background:var(--accent-soft)}
+.slot-time{font-size:15px; font-weight:750; letter-spacing:-.015em; font-variant-numeric:tabular-nums}
+.slot-time small{display:block; font-size:11px; font-weight:700; letter-spacing:.09em;
+  text-transform:uppercase; color:var(--text-muted); margin-top:2px}
+.slot-title{font-size:15.4px; font-weight:700; letter-spacing:-.012em}
+.badge{display:inline-block; margin-left:7px; font-size:11px; font-weight:750; letter-spacing:.06em;
+  text-transform:uppercase; padding:2px 8px; border-radius:99px; background:var(--gold-soft); color:var(--gold); vertical-align:1.5px}
+.badge.b-brand{background:var(--brand-soft); color:var(--brand)}
+.badge.b-accent{background:var(--accent-soft); color:var(--accent)}
+.slot-where{font-size:13.8px; color:var(--text-secondary); margin-top:3px}
+.slot-where b{color:var(--text-primary); font-weight:650}
+.slot-note{font-size:13.2px; color:var(--text-muted); margin-top:5px}
+.kv{display:grid; grid-template-columns:repeat(auto-fit,minmax(136px,1fr)); gap:1px; margin-top:13px;
+  background:var(--line); border:1px solid var(--line); border-radius:11px; overflow:hidden}
+.kv > div{background:var(--surface-1); padding:10px 13px}
+.kv .k{display:block; font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--text-muted); font-weight:650}
+.kv .v{font-size:15.5px; font-weight:750; letter-spacing:-.015em; font-variant-numeric:tabular-nums}
+
 /* ---------- footer ---------- */
 footer{padding:40px 0 60px; background:var(--surface-1); font-size:13.5px; color:var(--text-muted)}
 footer h4{font-size:12px; text-transform:uppercase; letter-spacing:.1em; color:var(--text-secondary); margin:0 0 10px; font-weight:700}
@@ -295,6 +326,11 @@ footer a{color:var(--text-secondary)}
   .track{grid-template-columns:repeat(2,1fr); height:auto}
   .seg{padding:9px 2px; border-bottom:2px solid var(--surface-0)}
   section{padding:40px 0}
+  .sday{grid-template-columns:1fr}
+  .sday-when{flex-direction:row; align-items:baseline; gap:9px; padding:11px 16px;
+    border-right:none; border-bottom:1px solid var(--line)}
+  .sday-when .dnum{font-size:21px}
+  .slot{grid-template-columns:1fr; gap:3px; padding:13px 16px}
 }
 @media print{
   .topbar,.navlinks{display:none}
@@ -310,6 +346,7 @@ footer a{color:var(--text-secondary)}
   <div class="wrap">
     <div class="brandmark"><span class="dot"></span> Lộ trình của Thùy Dương</div>
     <nav class="navlinks">
+      <a href="#lich">Lịch tuần này</a>
       <a href="#gap">Việc gấp</a>
       <a href="#hoidap">Hỏi đáp</a>
       <a href="#nganh">Ngành GHA03</a>
@@ -337,6 +374,8 @@ footer a{color:var(--text-secondary)}
       <span class="chip"><span class="k">Nguyện vọng</span> <b>4</b></span>
       <span class="chip"><span class="k">Cơ sở</span> <b>Hà Nội</b></span>
       <span class="chip"><span class="k">Khóa</span> <b>K67</b></span>
+      <span class="chip"><span class="k">Lớp</span> <b>KT1</b></span>
+      <span class="chip"><span class="k">Mã sinh viên</span> <b>261800139</b></span>
       <span class="chip"><span class="k">Nhập học tại trường</span> <b>20–21/8</b></span>
       <span class="chip"><span class="k">Bắt đầu năm học</span> <b>24/8</b></span>
     </div>
@@ -355,6 +394,153 @@ footer a{color:var(--text-secondary)}
     </div>
   </div>
 </header>
+
+<!-- ============ LỊCH SINH HOẠT CÔNG DÂN ============ -->
+<section id="lich">
+  <div class="wrap">
+    <div class="sec-eyebrow">Lịch riêng của Dương — Nhóm 5, lớp KT1</div>
+    <h2>Ba ngày phải có mặt</h2>
+    <p class="lede">Dương đã có mã sinh viên <b>261800139</b> và được xếp vào <b>lớp KT1</b> — nằm trong <b>Nhóm 5</b> (KT1 → KT7) của lịch Sinh hoạt Công dân – Sinh viên K67. Cộng thêm <b>ca thi phân loại tiếng Anh</b> đã có phòng và giờ cụ thể, sắp tới có ba ngày bắt buộc phải đi. Nặng nhất là <b>25/8</b>: chiều thi ở trường, tối học chuyên đề trực tuyến.</p>
+
+    <div class="urgent">
+      <div class="u-top">
+        <h3 id="nx-title">Buổi gần nhất</h3>
+        <div class="deadline" id="nx-when">—</div>
+      </div>
+      <div class="cd" id="nx">
+        <div class="cd-unit"><div class="n" id="nx-d">–</div><div class="u">Ngày</div></div>
+        <div class="cd-unit"><div class="n" id="nx-h">–</div><div class="u">Giờ</div></div>
+        <div class="cd-unit"><div class="n" id="nx-m">–</div><div class="u">Phút</div></div>
+        <div class="cd-unit"><div class="n" id="nx-s">–</div><div class="u">Giây</div></div>
+      </div>
+      <div class="cd-note" id="nx-note">Đồng hồ tự nhảy sang buổi kế tiếp trong lịch bên dưới.</div>
+    </div>
+
+    <div class="sched">
+
+      <article class="sday">
+        <div class="sday-when">
+          <div class="dow">Thứ 3</div>
+          <div class="dnum">25/8</div>
+          <div class="dsub">2026</div>
+        </div>
+        <div class="sday-body">
+          <div class="slot hi">
+            <div class="slot-time">13h00<small>Chiều · Ca 3</small></div>
+            <div>
+              <div class="slot-title">Kiểm tra phân loại trình độ tiếng Anh<span class="badge b-accent">Thi</span></div>
+              <div class="slot-where">Phòng <b>P.506-A4</b> · số thứ tự <b>1118</b> trong danh sách dự thi</div>
+              <div class="slot-note">Có mặt trước <b>12h30</b>. Mang CCCD hoặc giấy tờ tùy thân có ảnh, bút bi, bút chì 2B và tẩy. Đây là bài xếp bậc A1 → B1, không phải bài đánh trượt.</div>
+            </div>
+          </div>
+          <div class="slot">
+            <div class="slot-time">18h30 – 21h20<small>Tối</small></div>
+            <div>
+              <div class="slot-title">Chuyên đề 5<span class="badge">CĐ5</span></div>
+              <div class="slot-where"><b>Trực tuyến</b> — theo đường link nhà trường gửi cho Nhóm 5</div>
+              <div class="slot-note">Vào phòng sớm 15 phút và đặt tên hiển thị đúng dạng “Họ tên – Mã SV – KT1” để được điểm danh. Học từ đâu cũng được, miễn mạng ổn định.</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="sday">
+        <div class="sday-when">
+          <div class="dow">Thứ 4</div>
+          <div class="dnum">26/8</div>
+          <div class="dsub">2026</div>
+        </div>
+        <div class="sday-body">
+          <div class="slot">
+            <div class="slot-time">7h30 – 11h20<small>Sáng</small></div>
+            <div>
+              <div class="slot-title">Chuyên đề 1 → 4<span class="badge">CĐ1–4</span></div>
+              <div class="slot-where"><b>Hội trường lớn</b></div>
+              <div class="slot-note">Bốn chuyên đề dồn trong một buổi sáng — mang vở ghi, nhiều khóa phải làm bài thu hoạch sau đợt sinh hoạt công dân.</div>
+            </div>
+          </div>
+          <div class="slot">
+            <div class="slot-time">13h30 – 14h30<small>Chiều</small></div>
+            <div>
+              <div class="slot-title">Hướng dẫn khai thác tài liệu và dịch vụ thư viện<span class="badge b-brand">Khung giờ của KT1</span></div>
+              <div class="slot-where"><b>Tầng 6, nhà A8</b> — Trung tâm Thông tin – Thư viện</div>
+              <div class="slot-note">Khung 13h30–14h30 là của riêng KT1 và KT2. KT3, KT4 đi lúc 14h40–15h40; KT5, KT6, KT7 lúc 15h50–16h50 — đi đúng giờ của lớp mình, đừng đi theo bạn khác lớp.</div>
+            </div>
+          </div>
+          <div class="slot">
+            <div class="slot-time">Trong ngày<small>26/8</small></div>
+            <div>
+              <div class="slot-title">Nộp hồ sơ nhập học<span class="badge b-accent">Hồ sơ giấy</span></div>
+              <div class="slot-where"><b>Hội trường lớn</b></div>
+              <div class="slot-note">Đây chính là buổi nộp bộ hồ sơ giấy đã chuẩn bị ở nhà — danh mục đầy đủ ở mục <a href="#gap">Việc gấp</a>. Thiếu giấy nào là phải quay lại bổ sung, rất mất công.</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="sday">
+        <div class="sday-when">
+          <div class="dow">Thứ 5</div>
+          <div class="dnum">3/9</div>
+          <div class="dsub">2026</div>
+        </div>
+        <div class="sday-body">
+          <div class="slot">
+            <div class="slot-time">8h00 – 10h00<small>Sáng</small></div>
+            <div>
+              <div class="slot-title">Sinh hoạt chung với Khoa<span class="badge b-brand">Khoa Vận tải – Kinh tế</span></div>
+              <div class="slot-where"><b>Hội trường lớn</b></div>
+              <div class="slot-note">Buổi gặp khoa: cố vấn học tập, chương trình đào tạo, cách đăng ký tín chỉ. Nếu còn phân vân giữa <b>Kinh tế và quản lý đầu tư</b> và <b>Kinh tế bưu chính viễn thông</b> thì đây là chỗ hỏi thẳng.</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="cols2" style="margin-top:18px">
+      <div class="card">
+        <div class="tag" style="color:var(--accent)">Phiếu báo thi</div>
+        <h3>Ca thi tiếng Anh của Dương</h3>
+        <div class="kv">
+          <div><span class="k">Mã sinh viên</span><span class="v">261800139</span></div>
+          <div><span class="k">Lớp</span><span class="v">KT1</span></div>
+          <div><span class="k">Ngày thi</span><span class="v">25/08/2026</span></div>
+          <div><span class="k">Ca thi</span><span class="v">Ca 3</span></div>
+          <div><span class="k">Giờ thi</span><span class="v">13h00</span></div>
+          <div><span class="k">Phòng thi</span><span class="v">P.506-A4</span></div>
+        </div>
+        <ul>
+          <li>Tra cứu lại bất cứ lúc nào bằng <b>CCCD</b> hoặc <b>mã sinh viên</b> trên trang tra cứu của <b>Phòng Khảo thí</b> — nên kiểm tra lại vào tối 24/8 phòng khi đổi phòng.</li>
+          <li>Thắc mắc về ca thi, phòng thi thì liên hệ thẳng bộ phận Khảo thí theo thông tin ghi trên trang tra cứu.</li>
+          <li>Chụp màn hình kết quả tra cứu để trong máy, khỏi phải dò lại lúc đứng trước cửa phòng thi.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Đi lại hai ngày liền, tính từ Tam Sơn</h3>
+        <ul>
+          <li><b>Chiều 25/8 — thi 13h00:</b> chặng 54 → 34 mất 1h45–2h15, nên <b>rời nhà khoảng 10h00</b> thì 12h30 đã ngồi trước cửa phòng thi. Xem đường đi chi tiết ở mục <a href="#dilai">Đường đi học</a>.</li>
+          <li><b>Sáng 26/8 — 7h30 tại Hội trường lớn:</b> chuyến 54 sớm nhất chỉ chạy từ khoảng 5h00, tới cổng trường cũng gần 7h00 — không còn chỗ cho tắc đường hay lỡ xe.</li>
+          <li><b>Tối 25/8 — CĐ5:</b> học online nên không phải di chuyển, chỉ cần máy và mạng.</li>
+          <li>Nhà <b>A4</b> (phòng thi) và nhà <b>A8</b> (thư viện) đều nằm trong khuôn viên số 3 Cầu Giấy. Đến sớm hỏi bảo vệ hoặc sinh viên tình nguyện, đừng dò theo trí nhớ lúc sát giờ.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout">
+      <h3>Ngày 25 và 26/8 nên đi liền một mạch</h3>
+      Thi xong chiều 25/8 mà về Tam Sơn thì tới nhà đã gần 17h, 18h30 lại phải ngồi vào máy học CĐ5 tới 21h20, rồi khoảng 4h30 sáng hôm sau đã phải dậy đi cho kịp 7h30. Hai ngày đó gần như không còn thời gian ngủ. <b>Ở lại Hà Nội đêm 25/8</b> — ký túc xá, phòng trọ đã thuê hoặc nhà người quen — là cách gọn nhất: tối học online ngay tại chỗ, sáng hôm sau đi một chặng ngắn là tới Hội trường lớn.
+      <ul>
+        <li>Chưa chốt được chỗ ở thì tranh thủ hỏi phòng ký túc xá ngay hôm 25/8 khi đã ở trong trường.</li>
+        <li>Mang sẵn <b>bộ hồ sơ giấy</b> theo từ hôm 25/8 để hôm sau nộp luôn tại Hội trường lớn, khỏi phải mang đi mang lại.</li>
+      </ul>
+    </div>
+
+    <p style="margin-top:18px; font-size:13.5px; color:var(--text-muted)">
+      Lịch lấy từ thông báo <b>“Lịch sinh hoạt Công dân – Sinh viên K67 — Nhóm 5 (KT1 · KT2 · KT3 · KT4 · KT5 · KT6 · KT7)”</b> của Trường ĐH Giao thông Vận tải, và từ kết quả tra cứu ca thi phân loại tiếng Anh của Phòng Khảo thí (tra cứu ngày 23/8/2026). Nhà trường có thể đổi giờ hoặc đổi phòng — trước mỗi buổi vẫn nên xem lại thông báo của lớp và của trường.
+    </p>
+  </div>
+</section>
 
 <!-- ============ VIỆC GẤP ============ -->
 <section id="gap">
@@ -752,9 +938,14 @@ footer a{color:var(--text-secondary)}
 <!-- ============ TIẾNG ANH ĐẦU VÀO ============ -->
 <section id="tienganh">
   <div class="wrap">
-    <div class="sec-eyebrow">Việc của tuần đầu học kỳ 1</div>
+    <div class="sec-eyebrow">Đã có lịch thi cụ thể</div>
     <h2>Bài kiểm tra phân loại tiếng Anh — và vì sao nên thi</h2>
     <p class="lede">Ở UTC, tiếng Anh không phải một môn học đơn lẻ mà là <b>một cái thang có bậc</b>: A1 → A2 → B1 → tiếng Anh chuyên ngành. Bài kiểm tra phân loại đầu khóa quyết định Dương <b>bắt đầu từ bậc nào</b>. Thi tốt thì nhảy thẳng lên trên, bỏ qua được một đến hai học phần.</p>
+
+    <div class="callout" style="border-left-color:var(--accent); background:var(--accent-soft)">
+      <h3>Dương đã có tên trong danh sách dự thi</h3>
+      Không còn là chuyện “đăng ký trong tuần đầu học kỳ” nữa: ca thi đã được xếp — <b>13h00 ngày 25/8/2026, ca 3, phòng P.506-A4</b>, mã sinh viên 261800139, lớp KT1. Giờ giấc, đường đi và thứ cần mang xem ở mục <a href="#lich">Lịch tuần này</a>. Phần bên dưới là để ôn cho trúng trọng tâm trong những ngày còn lại.
+    </div>
 
     <div class="salary">
       <table>
@@ -1123,6 +1314,12 @@ footer a{color:var(--text-secondary)}
     <p class="lede">Tích vào từng ô khi xong. (Danh sách này chỉ lưu trong phiên xem hiện tại — tải lại trang sẽ trở về ban đầu.)</p>
 
     <div class="checklist" id="cl">
+      <label class="check"><input type="checkbox"><span class="txt"><span>Có mặt ở P.506-A4 trước 12h30 ngày 25/8 để thi phân loại tiếng Anh</span><small>Ca 3, giờ thi 13h00 — mang CCCD, bút bi, bút chì 2B và tẩy</small></span></label>
+      <label class="check"><input type="checkbox"><span class="txt"><span>Lấy đường link phòng học trực tuyến của CĐ5 tối 25/8</span><small>18h30–21h20, lịch của Nhóm 5 — vào sớm 15 phút, đặt tên hiển thị “Họ tên – Mã SV – KT1” để được điểm danh</small></span></label>
+      <label class="check"><input type="checkbox"><span class="txt"><span>Chốt chỗ ngủ đêm 25/8 tại Hà Nội</span><small>Sáng 26/8 phải có mặt ở Hội trường lớn lúc 7h30 — đi từ Tam Sơn sáng hôm đó gần như không kịp</small></span></label>
+      <label class="check"><input type="checkbox"><span class="txt"><span>Mang bộ hồ sơ giấy đi nộp tại Hội trường lớn ngày 26/8</span><small>Buổi nộp hồ sơ nhập học — danh mục giấy tờ ở mục Việc gấp</small></span></label>
+      <label class="check"><input type="checkbox"><span class="txt"><span>Đi buổi hướng dẫn thư viện đúng khung giờ của KT1: 13h30–14h30 ngày 26/8</span><small>Tầng 6 nhà A8 — KT3, KT4 lúc 14h40; KT5, KT6, KT7 lúc 15h50</small></span></label>
+      <label class="check"><input type="checkbox"><span class="txt"><span>Ghi vào lịch: sinh hoạt chung với Khoa, 8h00–10h00 ngày 3/9</span><small>Hội trường lớn — gặp cố vấn học tập và nghe về chương trình đào tạo</small></span></label>
       <label class="check"><input type="checkbox"><span class="txt"><span>Xác nhận nhập học trực tuyến trên hệ thống của Bộ</span><small>Cổng mở từ 13/8, hạn 17h00 ngày 21/8/2026 — việc quan trọng nhất trong danh sách</small></span></label>
       <label class="check"><input type="checkbox"><span class="txt"><span>Chụp màn hình trạng thái “Đã nhập học” và lưu lại</span><small>Bằng chứng phòng khi hệ thống lỗi</small></span></label>
       <label class="check"><input type="checkbox"><span class="txt"><span>Khai hồ sơ nhập học trên nhaphoc.utc.edu.vn</span><small>Làm sau khi đã xác nhận trên hệ thống của Bộ — lấy đúng danh mục hồ sơ và mức học phí của trường</small></span></label>
@@ -1131,8 +1328,8 @@ footer a{color:var(--text-secondary)}
       <label class="check"><input type="checkbox"><span class="txt"><span>Chốt phương án chỗ ở: ký túc xá hay thuê trọ</span><small>Đăng ký KTX thường có hạn riêng, làm sớm</small></span></label>
       <label class="check"><input type="checkbox"><span class="txt"><span>Ngồi với gia đình lập ngân sách năm nhất</span><small>Học phí + sinh hoạt phí + khoản đầu khóa</small></span></label>
       <label class="check"><input type="checkbox"><span class="txt"><span>Thi thử TOEIC hoặc IELTS để biết điểm xuất phát</span></span></label>
-      <label class="check"><input type="checkbox"><span class="txt"><span>Đăng ký thi phân loại tiếng Anh ngay tuần đầu học kỳ 1</span><small>Lệ phí ~250.000đ; đạt A2 trở lên là bỏ qua được hai học phần tăng cường A1 và A2. Không đăng ký thì mặc định học từ A1</small></span></label>
-      <label class="check"><input type="checkbox"><span class="txt"><span>Ôn 2 tuần trước bài kiểm tra phân loại tiếng Anh</span><small>16 chủ điểm ngữ pháp + đề mẫu Cambridge A2 Key và B1 Preliminary — xem mục Tiếng Anh đầu vào</small></span></label>
+      <label class="check"><input type="checkbox"><span class="txt"><span>Kiểm tra lại ca thi tiếng Anh trên trang tra cứu vào tối 24/8</span><small>Đã có lịch: 13h00 ngày 25/8, ca 3, P.506-A4. Tra lại bằng mã sinh viên phòng khi trường đổi phòng — đạt A2 trở lên là bỏ qua được hai học phần tăng cường A1 và A2</small></span></label>
+      <label class="check"><input type="checkbox"><span class="txt"><span>Ôn gấp trước ngày thi 25/8</span><small>Không còn hai tuần nữa — dồn vào 16 chủ điểm ngữ pháp và một đề mẫu Cambridge A2 Key, xem mục Tiếng Anh đầu vào</small></span></label>
       <label class="check"><input type="checkbox"><span class="txt"><span>Đặt lịch học Excel 30 phút mỗi ngày từ giờ đến khai giảng</span></span></label>
       <label class="check"><input type="checkbox"><span class="txt"><span>Nhắn hỏi 1 anh/chị đang học Khoa Vận tải – Kinh tế</span><small>Hỏi về hai chuyên ngành và cách học năm nhất</small></span></label>
       <label class="check"><input type="checkbox"><span class="txt"><span>Đi thử tuyến buýt Tam Sơn → trường trước ngày 24/8</span><small>Tận dụng luôn hôm lên trường nhập học: đi tuyến 54 rồi đổi tuyến 34, bấm giờ thật để biết phải rời nhà lúc mấy giờ</small></span></label>
@@ -1140,7 +1337,7 @@ footer a{color:var(--text-secondary)}
 
     <div class="progress-wrap">
       <div class="progress-outer"><div class="progress-inner" id="pi"></div></div>
-      <div><b id="pc">0</b>/<span id="pt">13</span> việc</div>
+      <div><b id="pc">0</b>/<span id="pt">19</span> việc</div>
     </div>
   </div>
 </section>
@@ -1159,6 +1356,8 @@ footer a{color:var(--text-secondary)}
       <li>Đề án đào tạo đạt chuẩn ngoại ngữ, hướng dẫn chọn ngoại ngữ và thi đánh giá trình độ — <a href="https://tuyensinh.utc.edu.vn/?q=tin-tuyen-sinh/m%E1%BB%99t-s%E1%BB%91-l%C6%B0u-%C3%BD-v%E1%BB%81-%C4%91%E1%BB%81-%C3%A1n-%C4%91%C3%A0o-t%E1%BA%A1o-%C4%91%E1%BA%A1t-chu%E1%BA%A9n-ngo%E1%BA%A1i-ng%E1%BB%AF-v%C3%A0-h%C6%B0%E1%BB%9Bng-d%E1%BA%ABn-%C4%91%C4%83ng-k%C3%BD-ch%E1%BB%8Dn-ngo%E1%BA%A1i-ng%E1%BB%AF">tuyensinh.utc.edu.vn</a> · quy định chuẩn đầu ra ngoại ngữ — <a href="https://hotrosinhvien.utc.edu.vn/tin-tuc/h%C6%B0%E1%BB%9Bng-d%E1%BA%ABn/qui-%C4%91%E1%BB%8Bnh-v%E1%BB%81-chu%E1%BA%A9n-%C4%91%E1%BA%A7u-ra-ngo%E1%BA%A1i-ng%E1%BB%AF">hotrosinhvien.utc.edu.vn</a></li>
       <li>Kết quả các kỳ thi phân loại tiếng Anh đầu vào khóa K63, K65, K66 — <a href="https://tuyensinh.utc.edu.vn/?q=tin-tuyen-sinh/k%E1%BA%BFt-qu%E1%BA%A3-k%E1%BB%B3-thi-ph%C3%A2n-lo%E1%BA%A1i-ti%E1%BA%BFng-anh-%C4%91%E1%BA%A7u-v%C3%A0o-k65">cổng tuyển sinh UTC</a> · đề mẫu tham chiếu — <a href="https://www.cambridgeenglish.org/exams-and-tests/">Cambridge English</a>, <a href="https://vstep.edu.vn/">VSTEP</a></li>
       <li>Bài giải đáp thắc mắc nhập học của Trường ĐH GTVT dành cho K67 — nguồn của phần “Sáu câu tân sinh viên hỏi nhiều nhất” (sơ yếu lý lịch, thi khảo sát tiếng Anh, BHYT, giấy báo nhập học, đơn nhập học, bảo hiểm thân thể)</li>
+      <li>Lịch sinh hoạt Công dân – Sinh viên K67, <b>Nhóm 5 (KT1 → KT7)</b> — thông báo của Trường ĐH Giao thông Vận tải: 25/8 CĐ5 trực tuyến 18h30–21h20; 26/8 CĐ1–4 tại Hội trường lớn 7h30–11h20, hướng dẫn thư viện tầng 6 nhà A8 (KT1, KT2: 13h30–14h30) và nộp hồ sơ nhập học tại Hội trường lớn; 3/9 sinh hoạt chung với Khoa 8h00–10h00</li>
+      <li>Ca thi kiểm tra phân loại trình độ tiếng Anh — trang tra cứu của Phòng Khảo thí, Trường ĐH Giao thông Vận tải (tra cứu theo mã sinh viên 261800139 ngày 23/8/2026): 25/08/2026, ca 3, 13h00, phòng P.506-A4</li>
       <li>Trang tuyển sinh chính thức của trường — <a href="https://tuyensinh.utc.edu.vn/">tuyensinh.utc.edu.vn</a></li>
       <li>Lộ trình, giờ chạy và giá vé tuyến buýt 54 Long Biên – Bắc Ninh — <a href="https://acchanoi.vn/xe-buyt-so-54-ha-noi/">acchanoi.vn</a> · <a href="https://khainamtransport.com/tuyen-xe-buyt-54-long-bien-bac-ninh/">khainamtransport.com</a></li>
       <li>Lộ trình tuyến buýt 34 Bến xe Gia Lâm – Bến xe Mỹ Đình (dừng trước cổng ĐH GTVT) — <a href="https://xe-bus.com/ben-xe-my-dinh-ben-xe-gia-lam/">xe-bus.com</a> · <a href="https://busmap.vn/">BusMap</a></li>
@@ -1166,7 +1365,7 @@ footer a{color:var(--text-secondary)}
       <li>Giá vé tháng xe buýt Hà Nội cho học sinh – sinh viên — <a href="http://vethangxebuytonline.com.vn/RegTicket/Help.aspx">vethangxebuytonline.com.vn</a></li>
     </ul>
     <div class="disclaimer">
-      Trang này được tổng hợp ngày 10/8/2026 và cập nhật ngày 11/8/2026 theo tin nhắn chính thức của nhà trường, để phục vụ riêng trường hợp của Nguyễn Ngọc Thùy Dương. Điểm chuẩn, chỉ tiêu, học phí và danh mục hồ sơ có thể thay đổi — <b>luôn lấy thông báo chính thức của Trường Đại học Giao thông Vận tải và của Bộ GD&amp;ĐT làm căn cứ cuối cùng</b>. Các con số về thu nhập là ước tính thị trường mang tính tham khảo, không phải cam kết. Lộ trình học tập là gợi ý, không thay thế tư vấn của cố vấn học tập tại trường.
+      Trang này được tổng hợp ngày 10/8/2026, cập nhật ngày 11/8/2026 theo tin nhắn chính thức của nhà trường và cập nhật ngày 23/8/2026 để bổ sung lịch sinh hoạt công dân của Nhóm 5 – lớp KT1 cùng ca thi phân loại tiếng Anh, để phục vụ riêng trường hợp của Nguyễn Ngọc Thùy Dương. Điểm chuẩn, chỉ tiêu, học phí và danh mục hồ sơ có thể thay đổi — <b>luôn lấy thông báo chính thức của Trường Đại học Giao thông Vận tải và của Bộ GD&amp;ĐT làm căn cứ cuối cùng</b>. Các con số về thu nhập là ước tính thị trường mang tính tham khảo, không phải cam kết. Lộ trình học tập là gợi ý, không thay thế tư vấn của cố vấn học tập tại trường.
     </div>
   </div>
 </footer>
@@ -1197,6 +1396,45 @@ footer a{color:var(--text-secondary)}
   }
   tick();
   var timer = setInterval(tick, 1000);
+
+  // ----- countdown to the next K67 activity (Nhóm 5 — lớp KT1) -----
+  var events = [
+    {t:'2026-08-25T13:00:00+07:00', name:'Thi phân loại tiếng Anh — ca 3',  when:'13h00 · Thứ Ba 25/8 · P.506-A4'},
+    {t:'2026-08-25T18:30:00+07:00', name:'Chuyên đề 5 — học trực tuyến',    when:'18h30–21h20 · Thứ Ba 25/8 · Trực tuyến'},
+    {t:'2026-08-26T07:30:00+07:00', name:'Chuyên đề 1 → 4',                 when:'7h30–11h20 · Thứ Tư 26/8 · Hội trường lớn'},
+    {t:'2026-08-26T13:30:00+07:00', name:'Hướng dẫn thư viện — KT1, KT2',   when:'13h30–14h30 · Thứ Tư 26/8 · Tầng 6 nhà A8'},
+    {t:'2026-09-03T08:00:00+07:00', name:'Sinh hoạt chung với Khoa',        when:'8h00–10h00 · Thứ Năm 3/9 · Hội trường lớn'}
+  ];
+  events.forEach(function(e){ e.ts = new Date(e.t).getTime(); });
+  var nx = {d:document.getElementById('nx-d'), h:document.getElementById('nx-h'),
+            m:document.getElementById('nx-m'), s:document.getElementById('nx-s')};
+  var nxTitle = document.getElementById('nx-title'), nxWhen = document.getElementById('nx-when'),
+      nxNote  = document.getElementById('nx-note');
+  var nxBase = nxNote.textContent;
+  function tickNext(){
+    var now = Date.now(), next = null, i;
+    for(i = 0; i < events.length; i++){ if(events[i].ts > now){ next = events[i]; break; } }
+    if(!next){
+      nxTitle.textContent = 'Đã xong cả ba ngày sinh hoạt';
+      nxWhen.textContent = '';
+      nx.d.textContent = nx.h.textContent = nx.m.textContent = nx.s.textContent = '0';
+      nxNote.textContent = 'Lịch sinh hoạt công dân của Nhóm 5 đã kết thúc. Từ đây theo thời khóa biểu học kỳ 1 trên hệ thống của trường.';
+      clearInterval(timer2);
+      return;
+    }
+    nxTitle.textContent = next.name;
+    nxWhen.textContent = next.when;
+    var left = Math.floor((next.ts - now)/1000);
+    nx.d.textContent = Math.floor(left/86400);
+    nx.h.textContent = pad(Math.floor(left%86400/3600));
+    nx.m.textContent = pad(Math.floor(left%3600/60));
+    nx.s.textContent = pad(left%60);
+    nxNote.textContent = left < 43200
+      ? 'Sắp đến giờ — kiểm tra lại phòng, đường đi và thứ cần mang ngay bây giờ. ' + nxBase
+      : nxBase;
+  }
+  tickNext();
+  var timer2 = setInterval(tickNext, 1000);
 
   // ----- checklist progress (in-memory only) -----
   var boxes = Array.prototype.slice.call(document.querySelectorAll('#cl input[type=checkbox]'));

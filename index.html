@@ -428,7 +428,7 @@ code{
 .fitbar .pip.on{background:var(--cc)}
 
 /* ---------- bảng ---------- */
-.salary{margin-top:24px; border:2.5px solid var(--line); border-radius:var(--radius); overflow:hidden; background:var(--surface-1)}
+.salary{margin-top:24px; border:2.5px solid var(--line); border-radius:var(--radius); overflow-x:auto; background:var(--surface-1)}
 .salary table{width:100%; border-collapse:collapse; font-size:14.5px}
 .salary caption{font-weight:600}
 .salary th{
@@ -709,7 +709,7 @@ footer a{color:var(--brand)}
   <div class="wrap">
     <div class="sec-eyebrow">Lịch riêng của Dương — Nhóm 5, lớp KT1</div>
     <h2>Ba ngày phải có mặt</h2>
-    <p class="lede">Dương đã có mã sinh viên <b>261800139</b> và được xếp vào <b>lớp KT1</b> — nằm trong <b>Nhóm 5</b> (KT1 → KT7) của lịch Sinh hoạt Công dân – Sinh viên K67. Cộng thêm <b>ca thi phân loại tiếng Anh</b> đã có phòng và giờ cụ thể, sắp tới có ba ngày bắt buộc phải đi. Nặng nhất là <b>25/8</b>: chiều thi ở trường, tối học chuyên đề trực tuyến.</p>
+    <p class="lede">Dương đã có mã sinh viên <b>261800139</b> và được xếp vào <b>lớp KT1</b> — nằm trong <b>Nhóm 5</b> (KT1 → KT7) của lịch Sinh hoạt Công dân – Sinh viên K67. Cộng thêm <b>ca thi phân loại tiếng Anh</b> đã có phòng và giờ cụ thể, có ba ngày bắt buộc phải đi. Nặng nhất là <b>25/8</b>: chiều thi ở trường (đã thi xong — <b>5.0/10, đạt trình độ A1</b>), tối học chuyên đề trực tuyến.</p>
 
     <div class="urgent">
       <div class="u-top">
@@ -819,11 +819,13 @@ footer a{color:var(--brand)}
           <div><span class="k">Ca thi</span><span class="v">Ca 3</span></div>
           <div><span class="k">Giờ thi</span><span class="v">13h00</span></div>
           <div><span class="k">Phòng thi</span><span class="v">P.506-A4</span></div>
+          <div><span class="k">Kết quả</span><span class="v">5.0/10</span></div>
+          <div><span class="k">Xếp bậc</span><span class="v">Đạt A1 → học A2</span></div>
         </div>
         <ul>
-          <li>Tra cứu lại bất cứ lúc nào bằng <b>CCCD</b> hoặc <b>mã sinh viên</b> trên trang tra cứu của <b>Phòng Khảo thí</b> — nên kiểm tra lại vào tối 24/8 phòng khi đổi phòng.</li>
-          <li>Thắc mắc về ca thi, phòng thi thì liên hệ thẳng bộ phận Khảo thí theo thông tin ghi trên trang tra cứu.</li>
-          <li>Chụp màn hình kết quả tra cứu để trong máy, khỏi phải dò lại lúc đứng trước cửa phòng thi.</li>
+          <li><b>Đã thi xong chiều 25/8</b> — điểm 5.0/10, đạt trình độ A1, được bỏ qua học phần tăng cường A1. Bước tiếp theo xem mục <a href="#tienganh">Tiếng Anh đầu vào</a>.</li>
+          <li>Thắc mắc về điểm hay bậc xếp lớp thì liên hệ bộ phận Khảo thí theo thông tin ghi trên trang tra cứu.</li>
+          <li>Chụp màn hình kết quả tra cứu lưu vào máy, phòng khi trang tra cứu thay đổi hoặc lỗi.</li>
         </ul>
       </div>
       <div class="card">
@@ -969,7 +971,7 @@ footer a{color:var(--brand)}
 
       <div class="faq-item">
         <div class="faq-q"><span class="qn">2</span><span>Đã có chứng chỉ tiếng Anh thì có phải thi khảo sát đầu vào không?<span class="faq-tag" style="background:var(--accent-soft); color:var(--accent)">Không cần</span></span></div>
-        <div class="faq-a">Không phải đăng ký thi. Sinh viên đã có chứng chỉ tiếng Anh sẽ được <b>quy đổi điểm</b>. Nhưng nếu Dương <b>chưa có chứng chỉ nào thì nhất định phải đăng ký thi</b>: không thi là mặc định bị xếp học từ bậc thấp nhất A1. Bài thi chỉ để xếp lớp, không đánh trượt ai — chi tiết ở mục <a href="#tienganh">Tiếng Anh đầu vào</a>.</div>
+        <div class="faq-a">Không phải đăng ký thi. Sinh viên đã có chứng chỉ tiếng Anh sẽ được <b>quy đổi điểm</b>. Nhưng nếu <b>chưa có chứng chỉ nào thì nhất định phải đăng ký thi</b>: không thi là mặc định bị xếp học từ bậc thấp nhất A1. Bài thi chỉ để xếp lớp, không đánh trượt ai. Dương đã thi hôm 25/8 — kết quả <b>5.0/10, đạt trình độ A1, học tiếp từ A2</b> — chi tiết ở mục <a href="#tienganh">Tiếng Anh đầu vào</a>.</div>
       </div>
 
       <div class="faq-item">
@@ -1263,36 +1265,40 @@ footer a{color:var(--brand)}
 <section id="tienganh" data-sticker="📖">
   <span class="deco br" style="--d:2.4s" aria-hidden="true">✏️</span>
   <div class="wrap">
-    <div class="sec-eyebrow">Đã có lịch thi cụ thể</div>
-    <h2>Bài kiểm tra phân loại tiếng Anh — và vì sao nên thi</h2>
-    <p class="lede">Ở UTC, tiếng Anh không phải một môn học đơn lẻ mà là <b>một cái thang có bậc</b>: A1 → A2 → B1 → tiếng Anh chuyên ngành. Bài kiểm tra phân loại đầu khóa quyết định Dương <b>bắt đầu từ bậc nào</b>. Thi tốt thì nhảy thẳng lên trên, bỏ qua được một đến hai học phần.</p>
+    <div class="sec-eyebrow">Đã thi xong — có kết quả</div>
+    <h2>Bài kiểm tra phân loại tiếng Anh — kết quả và bước tiếp theo</h2>
+    <p class="lede">Ở UTC, tiếng Anh không phải một môn học đơn lẻ mà là <b>một cái thang có bậc</b>: A1 → A2 → B1 → tiếng Anh chuyên ngành. Bài kiểm tra phân loại đầu khóa quyết định mỗi người <b>bắt đầu từ bậc nào</b> — và với Dương, câu trả lời đã có: <b>5.0/10, đạt trình độ A1, học tiếp từ bậc A2</b>.</p>
 
     <div class="callout" style="border-left-color:var(--accent); background:var(--accent-soft)">
-      <h3>Dương đã có tên trong danh sách dự thi</h3>
-      Không còn là chuyện “đăng ký trong tuần đầu học kỳ” nữa: ca thi đã được xếp — <b>13h00 ngày 25/8/2026, ca 3, phòng P.506-A4</b>, mã sinh viên 261800139, lớp KT1. Giờ giấc, đường đi và thứ cần mang xem ở mục <a href="#lich">Lịch tuần này</a>. Phần bên dưới là để ôn cho trúng trọng tâm trong những ngày còn lại.
+      <h3>Kết quả của Dương: 5.0/10 — đạt trình độ A1, vào thẳng A2</h3>
+      Thi chiều <b>25/8/2026</b> (ca 3, phòng P.506-A4, mã sinh viên 261800139). Với <b>5.0 điểm</b>, Dương rơi vào khoảng <b>5.00 – 6.95</b> theo thang các khóa trước — được công nhận <b>đạt trình độ A1</b>: bỏ qua học phần tăng cường A1 và <b>đăng ký học thẳng A2</b>. Chưa đủ để nhảy tới B1 (khoảng đó cần trên 6.95), nhưng đã tiết kiệm trọn một học phần đóng tiền ngoài chương trình. Hai việc cần làm tiếp:
+      <ul>
+        <li><b>Đăng ký lớp A2 tăng cường trong tuần đầu học kỳ 1</b> theo thông báo của Phòng Đào tạo / Bộ môn Anh văn — đừng chờ trường tự xếp.</li>
+        <li><b>Đối chiếu danh sách xếp lớp chính thức của K67</b> khi trường công bố — tra bằng mã sinh viên trên tài khoản quản lý đào tạo; thang điểm trên lấy từ các khóa trước, bảng áp dụng cuối cùng theo danh sách đó.</li>
+      </ul>
+      Toàn bộ phần ôn tập bên dưới giữ nguyên giá trị — giờ nó là <b>lộ trình tự học để vào A2 cho vững và nhắm tới B1</b>, học phần bắt buộc tính vào điểm trung bình.
     </div>
 
     <div class="salary">
       <table>
-        <caption style="text-align:left; padding:14px 16px 0; font-size:12.5px; color:var(--text-muted)">Cách nhà trường xếp lớp theo kết quả kiểm tra phân loại — theo hướng dẫn về đề án đào tạo đạt chuẩn ngoại ngữ trên cổng tuyển sinh của trường.</caption>
-        <thead><tr><th>Kết quả</th><th>Được xếp vào</th><th>Bỏ qua được</th></tr></thead>
+        <caption style="text-align:left; padding:14px 16px 0; font-size:12.5px; color:var(--text-muted)">Cách nhà trường xếp lớp theo kết quả kiểm tra phân loại — theo hướng dẫn về đề án đào tạo đạt chuẩn ngoại ngữ trên cổng tuyển sinh của trường. Cột điểm là thang đã áp dụng cho các khóa trước (đạt B1 thường qua quy đổi chứng chỉ hoặc ngưỡng riêng do trường công bố); K67 đối chiếu theo danh sách xếp lớp chính thức.</caption>
+        <thead><tr><th>Điểm thi (thang 10)</th><th>Kết quả</th><th>Được xếp vào</th><th>Bỏ qua được</th></tr></thead>
         <tbody>
-          <tr><td>Đạt <b>B1</b> trở lên</td><td>Công nhận và cấp điểm học phần B1 luôn</td><td class="n">Cả A1, A2 và B1</td></tr>
-          <tr><td>Đạt <b>A2</b></td><td>Đăng ký thẳng học phần B1</td><td class="n">A1 và A2</td></tr>
-          <tr><td>Đạt <b>A1</b></td><td>Đăng ký học A2</td><td class="n">A1</td></tr>
-          <tr><td>Dưới A1</td><td>Học từ A1</td><td class="n">—</td></tr>
-          <tr><td><b>Không đăng ký thi</b></td><td><b>Mặc định học từ A1</b> — bậc thấp nhất</td><td class="n">—</td></tr>
+          <tr><td class="n">—</td><td>Đạt <b>B1</b> trở lên</td><td>Công nhận và cấp điểm học phần B1 luôn</td><td class="n">Cả A1, A2 và B1</td></tr>
+          <tr><td class="n">Trên 6.95</td><td>Đạt <b>A2</b></td><td>Đăng ký thẳng học phần B1</td><td class="n">A1 và A2</td></tr>
+          <tr style="background:var(--accent-soft)"><td class="n"><b>5.00 – 6.95</b></td><td>Đạt <b>A1</b><span class="badge b-accent">Dương: 5.0</span></td><td><b>Đăng ký học A2</b></td><td class="n">A1</td></tr>
+          <tr><td class="n">0 – 4.95</td><td>Dưới A1</td><td>Học từ A1</td><td class="n">—</td></tr>
+          <tr><td class="n">—</td><td><b>Không đăng ký thi</b></td><td><b>Mặc định học từ A1</b> — bậc thấp nhất</td><td class="n">—</td></tr>
         </tbody>
       </table>
     </div>
 
     <div class="callout">
-      <h3>Đây là chỗ 250.000đ đổi lấy cả một học kỳ</h3>
-      Lệ phí thi phân loại khoảng <b>250.000đ</b>, đăng ký trong <b>tuần đầu của học kỳ 1</b>. Hai bậc A1 và A2 là <b>ngoại ngữ tăng cường — nằm ngoài chương trình đào tạo</b>, tức là học thêm, đóng tiền thêm, chiếm thêm buổi trong tuần suốt bốn học kỳ đầu. Bỏ được một bậc đã hời, bỏ được hai bậc thì quá hời. Không đăng ký thi thì mặc nhiên xếp vào A1, dù thực lực có thể cao hơn.
+      <h3>Tấm vé 250.000đ đã hoàn vốn: bỏ được học phần A1</h3>
+      Hai bậc A1 và A2 là <b>ngoại ngữ tăng cường — nằm ngoài chương trình đào tạo</b>, tức là học thêm, đóng tiền thêm, chiếm thêm buổi trong tuần suốt các học kỳ đầu. Nhờ đi thi và đạt trình độ A1, Dương <b>bỏ qua được trọn học phần A1</b> — lệ phí thi khoảng 250.000đ đổi lấy tiền học lẫn thời gian của cả một học phần. Nếu không đăng ký thi hôm 25/8 thì giờ đã mặc định phải học từ A1, dù điểm thật cao hơn. Cửa nhảy bậc cũng chưa đóng hẳn:
       <ul>
-        <li>Nếu Dương đã có <b>chứng chỉ tiếng Anh còn hạn tương đương B1 trở lên</b> — VSTEP bậc 3, IELTS, TOEIC, PET… — thì nộp để quy đổi, được công nhận đạt chuẩn và cấp điểm học phần B1, khỏi thi.</li>
-        <li>Chưa có chứng chỉ thì <b>cứ đăng ký thi</b>. Bài này không đánh trượt ai, chỉ xếp bậc — thi kém nhất cũng chỉ về đúng chỗ mà không thi vẫn phải vào.</li>
-        <li>Mức quy đổi cụ thể của từng loại chứng chỉ do trường quyết định, hỏi lại Phòng Đào tạo hoặc Bộ môn Anh văn để lấy đúng bảng đang áp dụng cho K67.</li>
+        <li>Nếu sau này Dương thi được <b>chứng chỉ tiếng Anh còn hạn tương đương B1 trở lên</b> — VSTEP bậc 3, IELTS, TOEIC, PET… — thì nộp để quy đổi theo quy định chuẩn đầu ra: được công nhận đạt chuẩn và cấp điểm học phần B1, đỡ phải học lên từng bậc.</li>
+        <li>Mức quy đổi và thời điểm nộp của từng loại chứng chỉ do trường quyết định — hỏi Phòng Đào tạo hoặc Bộ môn Anh văn để lấy đúng bảng đang áp dụng cho K67.</li>
       </ul>
     </div>
 
@@ -1376,7 +1382,7 @@ footer a{color:var(--brand)}
     </div>
 
     <p style="margin-top:18px; font-size:13.5px; color:var(--text-muted)">
-      Phần cấu trúc chương trình, mức xếp lớp và lệ phí lấy từ hướng dẫn về đề án đào tạo đạt chuẩn ngoại ngữ trên cổng tuyển sinh và trang hỗ trợ sinh viên của trường. Số câu và thời gian làm bài chưa được công bố công khai — chờ thông báo chính thức đầu học kỳ. Danh sách chủ điểm ôn tập là gợi ý dựa trên mốc năng lực A2–B1 mà bài thi hướng tới, không phải đề cương do trường phát hành.
+      Phần cấu trúc chương trình, mức xếp lớp và lệ phí lấy từ hướng dẫn về đề án đào tạo đạt chuẩn ngoại ngữ trên cổng tuyển sinh và trang hỗ trợ sinh viên của trường. Ngưỡng điểm 0 – 4.95 / 5.00 – 6.95 lấy từ thông báo xếp lớp ngoại ngữ tăng cường áp dụng cho các khóa trước; kết quả 5.0/10 của Dương tra trên trang của Phòng Khảo thí ngày 25/8/2026 — bậc xếp lớp cuối cùng lấy theo danh sách chính thức của Phòng Đào tạo cho K67. Danh sách chủ điểm ôn tập là gợi ý dựa trên mốc năng lực A2–B1, không phải đề cương do trường phát hành.
     </p>
   </div>
 </section>
@@ -1658,8 +1664,8 @@ footer a{color:var(--brand)}
       <label class="check"><input type="checkbox"><span class="txt"><span>Chốt phương án chỗ ở: ký túc xá hay thuê trọ</span><small>Đăng ký KTX thường có hạn riêng, làm sớm</small></span></label>
       <label class="check"><input type="checkbox"><span class="txt"><span>Ngồi với gia đình lập ngân sách năm nhất</span><small>Học phí + sinh hoạt phí + khoản đầu khóa</small></span></label>
       <label class="check"><input type="checkbox"><span class="txt"><span>Thi thử TOEIC hoặc IELTS để biết điểm xuất phát</span></span></label>
-      <label class="check"><input type="checkbox"><span class="txt"><span>Kiểm tra lại ca thi tiếng Anh trên trang tra cứu vào tối 24/8</span><small>Đã có lịch: 13h00 ngày 25/8, ca 3, P.506-A4. Tra lại bằng mã sinh viên phòng khi trường đổi phòng — đạt A2 trở lên là bỏ qua được hai học phần tăng cường A1 và A2</small></span></label>
-      <label class="check"><input type="checkbox"><span class="txt"><span>Ôn gấp trước ngày thi 25/8</span><small>Không còn hai tuần nữa — dồn vào 16 chủ điểm ngữ pháp và một đề mẫu Cambridge A2 Key, xem mục Tiếng Anh đầu vào</small></span></label>
+      <label class="check"><input type="checkbox"><span class="txt"><span>Đăng ký học phần tăng cường A2 trong tuần đầu học kỳ 1</span><small>Kết quả thi 5.0/10 — đạt trình độ A1, được bỏ qua A1 và vào thẳng A2. Theo dõi thông báo đăng ký của Phòng Đào tạo / Bộ môn Anh văn, đừng chờ trường tự xếp</small></span></label>
+      <label class="check"><input type="checkbox"><span class="txt"><span>Đối chiếu bậc xếp lớp khi trường công bố danh sách chính thức K67</span><small>Tra bằng mã sinh viên 261800139 trên tài khoản quản lý đào tạo — ngưỡng 5.00 – 6.95 → đạt A1 là thang các khóa trước, lấy danh sách chính thức làm căn cứ cuối</small></span></label>
       <label class="check"><input type="checkbox"><span class="txt"><span>Đặt lịch học Excel 30 phút mỗi ngày từ giờ đến khai giảng</span></span></label>
       <label class="check"><input type="checkbox"><span class="txt"><span>Nhắn hỏi 1 anh/chị đang học Khoa Vận tải – Kinh tế</span><small>Hỏi về hai chuyên ngành và cách học năm nhất</small></span></label>
       <label class="check"><input type="checkbox"><span class="txt"><span>Đi thử tuyến buýt Tam Sơn → trường trước ngày 24/8</span><small>Tận dụng luôn hôm lên trường nhập học: đi tuyến 54 rồi đổi tuyến 34, bấm giờ thật để biết phải rời nhà lúc mấy giờ</small></span></label>
@@ -1689,7 +1695,8 @@ footer a{color:var(--brand)}
       <li>Bài giải đáp thắc mắc nhập học của Trường ĐH GTVT dành cho K67 — nguồn của phần “Sáu câu tân sinh viên hỏi nhiều nhất” (sơ yếu lý lịch, thi khảo sát tiếng Anh, BHYT, giấy báo nhập học, đơn nhập học, bảo hiểm thân thể)</li>
       <li>Lịch sinh hoạt Công dân – Sinh viên K67, <b>Nhóm 5 (KT1 → KT7)</b> — thông báo của Trường ĐH Giao thông Vận tải: 25/8 CĐ5 trực tuyến 18h30–21h20; 26/8 CĐ1–4 tại Hội trường lớn 7h30–11h20, hướng dẫn thư viện tầng 6 nhà A8 (KT1, KT2: 13h30–14h30) và nộp hồ sơ nhập học tại Hội trường lớn; 3/9 sinh hoạt chung với Khoa 8h00–10h00</li>
       <li>Thông báo lịch Sinh hoạt Công dân – Sinh viên K67 <b>Chuyên đề 5</b> học trực tuyến qua Microsoft Teams, 18h30–21h20: Thứ Hai 24/8 (Nhóm 1 các lớp CT · Nhóm 2 CT7, MT1-A, XD, QL · Nhóm 3 các lớp ĐT), <b>Thứ Ba 25/8 (Nhóm 1 các lớp CK và MT1-B · Nhóm 2 KT1 → KT7, GV Nguyễn Thế Tấn · Nhóm 3 các lớp QT1–QT6)</b>, Thứ Tư 26/8 (QT7, QT8, TT1–TT3, CB1-A, CB1-B) — thông báo của Trường ĐH Giao thông Vận tải</li>
-      <li>Ca thi kiểm tra phân loại trình độ tiếng Anh — trang tra cứu của Phòng Khảo thí, Trường ĐH Giao thông Vận tải (tra cứu theo mã sinh viên 261800139 ngày 23/8/2026): 25/08/2026, ca 3, 13h00, phòng P.506-A4</li>
+      <li>Ca thi kiểm tra phân loại trình độ tiếng Anh — trang tra cứu của Phòng Khảo thí, Trường ĐH Giao thông Vận tải (tra cứu theo mã sinh viên 261800139 ngày 23/8/2026): 25/08/2026, ca 3, 13h00, phòng P.506-A4 · kết quả tra ngày 25/8/2026: <b>5.0/10 — đạt trình độ A1</b>, học tiếp học phần tăng cường A2</li>
+      <li>Ngưỡng điểm xếp lớp ngoại ngữ tăng cường các khóa trước (0 – 4.95: học A1 · 5.00 – 6.95: đạt A1, học A2) — <a href="https://tuyensinh.utc2.edu.vn/vi/cam-nang-cac-hoc-phan-tieng-anh-tai-phan-hieu-truong-dai-hoc-gtvt-tai-tpho-chi-minh-2051">cẩm nang các học phần tiếng Anh</a> và <a href="https://dept.utc2.edu.vn/khoavantaikinhte/tin-trong-truong/thong-bao-ve-viec-to-chuc-lop-hoc-ngoai-ngu-tang-cuong-cap-do-a1-a2-hoc-ky-i-nam-hoc-2021-2022-cho-sinh-vien-dai-hoc-chinh-quy-255.html">thông báo tổ chức lớp A1, A2</a> của Phân hiệu Trường ĐH GTVT — dùng làm tham chiếu, bậc xếp lớp K67 theo danh sách chính thức của Phòng Đào tạo</li>
       <li>Trang tuyển sinh chính thức của trường — <a href="https://tuyensinh.utc.edu.vn/">tuyensinh.utc.edu.vn</a></li>
       <li>Lộ trình, giờ chạy và giá vé tuyến buýt 54 Long Biên – Bắc Ninh — <a href="https://acchanoi.vn/xe-buyt-so-54-ha-noi/">acchanoi.vn</a> · <a href="https://khainamtransport.com/tuyen-xe-buyt-54-long-bien-bac-ninh/">khainamtransport.com</a></li>
       <li>Lộ trình tuyến buýt 34 Bến xe Gia Lâm – Bến xe Mỹ Đình (dừng trước cổng ĐH GTVT) — <a href="https://xe-bus.com/ben-xe-my-dinh-ben-xe-gia-lam/">xe-bus.com</a> · <a href="https://busmap.vn/">BusMap</a></li>
@@ -1697,7 +1704,7 @@ footer a{color:var(--brand)}
       <li>Giá vé tháng xe buýt Hà Nội cho học sinh – sinh viên — <a href="http://vethangxebuytonline.com.vn/RegTicket/Help.aspx">vethangxebuytonline.com.vn</a></li>
     </ul>
     <div class="disclaimer">
-      Trang này được tổng hợp ngày 10/8/2026, cập nhật ngày 11/8/2026 theo tin nhắn chính thức của nhà trường và cập nhật ngày 23/8/2026 để bổ sung lịch sinh hoạt công dân của Nhóm 5 – lớp KT1 cùng ca thi phân loại tiếng Anh, để phục vụ riêng trường hợp của Nguyễn Ngọc Thùy Dương. Điểm chuẩn, chỉ tiêu, học phí và danh mục hồ sơ có thể thay đổi — <b>luôn lấy thông báo chính thức của Trường Đại học Giao thông Vận tải và của Bộ GD&amp;ĐT làm căn cứ cuối cùng</b>. Các con số về thu nhập là ước tính thị trường mang tính tham khảo, không phải cam kết. Lộ trình học tập là gợi ý, không thay thế tư vấn của cố vấn học tập tại trường.
+      Trang này được tổng hợp ngày 10/8/2026, cập nhật ngày 11/8/2026 theo tin nhắn chính thức của nhà trường, cập nhật ngày 23/8/2026 để bổ sung lịch sinh hoạt công dân của Nhóm 5 – lớp KT1 cùng ca thi phân loại tiếng Anh, và cập nhật ngày 25/8/2026 để ghi nhận kết quả thi phân loại (5.0/10 — đạt trình độ A1, học tiếp từ A2), để phục vụ riêng trường hợp của Nguyễn Ngọc Thùy Dương. Điểm chuẩn, chỉ tiêu, học phí và danh mục hồ sơ có thể thay đổi — <b>luôn lấy thông báo chính thức của Trường Đại học Giao thông Vận tải và của Bộ GD&amp;ĐT làm căn cứ cuối cùng</b>. Các con số về thu nhập là ước tính thị trường mang tính tham khảo, không phải cam kết. Lộ trình học tập là gợi ý, không thay thế tư vấn của cố vấn học tập tại trường.
     </div>
   </div>
 </footer>

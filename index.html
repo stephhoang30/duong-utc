@@ -569,6 +569,111 @@ code{
 .kv .k{display:block; font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--text-muted); font-weight:800}
 .kv .v{font-family:var(--display); font-size:16px; font-weight:800; font-variant-numeric:tabular-nums}
 
+/* ---------- lộ trình học kỳ 1 ---------- */
+.study-overview{
+  display:grid; grid-template-columns:minmax(0,1.35fr) minmax(250px,.65fr); gap:16px;
+  margin:22px 0 18px; padding:20px; border:2.5px solid var(--lav-2); border-radius:24px;
+  background:linear-gradient(135deg,var(--lav-1),var(--surface-1)); box-shadow:var(--shadow)
+}
+.study-overview h3{margin:2px 0 6px; font-size:23px}
+.study-overview p{margin:0; color:var(--text-secondary); font-size:14px; font-weight:600}
+.study-kicker{color:var(--lav-3); font-size:11px; font-weight:800; letter-spacing:.1em; text-transform:uppercase}
+.study-progress-card{
+  align-self:stretch; display:grid; align-content:center; gap:9px; padding:15px;
+  border:2px solid var(--line); border-radius:18px; background:var(--surface-1)
+}
+.study-progress-row{display:flex; align-items:baseline; justify-content:space-between; gap:12px; color:var(--text-secondary); font-size:12px; font-weight:800}
+.study-progress-row strong{font-family:var(--display); color:var(--text-primary); font-size:22px}
+.study-progress-track{height:14px; overflow:hidden; border:2px solid var(--line); border-radius:999px; background:var(--surface-2)}
+.study-progress-fill{width:0; height:100%; border-radius:999px; background:linear-gradient(90deg,var(--lav-2),var(--sky-2),var(--mint-2)); transition:width .25s ease}
+.study-progress-card small{color:var(--text-muted); font-size:11px; font-weight:700}
+
+.study-subject-grid{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin:18px 0 28px}
+.study-card{
+  --event-bg:var(--surface-2); --event-line:var(--brand);
+  overflow:hidden; display:flex; flex-direction:column; min-width:0;
+  border:2.5px solid var(--line); border-top:8px solid var(--event-line); border-radius:22px;
+  background:var(--surface-1); box-shadow:var(--shadow)
+}
+.study-card.course-phil{--event-bg:var(--lav-1); --event-line:var(--lav-3)}
+.study-card.course-calc{--event-bg:var(--peach-1); --event-line:var(--peach-3)}
+.study-card.course-algebra{--event-bg:var(--butter-1); --event-line:var(--butter-3)}
+.study-card-head{padding:17px 18px 12px; background:linear-gradient(180deg,var(--event-bg),var(--surface-1))}
+.study-card-headline{display:flex; align-items:flex-start; justify-content:space-between; gap:12px}
+.study-card h3{margin:0; font-size:20px; line-height:1.2}
+.study-card-head p{margin:5px 0 0; color:var(--text-secondary); font-size:12.5px; line-height:1.5; font-weight:700}
+.study-subject-count{flex:none; min-width:48px; padding:4px 8px; border:1.5px solid var(--event-line); border-radius:999px; color:var(--text-primary); background:var(--surface-1); text-align:center; font-size:11px; font-weight:800}
+.study-core{padding:0 18px 13px}
+.study-core b{display:block; margin-bottom:4px; color:var(--text-primary); font-size:12px; text-transform:uppercase; letter-spacing:.07em}
+.study-core ul{margin:0; padding-left:18px; color:var(--text-secondary); font-size:12.5px; line-height:1.55; font-weight:600}
+.study-milestones{display:grid; gap:7px; padding:13px 14px; border-top:2px dashed var(--line)}
+.study-check{
+  display:flex; align-items:flex-start; gap:10px; min-height:50px; padding:9px 10px;
+  border:1.5px solid var(--line); border-radius:13px; background:var(--surface-1);
+  color:var(--text-secondary); font-size:12px; line-height:1.45; font-weight:700; cursor:pointer; transition:.18s
+}
+.study-check:hover{border-color:var(--event-line); background:var(--event-bg)}
+.study-check input{
+  appearance:none; -webkit-appearance:none; position:relative; flex:none; width:23px; height:23px; margin:0;
+  border:2px solid var(--line-strong); border-radius:7px; background:var(--surface-1); cursor:pointer
+}
+.study-check input:checked{border-color:var(--event-line); background:var(--event-line)}
+.study-check input:checked::after{content:"✓"; position:absolute; inset:0; display:grid; place-items:center; color:var(--chip-fg); font-size:14px; font-weight:800}
+.study-check input:focus-visible{outline:3px solid var(--brand); outline-offset:2px}
+.study-check.is-done{border-color:var(--mint-2); background:var(--mint-1); color:var(--text-muted)}
+.study-check.is-done span{text-decoration:line-through}
+.study-card-links{display:flex; flex-wrap:wrap; gap:7px; margin-top:auto; padding:14px 18px 17px; border-top:2px dashed var(--line)}
+.study-link{
+  display:inline-flex; align-items:center; min-height:44px; padding:7px 11px; border:1.5px solid var(--line);
+  border-radius:12px; background:var(--surface-2); color:var(--text-primary); font-size:11px; line-height:1.35;
+  font-weight:800; text-decoration:none
+}
+.study-link:hover{border-color:var(--event-line); background:var(--event-bg); color:var(--text-primary)}
+.study-link:focus-visible{outline:3px solid var(--brand); outline-offset:2px}
+
+.study-block-title{display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:6px 16px; margin:28px 0 12px}
+.study-block-title h3{margin:0; font-size:23px}
+.study-block-title span{color:var(--text-muted); font-size:12px; font-weight:700}
+.study-timeline{display:grid; gap:11px; margin:0; padding:0; list-style:none}
+.study-phase{
+  --phase-line:var(--line-strong); position:relative; display:grid; grid-template-columns:112px 1fr; gap:16px;
+  padding:16px 18px; border:2px solid var(--line); border-left:7px solid var(--phase-line); border-radius:18px;
+  background:var(--surface-1); box-shadow:var(--shadow)
+}
+.study-phase.is-current{border-color:var(--brand); border-left-color:var(--brand); background:linear-gradient(100deg,var(--brand-soft),var(--surface-1) 58%)}
+.study-phase-date{font-family:var(--display); color:var(--text-primary); font-size:15px; line-height:1.2; font-weight:800; font-variant-numeric:tabular-nums}
+.study-phase-date small{display:block; margin-top:5px; color:var(--text-muted); font-family:var(--body); font-size:10px; line-height:1.35; font-weight:800; letter-spacing:.05em; text-transform:uppercase}
+.study-phase-copy h4{margin:0 0 5px; font-size:17px; line-height:1.25}
+.study-phase-copy p{margin:0; color:var(--text-secondary); font-size:13px; line-height:1.55; font-weight:600}
+.study-phase-status{display:none; width:max-content; margin-top:9px; padding:3px 9px; border-radius:999px; background:var(--brand); color:var(--chip-fg); font-size:10px; font-weight:800; letter-spacing:.04em; text-transform:uppercase}
+.study-phase.is-current .study-phase-status{display:block}
+.study-rhythm{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin-top:12px}
+.study-session{padding:14px; border:2px solid var(--line); border-radius:16px; background:var(--surface-1)}
+.study-session b{display:block; color:var(--text-primary); font-family:var(--display); font-size:15px}
+.study-session span{display:block; margin-top:3px; color:var(--text-secondary); font-size:11.5px; line-height:1.45; font-weight:700}
+.study-rule{margin-top:18px; padding:16px 18px; border:2px dashed var(--mint-3); border-radius:17px; background:var(--mint-1); color:var(--text-secondary); font-size:13px; font-weight:700}
+.study-rule b{color:var(--text-primary)}
+
+@media (max-width:820px){
+  .study-overview{grid-template-columns:1fr}
+  .study-subject-grid{grid-template-columns:1fr}
+  .study-card{display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}
+  .study-card-head,.study-core{grid-column:1}
+  .study-milestones{grid-column:2; grid-row:1 / span 2; border-top:0; border-left:2px dashed var(--line)}
+  .study-card-links{grid-column:1 / -1}
+  .study-rhythm{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+@media (max-width:540px){
+  .study-overview{padding:16px; border-radius:19px}
+  .study-card{display:flex}
+  .study-milestones{border-left:0; border-top:2px dashed var(--line)}
+  .study-phase{grid-template-columns:1fr; gap:8px; padding:14px 15px}
+  .study-phase-date{display:flex; align-items:baseline; gap:9px}
+  .study-phase-date small{display:inline; margin:0}
+  .study-rhythm{grid-template-columns:1fr}
+}
+
 /* ---------- sticker trang trí ---------- */
 .deco{
   position:absolute; z-index:4; line-height:1; pointer-events:none; user-select:none;
@@ -703,6 +808,7 @@ footer a{color:var(--brand)}
     <div class="brandmark"><span class="dot"></span> Lộ trình của Thùy Dương</div>
     <nav class="navlinks">
       <a href="#lich">Lịch học kỳ 1</a>
+      <a href="#hocki">Lộ trình học kỳ</a>
       <a href="#gap">Việc gấp</a>
       <a href="#hoidap">Hỏi đáp</a>
       <a href="#nganh">Ngành</a>
@@ -829,6 +935,158 @@ footer a{color:var(--brand)}
     </details>
 
     <p style="margin-top:18px; font-size:13.5px; color:var(--text-muted)">Nguồn: mục <b>Tra cứu lịch → Lịch học</b> trong tài khoản của Nguyễn Ngọc Thùy Dương trên cổng quản lý đào tạo UTC, đối chiếu từng tuần từ tháng 9/2026 đến tháng 1/2027 vào ngày 05/09/2026. Đây là ảnh chụp dữ liệu tại thời điểm tra cứu; thông báo mới nhất của nhà trường và cổng UTC vẫn là căn cứ cuối cùng.</p>
+  </div>
+</section>
+
+<!-- ============ LỘ TRÌNH HỌC KỲ 1: TRIẾT · GIẢI TÍCH · ĐẠI SỐ ============ -->
+<section id="hocki" data-sticker="📚">
+  <span class="deco br" style="--d:1.4s" aria-hidden="true">✏️</span>
+  <div class="wrap">
+    <div class="sec-eyebrow">Kế hoạch riêng cho Dương · 09/2026–01/2027</div>
+    <h2>Lộ trình 3 môn cần giữ chắc</h2>
+    <p class="lede">Mục tiêu của học kỳ này không phải học trước thật nhiều, mà là <b>hiểu bài ngay trong tuần, làm được bài cơ bản và biết mình đang sai ở đâu</b>. Kế hoạch bám lịch Triết, Giải tích và Đại số tuyến tính hiện có trên cổng UTC, đồng thời giảm tải trong đợt GDQP tháng 11.</p>
+
+    <div class="study-overview">
+      <div>
+        <span class="study-kicker">Đích đến cuối học kỳ</span>
+        <h3>Hiểu → làm được → tự kiểm tra</h3>
+        <p>Khoảng <b>4–5 giờ tự học mỗi tuần</b> ngoài giờ lên lớp. Mỗi môn có bốn mốc lớn; tích vào ô khi Dương tự làm hoặc tự trình bày được mà không nhìn lời giải.</p>
+      </div>
+      <div class="study-progress-card">
+        <div class="study-progress-row"><span>Tiến độ 3 môn</span><strong id="study-progress-text" aria-live="polite">0/12</strong></div>
+        <div class="study-progress-track" id="study-progress-track" role="progressbar" aria-label="Tiến độ lộ trình học kỳ" aria-valuemin="0" aria-valuemax="12" aria-valuenow="0">
+          <div class="study-progress-fill" id="study-progress-fill"></div>
+        </div>
+        <small>Tiến độ được lưu trên thiết bị này, kể cả khi đóng trang.</small>
+      </div>
+    </div>
+
+    <div class="study-subject-grid">
+      <article class="study-card course-phil" data-subject-card="phil">
+        <div class="study-card-head">
+          <div class="study-card-headline">
+            <div><h3>Triết học Mác–Lênin</h3><p>Học theo mạch lập luận, không học thuộc từng đoạn rời.</p></div>
+            <span class="study-subject-count" data-subject-progress="phil">0/4</span>
+          </div>
+        </div>
+        <div class="study-core">
+          <b>Phải nắm</b>
+          <ul>
+            <li>Vật chất, ý thức và mối quan hệ giữa hai bên.</li>
+            <li>Hai nguyên lý, ba quy luật, các cặp phạm trù.</li>
+            <li>Duy vật lịch sử và cách liên hệ ví dụ thực tế.</li>
+          </ul>
+        </div>
+        <div class="study-milestones" aria-label="Các mốc môn Triết học Mác–Lênin">
+          <label class="study-check"><input type="checkbox" data-study-id="phil-1"><span>Vẽ được sơ đồ tổng quan các chương trên một tờ A4.</span></label>
+          <label class="study-check"><input type="checkbox" data-study-id="phil-2"><span>Tự giải thích hai nguyên lý và ba quy luật bằng ví dụ đời thường.</span></label>
+          <label class="study-check"><input type="checkbox" data-study-id="phil-3"><span>Phân biệt được các cặp phạm trù và phần duy vật lịch sử.</span></label>
+          <label class="study-check"><input type="checkbox" data-study-id="phil-4"><span>Soạn sáu câu tự luận theo mẫu: khái niệm → quan hệ → ví dụ → ý nghĩa.</span></label>
+        </div>
+        <div class="study-card-links">
+          <a class="study-link" href="https://lic.haui.edu.vn/vn/gioi-thieu-sach-moi/giao-trinh-triet-hoc-mac-lenin-2021/72760" target="_blank" rel="noopener noreferrer">Giáo trình Bộ GD&amp;ĐT 2021</a>
+          <a class="study-link" href="https://opac.hnue.edu.vn/Detail.aspx?f=namxuatban&amp;id=122419&amp;pIdx=551&amp;v=2021" target="_blank" rel="noopener noreferrer">Thông tin thư mục</a>
+        </div>
+      </article>
+
+      <article class="study-card course-calc" data-subject-card="calc">
+        <div class="study-card-head">
+          <div class="study-card-headline">
+            <div><h3>Giải tích</h3><p>Mỗi công thức phải đi cùng điều kiện dùng và một bài mẫu.</p></div>
+            <span class="study-subject-count" data-subject-progress="calc">0/4</span>
+          </div>
+        </div>
+        <div class="study-core">
+          <b>Phải nắm</b>
+          <ul>
+            <li>Hàm số, giới hạn, liên tục và đạo hàm.</li>
+            <li>Ứng dụng đạo hàm; tích phân và tích phân suy rộng.</li>
+            <li>Hàm nhiều biến, cực trị và phương trình vi phân cơ bản.</li>
+          </ul>
+        </div>
+        <div class="study-milestones" aria-label="Các mốc môn Giải tích">
+          <label class="study-check"><input type="checkbox" data-study-id="calc-1"><span>Làm chắc giới hạn và liên tục, ghi rõ điều kiện của từng phép biến đổi.</span></label>
+          <label class="study-check"><input type="checkbox" data-study-id="calc-2"><span>Tính đạo hàm và xử lý được bài khảo sát, cực trị cơ bản.</span></label>
+          <label class="study-check"><input type="checkbox" data-study-id="calc-3"><span>Nhận dạng đúng phương pháp tính tích phân cho từng dạng bài.</span></label>
+          <label class="study-check"><input type="checkbox" data-study-id="calc-4"><span>Làm hai bộ bài tổng hợp có bấm giờ và sửa lại toàn bộ lỗi sai.</span></label>
+        </div>
+        <div class="study-card-links">
+          <a class="study-link" href="https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/pages/syllabus/" target="_blank" rel="noopener noreferrer">MIT Calculus</a>
+          <a class="study-link" href="https://openstax.org/books/calculus-volume-1/pages/preface" target="_blank" rel="noopener noreferrer">OpenStax Calculus 1</a>
+        </div>
+      </article>
+
+      <article class="study-card course-algebra" data-subject-card="algebra">
+        <div class="study-card-head">
+          <div class="study-card-headline">
+            <div><h3>Đại số tuyến tính</h3><p>Ưu tiên biến đổi đúng từng dòng và kiểm tra lại kết quả.</p></div>
+            <span class="study-subject-count" data-subject-progress="algebra">0/4</span>
+          </div>
+        </div>
+        <div class="study-core">
+          <b>Phải nắm</b>
+          <ul>
+            <li>Ma trận, định thức, hạng và ma trận nghịch đảo.</li>
+            <li>Khử Gauss và hệ phương trình tuyến tính.</li>
+            <li>Không gian vector, cơ sở, số chiều và ánh xạ tuyến tính.</li>
+          </ul>
+        </div>
+        <div class="study-milestones" aria-label="Các mốc môn Đại số tuyến tính">
+          <label class="study-check"><input type="checkbox" data-study-id="algebra-1"><span>Thực hiện đúng phép toán ma trận và tính định thức không bỏ bước.</span></label>
+          <label class="study-check"><input type="checkbox" data-study-id="algebra-2"><span>Dùng khử Gauss để giải và biện luận hệ phương trình tuyến tính.</span></label>
+          <label class="study-check"><input type="checkbox" data-study-id="algebra-3"><span>Xác định được độc lập tuyến tính, cơ sở và số chiều.</span></label>
+          <label class="study-check"><input type="checkbox" data-study-id="algebra-4"><span>Làm hai bộ bài tổng hợp và hoàn thiện một trang “lỗi hay mắc”.</span></label>
+        </div>
+        <div class="study-card-links">
+          <a class="study-link" href="https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/" target="_blank" rel="noopener noreferrer">MIT Linear Algebra</a>
+          <a class="study-link" href="https://qlkhcn.utc.edu.vn/Upload/FilePost/2024/05/13/dieu-kien-dam-bao-chat-luong-5d91e6ab-8b0e-4b5f-bb0b-ee0833dc82ea.pdf" target="_blank" rel="noopener noreferrer">Danh mục giáo trình UTC</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="study-block-title">
+      <h3>Sáu chặng của học kỳ</h3>
+      <span>Chặng hiện tại sẽ tự được đánh dấu theo ngày Việt Nam</span>
+    </div>
+    <ol class="study-timeline" aria-label="Lộ trình học kỳ theo thời gian">
+      <li class="study-phase" data-phase-start="2026-09-07" data-phase-end="2026-09-20">
+        <div class="study-phase-date">07–20/09<small>Chặng 1</small></div>
+        <div class="study-phase-copy"><h4>Khởi động và làm quen với Triết</h4><p>Triết: đọc trước phần khái luận, vật chất–ý thức và viết lại bằng lời của mình. Toán: hai buổi ôn hàm số, phân thức, lượng giác, vector và phép biến đổi đại số để phát hiện lỗ hổng.</p><span class="study-phase-status">Đang học</span></div>
+      </li>
+      <li class="study-phase" data-phase-start="2026-09-21" data-phase-end="2026-10-11">
+        <div class="study-phase-date">21/09–11/10<small>Chặng 2</small></div>
+        <div class="study-phase-copy"><h4>Dựng nền cho cả ba môn</h4><p>Giải tích: giới hạn, liên tục, đạo hàm. Đại số: ma trận, định thức, khử Gauss. Triết: hai nguyên lý và ba quy luật; mỗi ý phải có ít nhất một ví dụ gần gũi.</p><span class="study-phase-status">Đang học</span></div>
+      </li>
+      <li class="study-phase" data-phase-start="2026-10-12" data-phase-end="2026-10-31">
+        <div class="study-phase-date">12–31/10<small>Chặng 3</small></div>
+        <div class="study-phase-copy"><h4>Nối các mảng kiến thức</h4><p>Giải tích: ứng dụng đạo hàm và mở đầu tích phân. Đại số: hệ phương trình, hạng, nghịch đảo, không gian vector. Triết: các cặp phạm trù và bước đầu duy vật lịch sử. Cuối chặng tự kiểm tra 45 phút/môn.</p><span class="study-phase-status">Đang học</span></div>
+      </li>
+      <li class="study-phase" data-phase-start="2026-11-01" data-phase-end="2026-11-29">
+        <div class="study-phase-date">01–29/11<small>Chặng 4 · GDQP</small></div>
+        <div class="study-phase-copy"><h4>Giữ nhịp, không ép tiến độ</h4><p>Mỗi tuần chỉ cần hai phiên Toán 25 phút và một phiên Triết 20 phút. Mục tiêu hết tháng: tám bài Toán đã chữa kỹ và một lần tự nói năm phút về nội dung Triết đã học.</p><span class="study-phase-status">Đang học</span></div>
+      </li>
+      <li class="study-phase" data-phase-start="2026-11-30" data-phase-end="2026-12-20">
+        <div class="study-phase-date">30/11–20/12<small>Chặng 5</small></div>
+        <div class="study-phase-copy"><h4>Luyện bài tập và sửa lỗi</h4><p>Làm bài được giao trước các buổi bài tập 04–18/12. Giải tích tập trung tích phân, hàm nhiều biến hoặc phương trình vi phân theo tiến độ giảng viên; Đại số chốt không gian vector và ánh xạ tuyến tính; Triết chuẩn bị câu hỏi thảo luận.</p><span class="study-phase-status">Đang học</span></div>
+      </li>
+      <li class="study-phase" data-phase-start="2026-12-21" data-phase-end="2027-01-05">
+        <div class="study-phase-date">21/12–05/01<small>Chặng 6</small></div>
+        <div class="study-phase-copy"><h4>Khóa kiến thức trước khi có lịch thi</h4><p>Mỗi môn hoàn thành một tờ A4 tổng hợp. Mỗi môn Toán làm hai bộ bài có bấm giờ; Triết soạn sáu câu tự luận và tập trình bày miệng. Khi trường công bố lịch thi, chỉ cần phân bổ lại số buổi ôn.</p><span class="study-phase-status">Đang học</span></div>
+      </li>
+    </ol>
+
+    <div class="study-block-title">
+      <h3>Nhịp tự học tuần thường</h3>
+      <span>Tổng khoảng 4 giờ 30 phút · có thể đổi giờ nhưng đừng bỏ nhịp</span>
+    </div>
+    <div class="study-rhythm">
+      <div class="study-session"><b>Thứ Hai · 60 phút</b><span>Giải tích: đọc phần sắp học, làm ba bài từ dễ đến vừa.</span></div>
+      <div class="study-session"><b>Thứ Ba · 60 phút</b><span>Đại số: luyện biến đổi từng dòng và cập nhật sổ lỗi sai.</span></div>
+      <div class="study-session"><b>Thứ Tư · 30 phút</b><span>Triết: tóm tắt bài vừa học thành năm ý và một ví dụ.</span></div>
+      <div class="study-session"><b>Chủ Nhật · 120 phút</b><span>60 phút Toán tổng hợp, 45 phút Triết, 15 phút lên kế hoạch tuần mới.</span></div>
+    </div>
+
+    <div class="study-rule"><b>Quy tắc giữ nhịp:</b> bài trên lớp phải được xem lại trong 24 giờ; bài sai phải làm lại sau 7 ngày. Nếu lỡ một tuần, quay về phiên học gần nhất — không dồn gấp đôi để “trả nợ”.</div>
   </div>
 </section>
 
@@ -1936,6 +2194,73 @@ footer a{color:var(--brand)}
   if(currentMonthIndex > -1) selectedMonth = currentMonthIndex;
   selectedDate = defaultDateForMonth(selectedMonth);
   renderCalendar(selectedMonth, false);
+
+  // ----- semester study roadmap: current phase + saved milestone progress -----
+  var studyPhases = Array.prototype.slice.call(document.querySelectorAll('[data-phase-start]'));
+  var studyToday = vnTodayKey();
+  var highlightedPhase = null;
+  var highlightedLabel = 'Đang học';
+  studyPhases.forEach(function(phase){
+    if(studyToday >= phase.getAttribute('data-phase-start') && studyToday <= phase.getAttribute('data-phase-end')){
+      highlightedPhase = phase;
+    }
+  });
+  if(!highlightedPhase && studyPhases.length){
+    if(studyToday < studyPhases[0].getAttribute('data-phase-start')){
+      highlightedPhase = studyPhases[0];
+      highlightedLabel = 'Sắp tới';
+    }else if(studyToday > studyPhases[studyPhases.length - 1].getAttribute('data-phase-end')){
+      highlightedPhase = studyPhases[studyPhases.length - 1];
+      highlightedLabel = 'Đã kết thúc';
+    }else{
+      highlightedPhase = studyPhases.find(function(phase){
+        return phase.getAttribute('data-phase-start') > studyToday;
+      });
+      highlightedLabel = 'Sắp tới';
+    }
+  }
+  if(highlightedPhase){
+    highlightedPhase.classList.add('is-current');
+    var phaseStatus = highlightedPhase.querySelector('.study-phase-status');
+    if(phaseStatus) phaseStatus.textContent = highlightedLabel;
+  }
+
+  var studyStorageKey = 'duong-study-hk1-2026';
+  var studyBoxes = Array.prototype.slice.call(document.querySelectorAll('#hocki input[data-study-id]'));
+  var studyProgressText = document.getElementById('study-progress-text');
+  var studyProgressFill = document.getElementById('study-progress-fill');
+  var studyProgressTrack = document.getElementById('study-progress-track');
+  var studyState = {};
+  try{ studyState = JSON.parse(localStorage.getItem(studyStorageKey) || '{}') || {}; }catch(e){ studyState = {}; }
+  studyBoxes.forEach(function(box){ box.checked = studyState[box.getAttribute('data-study-id')] === true; });
+  function syncStudyProgress(save){
+    var completed = 0;
+    studyBoxes.forEach(function(box){
+      var id = box.getAttribute('data-study-id');
+      var row = box.closest('.study-check');
+      if(box.checked){ completed++; row.classList.add('is-done'); }
+      else{ row.classList.remove('is-done'); }
+      studyState[id] = box.checked;
+    });
+    document.querySelectorAll('[data-subject-card]').forEach(function(card){
+      var subject = card.getAttribute('data-subject-card');
+      var subjectBoxes = Array.prototype.slice.call(card.querySelectorAll('input[data-study-id]'));
+      var subjectDone = subjectBoxes.filter(function(box){ return box.checked; }).length;
+      var subjectOutput = document.querySelector('[data-subject-progress="' + subject + '"]');
+      if(subjectOutput) subjectOutput.textContent = subjectDone + '/' + subjectBoxes.length;
+    });
+    studyProgressText.textContent = completed + '/' + studyBoxes.length;
+    studyProgressFill.style.width = (studyBoxes.length ? completed / studyBoxes.length * 100 : 0) + '%';
+    studyProgressTrack.setAttribute('aria-valuemax', studyBoxes.length);
+    studyProgressTrack.setAttribute('aria-valuenow', completed);
+    if(save){
+      try{ localStorage.setItem(studyStorageKey, JSON.stringify(studyState)); }catch(e){}
+    }
+  }
+  studyBoxes.forEach(function(box){
+    box.addEventListener('change', function(){ syncStudyProgress(true); });
+  });
+  syncStudyProgress(false);
 
   var nx = {d:document.getElementById('nx-d'), h:document.getElementById('nx-h'),
             m:document.getElementById('nx-m'), s:document.getElementById('nx-s')};

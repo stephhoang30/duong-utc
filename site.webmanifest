@@ -1,0 +1,15 @@
+{
+  "name": "Lộ trình của Thùy Dương",
+  "short_name": "Lộ trình Dương",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fff6d6",
+  "theme_color": "#2f7fc4",
+  "icons": [
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

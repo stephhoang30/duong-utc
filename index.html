@@ -498,39 +498,62 @@ code{
   padding:3px 11px; border-radius:999px; margin-left:9px; vertical-align:2px; white-space:nowrap
 }
 
-/* ---------- lịch sinh hoạt ---------- */
-.sched{display:grid; gap:15px; margin-top:26px}
-.sday{
-  display:grid; grid-template-columns:132px 1fr; background:var(--surface-1);
-  border:2.5px solid var(--line); border-radius:24px; box-shadow:var(--shadow); overflow:hidden
-}
-.sday-when{
-  background:var(--day-1,var(--sky-1)); padding:18px 16px;
-  display:flex; flex-direction:column; justify-content:center; gap:2px;
-  border-right:2.5px dashed var(--day-2,var(--sky-2))
-}
-.sched .sday:nth-child(3n+1){--day-1:var(--pink-1); --day-2:var(--pink-2); --day-3:var(--pink-3)}
-.sched .sday:nth-child(3n+2){--day-1:var(--mint-1); --day-2:var(--mint-2); --day-3:var(--mint-3)}
-.sched .sday:nth-child(3n+3){--day-1:var(--lav-1);  --day-2:var(--lav-2);  --day-3:var(--lav-3)}
-.sday-when .dow{font-family:var(--display); font-size:12px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:var(--day-3,var(--sky-3))}
-.sday-when .dnum{font-family:var(--display); font-size:31px; font-weight:800; line-height:1.12; font-variant-numeric:tabular-nums; color:var(--text-primary)}
-.sday-when .dsub{font-size:12px; font-weight:700; color:var(--text-muted)}
-.sday-body{display:grid}
-.slot{display:grid; grid-template-columns:120px 1fr; gap:15px; padding:15px 19px; border-top:2px dashed var(--line)}
-.sday-body > .slot:first-child{border-top:none}
-.slot.hi{background:var(--butter-1)}
-.slot-time{font-family:var(--display); font-size:15.5px; font-weight:800; font-variant-numeric:tabular-nums}
-.slot-time small{display:block; font-family:var(--body); font-size:11px; font-weight:800; letter-spacing:.09em; text-transform:uppercase; color:var(--text-muted); margin-top:2px}
-.slot-title{font-family:var(--display); font-size:16px; font-weight:800}
-.badge{
-  display:inline-block; margin-left:8px; font-family:var(--body); font-size:11px; font-weight:800; letter-spacing:.05em;
-  text-transform:uppercase; padding:3px 10px; border-radius:999px; background:var(--butter-2); color:var(--butter-3); vertical-align:2px
-}
-.badge.b-brand{background:var(--sky-2); color:var(--sky-3)}
-.badge.b-accent{background:var(--pink-2); color:var(--pink-3)}
-.slot-where{font-size:13.9px; color:var(--text-secondary); margin-top:4px; font-weight:600}
-.slot-where b{color:var(--text-primary); font-weight:800}
-.slot-note{font-size:13.3px; color:var(--text-muted); margin-top:6px; font-weight:600}
+/* ---------- lịch học ---------- */
+.schedule-summary{display:flex; flex-wrap:wrap; gap:8px; margin:18px 0}
+.schedule-summary span{padding:5px 11px; border-radius:999px; background:var(--surface-2); border:1.5px solid var(--line); color:var(--text-secondary); font-size:12px; font-weight:700}
+.schedule-summary b{color:var(--text-primary)}
+.calendar-shell{overflow:hidden; border:2.5px solid var(--line); border-radius:24px; background:var(--surface-1); box-shadow:var(--shadow)}
+.calendar-toolbar{display:grid; grid-template-columns:48px 1fr 48px; align-items:center; gap:10px; padding:14px 16px; background:var(--surface-2); border-bottom:2px solid var(--line)}
+.calendar-title{text-align:center}
+.calendar-title h3{margin:0; font-size:23px; line-height:1.15}
+.calendar-title p{margin:3px 0 0; color:var(--text-muted); font-size:11.5px; font-weight:700}
+.calendar-nav{display:grid; place-items:center; width:46px; height:46px; padding:0; border:2px solid var(--line-strong); border-radius:15px; background:var(--surface-1); color:var(--text-primary); cursor:pointer; touch-action:manipulation; transition:background .18s ease,border-color .18s ease,opacity .18s ease}
+.calendar-nav svg{width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:2.25; stroke-linecap:round; stroke-linejoin:round}
+.calendar-nav:hover:not(:disabled){background:var(--brand-soft); border-color:var(--brand)}
+.calendar-nav:active:not(:disabled){background:var(--sky-2)}
+.calendar-nav:disabled{opacity:.32; cursor:not-allowed}
+.calendar-nav:focus-visible,.month-tab:focus-visible,.calendar-day:focus-visible{outline:3px solid var(--brand); outline-offset:2px}
+.month-tabs{display:grid; grid-template-columns:repeat(5,1fr); gap:8px; margin:14px 0}
+.month-tab{min-height:44px; padding:8px 10px; border:1.5px solid var(--line); border-radius:14px; background:var(--surface-1); color:var(--text-secondary); font-family:var(--display); font-size:13px; font-weight:800; cursor:pointer; touch-action:manipulation; transition:background .18s ease,border-color .18s ease,color .18s ease}
+.month-tab:hover{background:var(--brand-soft)}
+.month-tab[aria-selected="true"]{background:var(--brand); border-color:var(--brand); color:#fff}
+.calendar-legend{display:flex; flex-wrap:wrap; gap:7px 12px; margin:0 0 12px; color:var(--text-secondary); font-size:11px; font-weight:700}
+.calendar-legend span{display:inline-flex; align-items:center; gap:6px}
+.calendar-legend i{width:10px; height:10px; border-radius:3px; background:var(--event-line); box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--event-line) 70%,#000)}
+.course-phil{--event-bg:var(--lav-1); --event-line:var(--lav-3)}
+.course-ai{--event-bg:var(--sky-1); --event-line:var(--sky-3)}
+.course-sport{--event-bg:var(--mint-1); --event-line:var(--mint-3)}
+.course-calc{--event-bg:var(--peach-1); --event-line:var(--peach-3)}
+.course-algebra{--event-bg:var(--butter-1); --event-line:var(--butter-3)}
+.calendar-weekdays,.calendar-week{display:grid; grid-template-columns:repeat(7,minmax(0,1fr))}
+.calendar-weekdays{border-bottom:1px solid var(--line); background:var(--surface-2)}
+.calendar-weekdays div{padding:8px 4px; text-align:center; color:var(--text-secondary); font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.05em}
+.calendar-days{display:grid; gap:1px; background:var(--line)}
+.calendar-week{gap:1px}
+.calendar-blank{min-height:126px; background:color-mix(in srgb,var(--surface-2) 76%,transparent)}
+.calendar-day{position:relative; min-width:0; min-height:126px; padding:7px; border:0; background:var(--surface-1); color:var(--text-primary); text-align:left; font:inherit; cursor:pointer; touch-action:manipulation; transition:background .18s ease,box-shadow .18s ease}
+.calendar-day:hover{background:var(--brand-soft)}
+.calendar-day[aria-selected="true"]{z-index:1; box-shadow:inset 0 0 0 3px var(--brand)}
+.calendar-day.is-today .date-number{background:var(--accent); color:#fff}
+.calendar-day.is-defense{background:var(--butter-1)}
+.date-number{display:grid; place-items:center; width:27px; height:27px; border-radius:9px; font-family:var(--display); font-size:13px; font-weight:800; font-variant-numeric:tabular-nums}
+.calendar-events{display:grid; gap:4px; margin-top:4px}
+.cal-event{overflow:hidden; padding:4px 5px; border-left:3px solid var(--event-line); border-radius:6px; background:var(--event-bg); color:var(--text-primary); font-size:9.5px; line-height:1.25; font-weight:800; white-space:nowrap; text-overflow:ellipsis}
+.cal-event .cal-time{margin-right:3px; font-variant-numeric:tabular-nums}
+.mobile-count{display:none}
+.defense-mark{display:block; margin-top:6px; padding:4px 5px; border:1px dashed var(--butter-3); border-radius:7px; color:var(--butter-3); font-size:9px; line-height:1.25; font-weight:800}
+.calendar-notice{margin:12px 14px 0; padding:12px 14px; border:1.5px solid var(--butter-2); border-radius:14px; background:var(--butter-1); color:var(--text-secondary); font-size:12.5px; line-height:1.55; font-weight:700}
+.calendar-detail{min-height:150px; margin-top:16px; padding:18px; border:2px solid var(--line); border-radius:20px; background:var(--surface-1); box-shadow:var(--shadow)}
+.detail-heading{display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:6px 14px; margin-bottom:12px}
+.detail-heading h3{margin:0; font-size:20px}
+.detail-heading span{color:var(--text-muted); font-size:12px; font-weight:800}
+.agenda-list{display:grid; gap:9px}
+.agenda-item{display:grid; grid-template-columns:118px 1fr; gap:14px; padding:12px 14px; border-left:5px solid var(--event-line); border-radius:14px; background:var(--event-bg)}
+.agenda-time{font-family:var(--display); font-size:14px; line-height:1.35; font-weight:800; font-variant-numeric:tabular-nums}
+.agenda-time small{display:block; margin-top:2px; color:var(--text-secondary); font-family:var(--body); font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.05em}
+.agenda-title{font-family:var(--display); font-size:15px; line-height:1.3; font-weight:800}
+.agenda-place{margin-top:3px; color:var(--text-secondary); font-size:12px; font-weight:700}
+.calendar-empty{display:grid; place-items:center; min-height:105px; padding:20px; border:1px dashed var(--line-strong); border-radius:14px; color:var(--text-muted); text-align:center; font-size:13px; font-weight:700}
 .kv{
   display:grid; grid-template-columns:repeat(auto-fit,minmax(min(136px,100%),1fr)); gap:2px; margin-top:14px;
   background:var(--line); border:2.5px solid var(--line); border-radius:16px; overflow:hidden
@@ -590,6 +613,8 @@ footer a{color:var(--brand)}
 /* ---------- màn hình nhỏ ---------- */
 @media (max-width:900px){
   .brandmark{font-size:0; gap:0}
+  .calendar-blank,.calendar-day{min-height:104px}
+  .cal-event{font-size:8.5px}
 }
 @media (max-width:640px){
   body{font-size:16px}
@@ -609,11 +634,32 @@ footer a{color:var(--brand)}
   .deco.ml,.deco.mr{display:none}
   .hero .deco.tl{right:16px; top:16px}
   .hero .deco.mr{display:none}
-  .sday{grid-template-columns:1fr}
-  .sday-when{flex-direction:row; align-items:baseline; gap:10px; padding:12px 17px;
-    border-right:none; border-bottom:2.5px dashed var(--day-2,var(--sky-2))}
-  .sday-when .dnum{font-size:22px}
-  .slot{grid-template-columns:1fr; gap:4px; padding:14px 17px}
+  .schedule-summary{margin:14px 0}
+  .calendar-shell{border-radius:18px}
+  .calendar-toolbar{grid-template-columns:44px 1fr 44px; gap:7px; padding:10px}
+  .calendar-nav{width:44px; height:44px; border-radius:13px}
+  .calendar-title h3{font-size:18px}
+  .calendar-title p{font-size:10px}
+  .month-tabs{gap:5px; margin:10px 0}
+  .month-tab{min-height:44px; padding:7px 3px; font-size:12px}
+  .month-long{display:none}
+  .calendar-legend{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:5px 10px; font-size:10px}
+  .calendar-weekdays div{padding:6px 2px; font-size:9.5px}
+  .calendar-blank,.calendar-day{min-height:66px}
+  .calendar-day{padding:4px}
+  .date-number{width:24px; height:24px; border-radius:8px; font-size:12px}
+  .calendar-events{gap:3px; margin-top:3px}
+  .cal-event{height:5px; padding:0; border:0; border-radius:999px; background:var(--event-line); font-size:0}
+  .mobile-count{position:absolute; top:7px; right:6px; display:block; color:var(--text-secondary); font-size:9px; font-weight:800}
+  .defense-mark{margin-top:3px; padding:2px; text-align:center; font-size:8px}
+  .calendar-notice{margin:9px 9px 0; padding:10px 11px; font-size:11.5px}
+  .calendar-detail{min-height:132px; margin-top:12px; padding:14px; border-radius:17px}
+  .detail-heading{margin-bottom:9px}
+  .detail-heading h3{font-size:18px}
+  .agenda-item{grid-template-columns:92px 1fr; gap:10px; padding:10px 11px}
+  .agenda-time{font-size:12.5px}
+  .agenda-title{font-size:14px}
+  .agenda-place{font-size:11.5px}
   .cd-unit{min-width:66px}
   footer{border-radius:26px}
   footer::before{left:26px; right:26px}
@@ -635,7 +681,6 @@ footer a{color:var(--brand)}
 }
 
 /* ---------- nét chữ viết tay cho các ghi chú ngắn ---------- */
-.slot-note{font-family:var(--hand); font-size:15.2px; line-height:1.5}
 .cd-note{font-family:var(--hand); font-size:15.4px; line-height:1.5}
 
 /* Kiểm tra tương phản (nền giấy #fffdf9):
@@ -650,7 +695,7 @@ footer a{color:var(--brand)}
   <div class="wrap">
     <div class="brandmark"><span class="dot"></span> Lộ trình của Thùy Dương</div>
     <nav class="navlinks">
-      <a href="#lich">Lịch tuần này</a>
+      <a href="#lich">Lịch học kỳ 1</a>
       <a href="#gap">Việc gấp</a>
       <a href="#hoidap">Hỏi đáp</a>
       <a href="#nganh">Ngành</a>
@@ -703,13 +748,13 @@ footer a{color:var(--brand)}
   </div>
 </header>
 
-<!-- ============ LỊCH SINH HOẠT CÔNG DÂN ============ -->
+<!-- ============ THỜI KHÓA BIỂU HỌC KỲ 1 ============ -->
 <section id="lich" data-sticker="🗓️">
   <span class="deco bl" style="--d:.2s" aria-hidden="true">🌸</span>
   <div class="wrap">
-    <div class="sec-eyebrow">Lịch riêng của Dương — Nhóm 5, lớp KT1</div>
-    <h2>Ba ngày phải có mặt</h2>
-    <p class="lede">Dương đã có mã sinh viên <b>261800139</b> và được xếp vào <b>lớp KT1</b> — nằm trong <b>Nhóm 5</b> (KT1 → KT7) của lịch Sinh hoạt Công dân – Sinh viên K67. Cộng thêm <b>ca thi phân loại tiếng Anh</b> đã có phòng và giờ cụ thể, có ba ngày bắt buộc phải đi. Nặng nhất là <b>25/8</b>: chiều thi ở trường (đã thi xong — <b>5.0/10, đạt trình độ A1</b>), tối học chuyên đề trực tuyến.</p>
+    <div class="sec-eyebrow">Lịch chính thức của Dương — lớp KT1 · học kỳ 1 năm 2026–2027</div>
+    <h2>Toàn bộ thời khóa biểu</h2>
+    <p class="lede">Lịch dưới đây được đối chiếu trực tiếp trên cổng quản lý đào tạo UTC ngày <b>05/09/2026</b>, gồm mọi buổi đã có ngày, giờ và phòng từ <b>09/09/2026 đến 05/01/2027</b>. Giờ hiển thị theo <b>Giờ Việt Nam (GMT+7)</b>.</p>
 
     <div class="urgent">
       <div class="u-top">
@@ -722,145 +767,61 @@ footer a{color:var(--brand)}
         <div class="cd-unit"><div class="n" id="nx-m">–</div><div class="u">Phút</div></div>
         <div class="cd-unit"><div class="n" id="nx-s">–</div><div class="u">Giây</div></div>
       </div>
-      <div class="cd-note" id="nx-note">Đồng hồ tự nhảy sang buổi kế tiếp trong lịch bên dưới.</div>
+      <div class="cd-note" id="nx-note">Đồng hồ tự chuyển sang buổi học kế tiếp có giờ cụ thể. Trước khi đi, nên kiểm tra lại cổng UTC vì phòng học có thể đổi.</div>
     </div>
 
-    <div class="sched">
-
-      <article class="sday">
-        <div class="sday-when">
-          <div class="dow">Thứ 3</div>
-          <div class="dnum">25/8</div>
-          <div class="dsub">2026</div>
-        </div>
-        <div class="sday-body">
-          <div class="slot hi">
-            <div class="slot-time">13h00<small>Chiều · Ca 3</small></div>
-            <div>
-              <div class="slot-title">Kiểm tra phân loại trình độ tiếng Anh<span class="badge b-accent">Thi</span></div>
-              <div class="slot-where">Phòng <b>P.506-A4</b> · số thứ tự <b>1118</b> trong danh sách dự thi</div>
-              <div class="slot-note">Có mặt trước <b>12h30</b>. Mang CCCD hoặc giấy tờ tùy thân có ảnh, bút bi, bút chì 2B và tẩy. Đây là bài xếp bậc A1 → B1, không phải bài đánh trượt.</div>
-            </div>
-          </div>
-          <div class="slot">
-            <div class="slot-time">18h30 – 21h20<small>Tối</small></div>
-            <div>
-              <div class="slot-title">Chuyên đề 5<span class="badge">CĐ5</span><span class="badge b-brand">Nhóm 2</span></div>
-              <div class="slot-where"><b>Microsoft Teams</b> — Nhóm 2 (KT1 → KT7), giảng viên <b>Nguyễn Thế Tấn</b><br>
-                <a class="joinlink" href="https://teams.microsoft.com/meet/42593276849536?p=T5m1FeGqV2WRdp3PrD" target="_blank" rel="noopener">▶ Vào phòng học Nhóm 2</a></div>
-              <div class="slot-note">Buổi online chia nhóm <b>khác với lịch tổng</b>: KT1 nằm ở Nhóm 5 của lịch chung, nhưng tối 25/8 phải vào <b>link của Nhóm 2</b>. Vào sớm 15 phút, đăng nhập bằng tài khoản trường, đặt tên hiển thị “Họ tên – Mã SV – KT1” để được điểm danh.</div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <article class="sday">
-        <div class="sday-when">
-          <div class="dow">Thứ 4</div>
-          <div class="dnum">26/8</div>
-          <div class="dsub">2026</div>
-        </div>
-        <div class="sday-body">
-          <div class="slot">
-            <div class="slot-time">7h30 – 11h20<small>Sáng</small></div>
-            <div>
-              <div class="slot-title">Chuyên đề 1 → 4<span class="badge">CĐ1–4</span></div>
-              <div class="slot-where"><b>Hội trường lớn</b></div>
-              <div class="slot-note">Bốn chuyên đề dồn trong một buổi sáng — mang vở ghi, nhiều khóa phải làm bài thu hoạch sau đợt sinh hoạt công dân.</div>
-            </div>
-          </div>
-          <div class="slot">
-            <div class="slot-time">13h30 – 14h30<small>Chiều</small></div>
-            <div>
-              <div class="slot-title">Hướng dẫn khai thác tài liệu và dịch vụ thư viện<span class="badge b-brand">Khung giờ của KT1</span></div>
-              <div class="slot-where"><b>Tầng 6, nhà A8</b> — Trung tâm Thông tin – Thư viện</div>
-              <div class="slot-note">Khung 13h30–14h30 là của riêng KT1 và KT2. KT3, KT4 đi lúc 14h40–15h40; KT5, KT6, KT7 lúc 15h50–16h50 — đi đúng giờ của lớp mình, đừng đi theo bạn khác lớp.</div>
-            </div>
-          </div>
-          <div class="slot">
-            <div class="slot-time">Trong ngày<small>26/8</small></div>
-            <div>
-              <div class="slot-title">Nộp hồ sơ nhập học<span class="badge b-accent">Hồ sơ giấy</span></div>
-              <div class="slot-where"><b>Hội trường lớn</b></div>
-              <div class="slot-note">Đây chính là buổi nộp bộ hồ sơ giấy đã chuẩn bị ở nhà — danh mục đầy đủ ở mục <a href="#gap">Việc gấp</a>. Thiếu giấy nào là phải quay lại bổ sung, rất mất công.</div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <article class="sday">
-        <div class="sday-when">
-          <div class="dow">Thứ 5</div>
-          <div class="dnum">3/9</div>
-          <div class="dsub">2026</div>
-        </div>
-        <div class="sday-body">
-          <div class="slot">
-            <div class="slot-time">8h00 – 10h00<small>Sáng</small></div>
-            <div>
-              <div class="slot-title">Sinh hoạt chung với Khoa<span class="badge b-brand">Khoa Vận tải – Kinh tế</span></div>
-              <div class="slot-where"><b>Hội trường lớn</b></div>
-              <div class="slot-note">Buổi gặp khoa: cố vấn học tập, chương trình đào tạo, cách đăng ký tín chỉ. Nếu còn phân vân giữa <b>Kinh tế và quản lý đầu tư</b> và <b>Kinh tế bưu chính viễn thông</b> thì đây là chỗ hỏi thẳng.</div>
-            </div>
-          </div>
-        </div>
-      </article>
-
+    <div class="schedule-summary" aria-label="Tóm tắt lịch học">
+      <span><b>5 tháng</b> · 09/2026–01/2027</span>
+      <span><b><span id="schedule-event-count">68</span> buổi</b> có giờ cụ thể</span>
+      <span><b>Chạm vào ngày</b> để xem đầy đủ môn và phòng</span>
     </div>
 
-    <div class="cols2" style="margin-top:18px">
-      <div class="card">
-        <div class="tag" style="color:var(--accent)">Phiếu báo thi</div>
-        <h3>Ca thi tiếng Anh của Dương</h3>
-        <div class="kv">
-          <div><span class="k">Mã sinh viên</span><span class="v">261800139</span></div>
-          <div><span class="k">Lớp</span><span class="v">KT1</span></div>
-          <div><span class="k">Ngày thi</span><span class="v">25/08/2026</span></div>
-          <div><span class="k">Ca thi</span><span class="v">Ca 3</span></div>
-          <div><span class="k">Giờ thi</span><span class="v">13h00</span></div>
-          <div><span class="k">Phòng thi</span><span class="v">P.506-A4</span></div>
-          <div><span class="k">Kết quả</span><span class="v">5.0/10</span></div>
-          <div><span class="k">Xếp bậc</span><span class="v">Đạt A1 → học A2</span></div>
-        </div>
-        <ul>
-          <li><b>Đã thi xong chiều 25/8</b> — điểm 5.0/10, đạt trình độ A1, được bỏ qua học phần tăng cường A1. Bước tiếp theo xem mục <a href="#tienganh">Tiếng Anh đầu vào</a>.</li>
-          <li>Thắc mắc về điểm hay bậc xếp lớp thì liên hệ bộ phận Khảo thí theo thông tin ghi trên trang tra cứu.</li>
-          <li>Chụp màn hình kết quả tra cứu lưu vào máy, phòng khi trang tra cứu thay đổi hoặc lỗi.</li>
-        </ul>
+    <div class="month-tabs" role="tablist" aria-label="Chọn tháng trong học kỳ">
+      <button class="month-tab" id="month-tab-0" type="button" role="tab" data-calendar-month="0" aria-controls="calendar-panel" aria-selected="true" aria-label="Tháng 9 năm 2026"><span class="month-long">Tháng </span>9</button>
+      <button class="month-tab" id="month-tab-1" type="button" role="tab" data-calendar-month="1" aria-controls="calendar-panel" aria-selected="false" aria-label="Tháng 10 năm 2026"><span class="month-long">Tháng </span>10</button>
+      <button class="month-tab" id="month-tab-2" type="button" role="tab" data-calendar-month="2" aria-controls="calendar-panel" aria-selected="false" aria-label="Tháng 11 năm 2026"><span class="month-long">Tháng </span>11</button>
+      <button class="month-tab" id="month-tab-3" type="button" role="tab" data-calendar-month="3" aria-controls="calendar-panel" aria-selected="false" aria-label="Tháng 12 năm 2026"><span class="month-long">Tháng </span>12</button>
+      <button class="month-tab" id="month-tab-4" type="button" role="tab" data-calendar-month="4" aria-controls="calendar-panel" aria-selected="false" aria-label="Tháng 1 năm 2027"><span class="month-long">Tháng </span>1/27</button>
+    </div>
+
+    <div class="calendar-legend" aria-label="Màu của các học phần">
+      <span class="course-phil"><i aria-hidden="true"></i>Triết học</span>
+      <span class="course-ai"><i aria-hidden="true"></i>Công nghệ số &amp; AI</span>
+      <span class="course-sport"><i aria-hidden="true"></i>GDTC</span>
+      <span class="course-calc"><i aria-hidden="true"></i>Giải tích</span>
+      <span class="course-algebra"><i aria-hidden="true"></i>Đại số tuyến tính</span>
+    </div>
+
+    <div class="calendar-shell" id="calendar-panel" role="tabpanel" aria-labelledby="month-tab-0">
+      <div class="calendar-toolbar">
+        <button class="calendar-nav" id="calendar-prev" type="button" aria-label="Xem tháng trước">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+        </button>
+        <div class="calendar-title"><h3 id="calendar-title">Tháng 9 · 2026</h3><p id="calendar-range">Học kỳ 1 · Giờ Việt Nam (GMT+7)</p></div>
+        <button class="calendar-nav" id="calendar-next" type="button" aria-label="Xem tháng sau">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
       </div>
-      <div class="card">
-        <div class="tag" style="color:var(--brand)">Vào phòng học online</div>
-        <h3>Link Teams cho CĐ5 tối 25/8</h3>
-        <ul>
-          <li><b>Nhóm của Dương là Nhóm 2</b> — gồm KT1 đến KT7, giảng viên Nguyễn Thế Tấn. Đừng vào nhầm link Nhóm 1 (các lớp CK) hay Nhóm 3 (các lớp QT).</li>
-          <li><b>Link phòng Nhóm 2:</b> <a href="https://teams.microsoft.com/meet/42593276849536?p=T5m1FeGqV2WRdp3PrD" target="_blank" rel="noopener">teams.microsoft.com/meet/42593276849536?p=T5m1FeGqV2WRdp3PrD</a></li>
-          <li><b>Tối 24/8 không phải lịch của KT1</b> — hôm đó là các lớp CT, MT1-A, XD, QL, ĐT. Đừng vào nhầm rồi tưởng đã học xong.</li>
-          <li>Cài sẵn <b>Microsoft Teams</b> và đăng nhập thử trước một hôm; vào bằng trình duyệt cũng được nhưng dễ trục trặc micro và tên hiển thị.</li>
-        </ul>
+      <div class="calendar-notice" id="calendar-notice" hidden><b>02–29/11:</b> Đợt Giáo dục quốc phòng – an ninh có 8 lớp thành phần nhưng cổng UTC chưa công bố ngày, giờ và địa điểm từng buổi.</div>
+      <div class="calendar-weekdays" role="row">
+        <div role="columnheader" aria-label="Thứ Hai">T2</div><div role="columnheader" aria-label="Thứ Ba">T3</div><div role="columnheader" aria-label="Thứ Tư">T4</div><div role="columnheader" aria-label="Thứ Năm">T5</div><div role="columnheader" aria-label="Thứ Sáu">T6</div><div role="columnheader" aria-label="Thứ Bảy">T7</div><div role="columnheader" aria-label="Chủ nhật">CN</div>
       </div>
-      <div class="card">
-        <h3>Đi lại hai ngày liền, tính từ Tam Sơn</h3>
-        <ul>
-          <li><b>Chiều 25/8 — thi 13h00:</b> chặng 54 → 34 mất 1h45–2h15, nên <b>rời nhà khoảng 10h00</b> thì 12h30 đã ngồi trước cửa phòng thi. Xem đường đi chi tiết ở mục <a href="#dilai">Đường đi học</a>.</li>
-          <li><b>Sáng 26/8 — 7h30 tại Hội trường lớn:</b> chuyến 54 sớm nhất chỉ chạy từ khoảng 5h00, tới cổng trường cũng gần 7h00 — không còn chỗ cho tắc đường hay lỡ xe.</li>
-          <li><b>Tối 25/8 — CĐ5:</b> học online nên không phải di chuyển, chỉ cần máy và mạng.</li>
-          <li>Nhà <b>A4</b> (phòng thi) và nhà <b>A8</b> (thư viện) đều nằm trong khuôn viên số 3 Cầu Giấy. Đến sớm hỏi bảo vệ hoặc sinh viên tình nguyện, đừng dò theo trí nhớ lúc sát giờ.</li>
-        </ul>
-      </div>
+      <div class="calendar-days" id="calendar-days" role="grid" aria-labelledby="calendar-title"></div>
+      <noscript><div class="calendar-notice">Cần bật JavaScript để hiển thị lịch theo tháng.</div></noscript>
     </div>
 
-    <div class="callout">
-      <h3>Ngày 25 và 26/8 nên đi liền một mạch</h3>
-      Thi xong chiều 25/8 mà về Tam Sơn thì tới nhà đã gần 17h, 18h30 lại phải ngồi vào máy học CĐ5 tới 21h20, rồi khoảng 4h30 sáng hôm sau đã phải dậy đi cho kịp 7h30. Hai ngày đó gần như không còn thời gian ngủ. <b>Ở lại Hà Nội đêm 25/8</b> — ký túc xá, phòng trọ đã thuê hoặc nhà người quen — là cách gọn nhất: tối học online ngay tại chỗ, sáng hôm sau đi một chặng ngắn là tới Hội trường lớn.
-      <ul>
-        <li>Chưa chốt được chỗ ở thì tranh thủ hỏi phòng ký túc xá ngay hôm 25/8 khi đã ở trong trường.</li>
-        <li>Mang sẵn <b>bộ hồ sơ giấy</b> theo từ hôm 25/8 để hôm sau nộp luôn tại Hội trường lớn, khỏi phải mang đi mang lại.</li>
-      </ul>
+    <div class="calendar-detail" id="calendar-detail" aria-live="polite" aria-atomic="true">
+      <div class="calendar-empty">Đang chuẩn bị lịch học…</div>
     </div>
 
-    <p style="margin-top:18px; font-size:13.5px; color:var(--text-muted)">
-      Lịch lấy từ thông báo <b>“Lịch sinh hoạt Công dân – Sinh viên K67 — Nhóm 5 (KT1 · KT2 · KT3 · KT4 · KT5 · KT6 · KT7)”</b> của Trường ĐH Giao thông Vận tải, từ thông báo lịch học trực tuyến Chuyên đề 5 qua Microsoft Teams, và từ kết quả tra cứu ca thi phân loại tiếng Anh của Phòng Khảo thí (tra cứu ngày 23/8/2026). Nhà trường có thể đổi giờ hoặc đổi phòng — trước mỗi buổi vẫn nên xem lại thông báo của lớp và của trường.
-    </p>
+    <details class="schedule-details">
+      <summary>Thông tin đợt Giáo dục quốc phòng – an ninh</summary>
+      <div class="module-list" aria-label="Các lớp Giáo dục quốc phòng – an ninh">
+        <span>GDQP–AN 1 · N33</span><span>GDQP–AN 1 · BT1</span><span>GDQP–AN 2 · N33</span><span>GDQP–AN 2 · BT1</span><span>GDQP–AN 3 · N33</span><span>GDQP–AN 3 · TH1</span><span>GDQP–AN 4 · N33</span><span>GDQP–AN 4 · TH1</span>
+      </div>
+    </details>
+
+    <p style="margin-top:18px; font-size:13.5px; color:var(--text-muted)">Nguồn: mục <b>Tra cứu lịch → Lịch học</b> trong tài khoản của Nguyễn Ngọc Thùy Dương trên cổng quản lý đào tạo UTC, đối chiếu từng tuần từ tháng 9/2026 đến tháng 1/2027 vào ngày 05/09/2026. Đây là ảnh chụp dữ liệu tại thời điểm tra cứu; thông báo mới nhất của nhà trường và cổng UTC vẫn là căn cứ cuối cùng.</p>
   </div>
 </section>
 
@@ -1692,6 +1653,7 @@ footer a{color:var(--brand)}
       <li>Cổng khai hồ sơ nhập học của trường — <a href="https://nhaphoc.utc.edu.vn/">nhaphoc.utc.edu.vn</a> · tra cứu kết quả xét tuyển — <a href="https://xettuyen.utc.edu.vn/tra-cuu">xettuyen.utc.edu.vn/tra-cuu</a></li>
       <li>Đề án đào tạo đạt chuẩn ngoại ngữ, hướng dẫn chọn ngoại ngữ và thi đánh giá trình độ — <a href="https://tuyensinh.utc.edu.vn/?q=tin-tuyen-sinh/m%E1%BB%99t-s%E1%BB%91-l%C6%B0u-%C3%BD-v%E1%BB%81-%C4%91%E1%BB%81-%C3%A1n-%C4%91%C3%A0o-t%E1%BA%A1o-%C4%91%E1%BA%A1t-chu%E1%BA%A9n-ngo%E1%BA%A1i-ng%E1%BB%AF-v%C3%A0-h%C6%B0%E1%BB%9Bng-d%E1%BA%ABn-%C4%91%C4%83ng-k%C3%BD-ch%E1%BB%8Dn-ngo%E1%BA%A1i-ng%E1%BB%AF">tuyensinh.utc.edu.vn</a> · quy định chuẩn đầu ra ngoại ngữ — <a href="https://hotrosinhvien.utc.edu.vn/tin-tuc/h%C6%B0%E1%BB%9Bng-d%E1%BA%ABn/qui-%C4%91%E1%BB%8Bnh-v%E1%BB%81-chu%E1%BA%A9n-%C4%91%E1%BA%A7u-ra-ngo%E1%BA%A1i-ng%E1%BB%AF">hotrosinhvien.utc.edu.vn</a></li>
       <li>Kết quả các kỳ thi phân loại tiếng Anh đầu vào khóa K63, K65, K66 — <a href="https://tuyensinh.utc.edu.vn/?q=tin-tuyen-sinh/k%E1%BA%BFt-qu%E1%BA%A3-k%E1%BB%B3-thi-ph%C3%A2n-lo%E1%BA%A1i-ti%E1%BA%BFng-anh-%C4%91%E1%BA%A7u-v%C3%A0o-k65">cổng tuyển sinh UTC</a> · đề mẫu tham chiếu — <a href="https://www.cambridgeenglish.org/exams-and-tests/">Cambridge English</a>, <a href="https://vstep.edu.vn/">VSTEP</a></li>
+      <li>Thời khóa biểu học kỳ 1 năm học 2026–2027 — mục <b>Tra cứu lịch → Lịch học</b> trong tài khoản sinh viên Nguyễn Ngọc Thùy Dương trên cổng quản lý đào tạo UTC; đối chiếu từng tuần từ 09/09/2026 đến 05/01/2027 vào ngày 05/09/2026</li>
       <li>Bài giải đáp thắc mắc nhập học của Trường ĐH GTVT dành cho K67 — nguồn của phần “Sáu câu tân sinh viên hỏi nhiều nhất” (sơ yếu lý lịch, thi khảo sát tiếng Anh, BHYT, giấy báo nhập học, đơn nhập học, bảo hiểm thân thể)</li>
       <li>Lịch sinh hoạt Công dân – Sinh viên K67, <b>Nhóm 5 (KT1 → KT7)</b> — thông báo của Trường ĐH Giao thông Vận tải: 25/8 CĐ5 trực tuyến 18h30–21h20; 26/8 CĐ1–4 tại Hội trường lớn 7h30–11h20, hướng dẫn thư viện tầng 6 nhà A8 (KT1, KT2: 13h30–14h30) và nộp hồ sơ nhập học tại Hội trường lớn; 3/9 sinh hoạt chung với Khoa 8h00–10h00</li>
       <li>Thông báo lịch Sinh hoạt Công dân – Sinh viên K67 <b>Chuyên đề 5</b> học trực tuyến qua Microsoft Teams, 18h30–21h20: Thứ Hai 24/8 (Nhóm 1 các lớp CT · Nhóm 2 CT7, MT1-A, XD, QL · Nhóm 3 các lớp ĐT), <b>Thứ Ba 25/8 (Nhóm 1 các lớp CK và MT1-B · Nhóm 2 KT1 → KT7, GV Nguyễn Thế Tấn · Nhóm 3 các lớp QT1–QT6)</b>, Thứ Tư 26/8 (QT7, QT8, TT1–TT3, CB1-A, CB1-B) — thông báo của Trường ĐH Giao thông Vận tải</li>
@@ -1704,7 +1666,7 @@ footer a{color:var(--brand)}
       <li>Giá vé tháng xe buýt Hà Nội cho học sinh – sinh viên — <a href="http://vethangxebuytonline.com.vn/RegTicket/Help.aspx">vethangxebuytonline.com.vn</a></li>
     </ul>
     <div class="disclaimer">
-      Trang này được tổng hợp ngày 10/8/2026, cập nhật ngày 11/8/2026 theo tin nhắn chính thức của nhà trường, cập nhật ngày 23/8/2026 để bổ sung lịch sinh hoạt công dân của Nhóm 5 – lớp KT1 cùng ca thi phân loại tiếng Anh, và cập nhật ngày 25/8/2026 để ghi nhận kết quả thi phân loại (5.0/10 — đạt trình độ A1, học tiếp từ A2), để phục vụ riêng trường hợp của Nguyễn Ngọc Thùy Dương. Điểm chuẩn, chỉ tiêu, học phí và danh mục hồ sơ có thể thay đổi — <b>luôn lấy thông báo chính thức của Trường Đại học Giao thông Vận tải và của Bộ GD&amp;ĐT làm căn cứ cuối cùng</b>. Các con số về thu nhập là ước tính thị trường mang tính tham khảo, không phải cam kết. Lộ trình học tập là gợi ý, không thay thế tư vấn của cố vấn học tập tại trường.
+      Trang này được tổng hợp ngày 10/8/2026, cập nhật ngày 11/8/2026 theo tin nhắn chính thức của nhà trường, ngày 23–25/8/2026 để bổ sung lịch sinh hoạt công dân và kết quả thi phân loại tiếng Anh, và ngày 05/09/2026 để bổ sung toàn bộ thời khóa biểu học kỳ 1 đang có trên cổng UTC, phục vụ riêng trường hợp của Nguyễn Ngọc Thùy Dương. Điểm chuẩn, chỉ tiêu, học phí, lịch học và danh mục hồ sơ có thể thay đổi — <b>luôn lấy thông báo chính thức của Trường Đại học Giao thông Vận tải và của Bộ GD&amp;ĐT làm căn cứ cuối cùng</b>. Các con số về thu nhập là ước tính thị trường mang tính tham khảo, không phải cam kết. Lộ trình học tập là gợi ý, không thay thế tư vấn của cố vấn học tập tại trường.
     </div>
   </div>
 </footer>
@@ -1734,17 +1696,240 @@ footer a{color:var(--brand)}
     if(s < 86400*3){ note.textContent = 'Còn rất ít thời gian — nên xác nhận ngay hôm nay. ' + baseNote; }
   }
   tick();
-  var timer = setInterval(tick, 1000);
+  var timer = target > Date.now() ? setInterval(tick, 1000) : null;
 
-  // ----- countdown to the next K67 activity (Nhóm 5 — lớp KT1) -----
-  var events = [
-    {t:'2026-08-25T13:00:00+07:00', name:'Thi phân loại tiếng Anh — ca 3',  when:'13h00 · Thứ Ba 25/8 · P.506-A4'},
-    {t:'2026-08-25T18:30:00+07:00', name:'Chuyên đề 5 — Teams, Nhóm 2',     when:'18h30–21h20 · Thứ Ba 25/8 · Microsoft Teams'},
-    {t:'2026-08-26T07:30:00+07:00', name:'Chuyên đề 1 → 4',                 when:'7h30–11h20 · Thứ Tư 26/8 · Hội trường lớn'},
-    {t:'2026-08-26T13:30:00+07:00', name:'Hướng dẫn thư viện — KT1, KT2',   when:'13h30–14h30 · Thứ Tư 26/8 · Tầng 6 nhà A8'},
-    {t:'2026-09-03T08:00:00+07:00', name:'Sinh hoạt chung với Khoa',        when:'8h00–10h00 · Thứ Năm 3/9 · Hội trường lớn'}
-  ];
+  // ----- countdown to the next class in Dương's official semester timetable -----
+  var events = [];
+  function addClasses(dates, start, end, name, place){
+    dates.forEach(function(date){
+      var parts = date.split('-');
+      events.push({
+        date: date,
+        start: start,
+        end: end,
+        t: date + 'T' + start + ':00+07:00',
+        name: name,
+        place: place,
+        when: start.replace(':','h') + '–' + end.replace(':','h') + ' · ' +
+          parts[2] + '/' + parts[1] + '/' + parts[0] + ' · ' + place
+      });
+    });
+  }
+  addClasses(['2026-09-09','2026-09-16','2026-09-23','2026-09-30','2026-10-07','2026-10-14','2026-10-21','2026-10-28'], '13:00','15:25','Giáo dục thể chất F1','Ngoài trời 65');
+  addClasses(['2026-09-09','2026-09-16','2026-09-23','2026-09-30','2026-10-07','2026-10-14'], '15:35','18:00','Triết học Mác–Lênin','Phòng trực tuyến');
+  addClasses(['2026-10-21'], '15:35','18:00','Triết học Mác–Lênin','202-A5');
+  addClasses(['2026-10-28'], '15:35','18:00','Triết học Mác–Lênin','303-A2');
+  addClasses(['2026-09-10','2026-09-17','2026-09-24','2026-10-01'], '07:00','09:25','Công nghệ số và ứng dụng trí tuệ nhân tạo','Phòng trực tuyến');
+  addClasses(['2026-10-08','2026-10-15','2026-10-22','2026-10-29'], '07:00','09:25','Công nghệ số và ứng dụng trí tuệ nhân tạo','303-A2');
+  addClasses(['2026-09-25','2026-10-02','2026-10-09','2026-10-16','2026-10-23','2026-10-30'], '13:00','15:25','Giải tích','303-A2');
+  addClasses(['2026-09-25','2026-10-02','2026-10-09','2026-10-16','2026-10-23','2026-10-30'], '15:35','18:00','Đại số tuyến tính','303-A2');
+  addClasses(['2026-09-29','2026-10-06','2026-10-13','2026-10-20','2026-10-27','2026-12-01','2026-12-08','2026-12-15','2026-12-22','2026-12-29','2027-01-05'], '07:00','09:25','Triết học Mác–Lênin · thảo luận','105-A5');
+  addClasses(['2026-10-20','2026-10-27','2026-12-01','2026-12-08','2026-12-15','2026-12-22'], '09:35','12:00','Công nghệ số và ứng dụng trí tuệ nhân tạo · bài tập','401-A9');
+  addClasses(['2026-12-02','2026-12-09','2026-12-16'], '09:35','12:00','Giáo dục thể chất F1','Ngoài trời 65');
+  addClasses(['2026-12-02','2026-12-09','2026-12-16'], '15:35','18:00','Triết học Mác–Lênin','303-A2');
+  addClasses(['2026-12-03','2026-12-10','2026-12-17'], '07:00','09:25','Công nghệ số và ứng dụng trí tuệ nhân tạo','103-A2');
+  addClasses(['2026-12-04','2026-12-11','2026-12-18'], '13:00','15:25','Giải tích · bài tập','303-A2');
+  addClasses(['2026-12-04','2026-12-11','2026-12-18'], '15:35','18:00','Đại số tuyến tính · bài tập','303-A2');
   events.forEach(function(e){ e.ts = new Date(e.t).getTime(); });
+  events.sort(function(a,b){ return a.ts - b.ts; });
+  document.getElementById('schedule-event-count').textContent = events.length;
+
+  // ----- interactive semester calendar -----
+  var semesterMonths = [
+    {year:2026, month:8}, {year:2026, month:9}, {year:2026, month:10},
+    {year:2026, month:11}, {year:2027, month:0}
+  ];
+  var monthTabs = Array.prototype.slice.call(document.querySelectorAll('[data-calendar-month]'));
+  var calendarPanel = document.getElementById('calendar-panel');
+  var calendarDays = document.getElementById('calendar-days');
+  var calendarTitle = document.getElementById('calendar-title');
+  var calendarNotice = document.getElementById('calendar-notice');
+  var calendarDetail = document.getElementById('calendar-detail');
+  var prevMonth = document.getElementById('calendar-prev');
+  var nextMonth = document.getElementById('calendar-next');
+  var eventMap = {};
+  var selectedMonth = 0;
+  var selectedDate = '';
+
+  events.forEach(function(event){
+    if(!eventMap[event.date]) eventMap[event.date] = [];
+    eventMap[event.date].push(event);
+  });
+
+  function dateKey(year, month, day){
+    return year + '-' + pad(month + 1) + '-' + pad(day);
+  }
+  function vnTodayKey(){
+    var pieces = new Intl.DateTimeFormat('en-GB', {
+      timeZone:'Asia/Ho_Chi_Minh', year:'numeric', month:'2-digit', day:'2-digit'
+    }).formatToParts(new Date());
+    var values = {};
+    pieces.forEach(function(piece){ if(piece.type !== 'literal') values[piece.type] = piece.value; });
+    return values.year + '-' + values.month + '-' + values.day;
+  }
+  function isDefenseDay(key){ return key >= '2026-11-02' && key <= '2026-11-29'; }
+  function courseClass(name){
+    if(name.indexOf('Triết') === 0) return 'course-phil';
+    if(name.indexOf('Công nghệ') === 0) return 'course-ai';
+    if(name.indexOf('Giáo dục thể chất') === 0) return 'course-sport';
+    if(name.indexOf('Giải tích') === 0) return 'course-calc';
+    return 'course-algebra';
+  }
+  function shortCourseName(name){
+    var practice = name.indexOf('bài tập') > -1 ? ' · BT' :
+      (name.indexOf('thảo luận') > -1 ? ' · TL' : '');
+    if(name.indexOf('Triết') === 0) return 'Triết' + practice;
+    if(name.indexOf('Công nghệ') === 0) return 'CNS & AI' + practice;
+    if(name.indexOf('Giáo dục thể chất') === 0) return 'GDTC F1';
+    if(name.indexOf('Giải tích') === 0) return 'Giải tích' + practice;
+    return 'Đại số' + practice;
+  }
+  function longDate(key){
+    var p = key.split('-');
+    var date = new Date(Date.UTC(Number(p[0]), Number(p[1]) - 1, Number(p[2])));
+    return new Intl.DateTimeFormat('vi-VN', {
+      timeZone:'UTC', weekday:'long', day:'numeric', month:'long', year:'numeric'
+    }).format(date);
+  }
+  function defaultDateForMonth(index){
+    var config = semesterMonths[index];
+    var prefix = config.year + '-' + pad(config.month + 1) + '-';
+    var today = vnTodayKey();
+    var dates = Object.keys(eventMap).filter(function(key){ return key.indexOf(prefix) === 0; }).sort();
+    var upcoming = dates.filter(function(key){ return key >= today; });
+    if(upcoming.length) return upcoming[0];
+    if(dates.length) return dates[0];
+    return index === 2 ? '2026-11-02' : dateKey(config.year, config.month, 1);
+  }
+  function renderDetail(key){
+    var dayEvents = eventMap[key] || [];
+    var defense = isDefenseDay(key);
+    var body = '';
+    if(dayEvents.length){
+      body = '<div class="agenda-list">' + dayEvents.map(function(event){
+        return '<article class="agenda-item ' + courseClass(event.name) + '">' +
+          '<div class="agenda-time">' + event.start.replace(':','h') + '–' + event.end.replace(':','h') +
+          '<small>Giờ Việt Nam</small></div>' +
+          '<div><div class="agenda-title">' + event.name + '</div>' +
+          '<div class="agenda-place">' + event.place + '</div></div></article>';
+      }).join('') + '</div>';
+    }else if(defense){
+      body = '<div class="calendar-empty"><div><b>Đợt Giáo dục quốc phòng – an ninh</b><br>' +
+        'Cổng UTC chưa công bố giờ và địa điểm của ngày này. Hãy kiểm tra lại trước khi đi học.</div></div>';
+    }else{
+      body = '<div class="calendar-empty">Không có buổi học nào đã được công bố trong ngày này.</div>';
+    }
+    calendarDetail.innerHTML = '<div class="detail-heading"><h3>' + longDate(key) + '</h3>' +
+      '<span>' + (dayEvents.length ? dayEvents.length + ' buổi học' : (defense ? 'Đang chờ lịch chi tiết' : 'Lịch trống')) + '</span></div>' + body;
+  }
+  function selectDate(key, focusCell){
+    selectedDate = key;
+    Array.prototype.forEach.call(calendarDays.querySelectorAll('.calendar-day'), function(button){
+      var active = button.getAttribute('data-date') === key;
+      button.setAttribute('aria-selected', active ? 'true' : 'false');
+      button.tabIndex = active ? 0 : -1;
+      if(active && focusCell) button.focus();
+    });
+    renderDetail(key);
+  }
+  function renderCalendar(index, focusTab){
+    selectedMonth = Math.max(0, Math.min(semesterMonths.length - 1, index));
+    var config = semesterMonths[selectedMonth];
+    var daysInMonth = new Date(config.year, config.month + 1, 0).getDate();
+    var mondayOffset = (new Date(config.year, config.month, 1).getDay() + 6) % 7;
+    var cells = [];
+    var today = vnTodayKey();
+    var day;
+    for(day = 0; day < mondayOffset; day++) cells.push('<div class="calendar-blank" role="gridcell" aria-hidden="true"></div>');
+    for(day = 1; day <= daysInMonth; day++){
+      var key = dateKey(config.year, config.month, day);
+      var dayEvents = eventMap[key] || [];
+      var defense = isDefenseDay(key);
+      var eventMarkup = dayEvents.map(function(event){
+        return '<span class="cal-event ' + courseClass(event.name) + '"><span class="cal-time">' +
+          event.start + '</span>' + shortCourseName(event.name) + '</span>';
+      }).join('');
+      var label = longDate(key) + (dayEvents.length ? ', ' + dayEvents.length + ' buổi học' : '') +
+        (defense ? ', trong đợt Giáo dục quốc phòng – an ninh' : '');
+      cells.push('<button class="calendar-day' + (key === today ? ' is-today' : '') +
+        (defense ? ' is-defense' : '') + '" type="button" role="gridcell" data-date="' + key +
+        '" aria-label="' + label + '" aria-selected="false" tabindex="-1">' +
+        '<span class="date-number">' + day + '</span>' +
+        (dayEvents.length ? '<span class="mobile-count">' + dayEvents.length + ' buổi</span>' : '') +
+        '<span class="calendar-events">' + eventMarkup + '</span>' +
+        (defense ? '<span class="defense-mark">GDQP–AN</span>' : '') + '</button>');
+    }
+    while(cells.length % 7) cells.push('<div class="calendar-blank" role="gridcell" aria-hidden="true"></div>');
+    var weeks = [];
+    for(var i = 0; i < cells.length; i += 7){
+      weeks.push('<div class="calendar-week" role="row">' + cells.slice(i, i + 7).join('') + '</div>');
+    }
+    calendarDays.innerHTML = weeks.join('');
+    calendarTitle.textContent = 'Tháng ' + (config.month + 1) + ' · ' + config.year;
+    calendarNotice.hidden = selectedMonth !== 2;
+    prevMonth.disabled = selectedMonth === 0;
+    nextMonth.disabled = selectedMonth === semesterMonths.length - 1;
+    monthTabs.forEach(function(tab, tabIndex){
+      var active = tabIndex === selectedMonth;
+      tab.setAttribute('aria-selected', active ? 'true' : 'false');
+      tab.tabIndex = active ? 0 : -1;
+      if(active){
+        calendarPanel.setAttribute('aria-labelledby', tab.id);
+        if(focusTab) tab.focus();
+      }
+    });
+    if(selectedDate.indexOf(config.year + '-' + pad(config.month + 1) + '-') !== 0){
+      selectedDate = defaultDateForMonth(selectedMonth);
+    }
+    selectDate(selectedDate, false);
+  }
+  function moveDayFocus(fromKey, offset){
+    var p = fromKey.split('-');
+    var date = new Date(Number(p[0]), Number(p[1]) - 1, Number(p[2]) + offset);
+    var key = dateKey(date.getFullYear(), date.getMonth(), date.getDate());
+    var monthIndex = semesterMonths.findIndex(function(item){
+      return item.year === date.getFullYear() && item.month === date.getMonth();
+    });
+    if(monthIndex < 0) return;
+    if(monthIndex !== selectedMonth){
+      selectedDate = key;
+      renderCalendar(monthIndex, false);
+    }
+    selectDate(key, true);
+  }
+  calendarDays.addEventListener('click', function(event){
+    var button = event.target.closest('.calendar-day');
+    if(button) selectDate(button.getAttribute('data-date'), false);
+  });
+  calendarDays.addEventListener('keydown', function(event){
+    var button = event.target.closest('.calendar-day');
+    if(!button) return;
+    var offsets = {ArrowLeft:-1, ArrowRight:1, ArrowUp:-7, ArrowDown:7};
+    if(Object.prototype.hasOwnProperty.call(offsets, event.key)){
+      event.preventDefault();
+      moveDayFocus(button.getAttribute('data-date'), offsets[event.key]);
+    }
+  });
+  monthTabs.forEach(function(tab){
+    tab.addEventListener('click', function(){ renderCalendar(Number(tab.getAttribute('data-calendar-month')), false); });
+    tab.addEventListener('keydown', function(event){
+      if(event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+      event.preventDefault();
+      var offset = event.key === 'ArrowRight' ? 1 : -1;
+      renderCalendar((selectedMonth + offset + semesterMonths.length) % semesterMonths.length, true);
+    });
+  });
+  prevMonth.addEventListener('click', function(){ renderCalendar(selectedMonth - 1, false); });
+  nextMonth.addEventListener('click', function(){ renderCalendar(selectedMonth + 1, false); });
+
+  var todayParts = vnTodayKey().split('-');
+  var currentMonthIndex = semesterMonths.findIndex(function(item){
+    return item.year === Number(todayParts[0]) && item.month === Number(todayParts[1]) - 1;
+  });
+  if(currentMonthIndex > -1) selectedMonth = currentMonthIndex;
+  selectedDate = defaultDateForMonth(selectedMonth);
+  renderCalendar(selectedMonth, false);
+
   var nx = {d:document.getElementById('nx-d'), h:document.getElementById('nx-h'),
             m:document.getElementById('nx-m'), s:document.getElementById('nx-s')};
   var nxTitle = document.getElementById('nx-title'), nxWhen = document.getElementById('nx-when'),
@@ -1754,10 +1939,10 @@ footer a{color:var(--brand)}
     var now = Date.now(), next = null, i;
     for(i = 0; i < events.length; i++){ if(events[i].ts > now){ next = events[i]; break; } }
     if(!next){
-      nxTitle.textContent = 'Đã xong cả ba ngày sinh hoạt';
+      nxTitle.textContent = 'Đã hết lịch học kỳ 1 hiện có';
       nxWhen.textContent = '';
       nx.d.textContent = nx.h.textContent = nx.m.textContent = nx.s.textContent = '0';
-      nxNote.textContent = 'Lịch sinh hoạt công dân của Nhóm 5 đã kết thúc. Từ đây theo thời khóa biểu học kỳ 1 trên hệ thống của trường.';
+      nxNote.textContent = 'Buổi cuối cùng đang có trên cổng UTC là sáng 05/01/2027. Hãy kiểm tra lịch thi và các thay đổi mới trên hệ thống của trường.';
       clearInterval(timer2);
       return;
     }
@@ -1773,7 +1958,8 @@ footer a{color:var(--brand)}
       : nxBase;
   }
   tickNext();
-  var timer2 = setInterval(tickNext, 1000);
+  var timer2 = events.length && events[events.length - 1].ts > Date.now()
+    ? setInterval(tickNext, 1000) : null;
 
   // ----- đổi giao diện sáng / tối -----
   var tt = document.getElementById('tt'), root = document.documentElement;

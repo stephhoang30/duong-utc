@@ -1,7 +1,7 @@
 {
-  "name": "Lộ trình của Thùy Dương",
-  "short_name": "Lộ trình Dương",
-  "start_url": ".",
+  "name": "Dương Study Planner",
+  "short_name": "Planner Dương",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#fff6d6",
   "theme_color": "#2f7fc4",

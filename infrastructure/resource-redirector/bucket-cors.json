@@ -4,7 +4,7 @@
       "AllowedHeaders": ["*"],
       "AllowedMethods": ["GET", "HEAD"],
       "AllowedOrigins": [
-        "https://duong-study-planner.givingfinishing217.chatgpt.site",
+        "https://duong-study-planner.datvan29-05.chatgpt.site",
         "http://localhost:3000"
       ],
       "ExposeHeaders": [

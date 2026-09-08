@@ -46,9 +46,9 @@ export default function ReviewPage() {
   return (
     <div className="page review-page">
       <PageHeader
-        eyebrow="BOYA 1 · Ôn tập"
-        title="Ôn từ vựng theo từng bài"
-        description="Lật thẻ, nghe phát âm và đánh dấu những từ đã nhớ."
+        eyebrow="BOYA 1 · Ôn đúng thời điểm"
+        title="Nhớ lâu từng từ tiếng Trung"
+        description="Planner tự xếp lịch ôn ngắt quãng theo 5 mức ghi nhớ của Dương."
         sticker="review"
         stickerTone="rose"
         action={<button className="button secondary" onClick={() => setShowForm((value) => !value)}><Icon name={showForm ? "x" : "plus"} size={18} />{showForm ? "Đóng" : "Tạo thẻ"}</button>}

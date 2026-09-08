@@ -6,3 +6,4 @@ public/resources/
 .DS_Store
 .env*
 !.env.example
+.vercel

@@ -38,8 +38,8 @@ Các tài nguyên lớn chỉ được tải khi người dùng mở PDF hoặc 
 
 ## Lưu trữ production
 
-Trang tĩnh được deploy riêng, còn thư mục `public/resources/` được đồng bộ vào bucket S3 private. Lambda redirector tại `infrastructure/resource-redirector/` xác thực khóa truy cập từ SSM Parameter Store rồi tạo URL S3 có chữ ký sống trong 5 phút. Vì trình duyệt tải trực tiếp từ S3 nên PDF/audio lớn vẫn hỗ trợ HTTP range requests và không đi xuyên qua Lambda.
+Ứng dụng Next.js được deploy trên Vercel, còn thư mục `public/resources/` được đồng bộ vào bucket S3 private. Route Handler trên Vercel giữ khóa ở máy chủ, gọi Lambda redirector tại `infrastructure/resource-redirector/` và trả về URL S3 có chữ ký sống trong 5 phút. Vì trình duyệt tải trực tiếp từ S3 nên PDF/audio lớn vẫn hỗ trợ HTTP range requests và không đi xuyên qua Vercel hay Lambda.
 
-Build production cần hai biến trong `.env.example`. Không commit giá trị khóa thật; lấy khóa SecureString từ SSM chỉ trong bước build.
+Production dùng ba biến trong `.env.example`. Không commit giá trị khóa thật; `RESOURCE_ACCESS_TOKEN` phải là secret phía máy chủ, tuyệt đối không đặt tên bắt đầu bằng `NEXT_PUBLIC_`.
 
 Trang HTML trước khi chuyển đổi được giữ tại `legacy/index.html` để đối chiếu nội dung.

@@ -5,6 +5,7 @@
       "AllowedMethods": ["GET", "HEAD"],
       "AllowedOrigins": [
         "https://duong-study-planner.datvan29-05.chatgpt.site",
+        "https://duow.vercel.app",
         "http://localhost:3000"
       ],
       "ExposeHeaders": [

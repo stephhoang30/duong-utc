@@ -6,6 +6,5 @@
 out
 public/resources
 infrastructure
-legacy
 *.tsbuildinfo
 .DS_Store

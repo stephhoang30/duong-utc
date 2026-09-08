@@ -1,3 +1,5 @@
+import { resourceUrl } from "@/lib/resource-url";
+
 export type BoyaTerm = {
   id: string;
   hanzi: string;
@@ -23,7 +25,7 @@ export type BoyaStudyData = {
   lessons: BoyaLesson[];
 };
 
-export const boyaStudyDataUrl = "/resources/boya1/study-data.json";
+export const boyaStudyDataUrl = resourceUrl("/resources/boya1/study-data.json");
 
 let cachedStudyData: Promise<BoyaStudyData> | null = null;
 

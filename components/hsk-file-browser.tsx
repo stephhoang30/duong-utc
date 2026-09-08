@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Icon } from "./icons";
 import { SectionHeading } from "./ui";
+import { resourceUrl } from "@/lib/resource-url";
 
 type HskFile = {
   title: string;
@@ -48,7 +49,7 @@ export function HskFileBrowser() {
   const [activeAudio, setActiveAudio] = useState<HskFile | null>(null);
 
   useEffect(() => {
-    fetch("/resources/hsk/manifest.json")
+    fetch(resourceUrl("/resources/hsk/manifest.json"))
       .then((response) => {
         if (!response.ok) throw new Error("Không đọc được danh mục tài liệu");
         return response.json() as Promise<HskManifest>;
@@ -100,7 +101,7 @@ export function HskFileBrowser() {
         {activeAudio && <div className="hsk-audio-player">
           <span><Icon name="headphones" size={20} /></span>
           <div><small>Đang nghe</small><strong>{activeAudio.title}</strong></div>
-          <audio key={activeAudio.href} controls autoPlay preload="metadata" src={activeAudio.href}>Trình duyệt của bạn chưa hỗ trợ phát audio.</audio>
+          <audio key={activeAudio.href} controls autoPlay preload="metadata" src={resourceUrl(activeAudio.href)}>Trình duyệt của bạn chưa hỗ trợ phát audio.</audio>
           <button onClick={() => setActiveAudio(null)} aria-label="Đóng trình phát"><Icon name="x" size={17} /></button>
         </div>}
 
@@ -109,9 +110,9 @@ export function HskFileBrowser() {
             const isAudio = audioExtensions.has(file.extension);
             const mainContent = <><span className={`hsk-file-icon ${isAudio ? "audio" : "document"}`}><Icon name={isAudio ? "headphones" : "file"} size={18} /></span><div><strong title={file.title}>{file.title}</strong><p title={file.folder || file.group}>{file.folder || file.group}</p></div></>;
             return <article key={file.href}>
-              {isAudio ? <button className="hsk-file-main" onClick={() => setActiveAudio(file)} aria-label={`Nghe ${file.title}`}>{mainContent}</button> : <a className="hsk-file-main" href={file.href} target="_blank" rel="noreferrer">{mainContent}</a>}
+              {isAudio ? <button className="hsk-file-main" onClick={() => setActiveAudio(file)} aria-label={`Nghe ${file.title}`}>{mainContent}</button> : <a className="hsk-file-main" href={resourceUrl(file.href)} target="_blank" rel="noreferrer">{mainContent}</a>}
               <span className="hsk-file-meta">{file.extension.toUpperCase()} · {formatBytes(file.bytes)}</span>
-              <a className="hsk-file-download" href={file.href} download aria-label={`Tải ${file.title}`}><Icon name="download" size={17} /></a>
+              <a className="hsk-file-download" href={resourceUrl(file.href)} download aria-label={`Tải ${file.title}`}><Icon name="download" size={17} /></a>
             </article>;
           })}
         </div>

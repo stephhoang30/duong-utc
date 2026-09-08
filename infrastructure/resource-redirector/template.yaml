@@ -1,0 +1,111 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: Private S3 resource redirector for Duong Study Planner
+
+Parameters:
+  CodeBucket:
+    Type: String
+  CodeKey:
+    Type: String
+  ResourceBucket:
+    Type: String
+  AccessTokenParameter:
+    Type: String
+    Default: /duong-study-planner/resource-access-token
+
+Resources:
+  RedirectorRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: duong-study-planner-resource-redirector-role
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      Policies:
+        - PolicyName: ReadPlannerResourcesAndToken
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow
+                Action: s3:GetObject
+                Resource: !Sub arn:${AWS::Partition}:s3:::${ResourceBucket}/resources/*
+              - Effect: Allow
+                Action: ssm:GetParameter
+                Resource: !Sub arn:${AWS::Partition}:ssm:${AWS::Region}:${AWS::AccountId}:parameter${AccessTokenParameter}
+              - Effect: Allow
+                Action:
+                  - xray:PutTraceSegments
+                  - xray:PutTelemetryRecords
+                Resource: "*"
+      ManagedPolicyArns:
+        - !Sub arn:${AWS::Partition}:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+
+  RedirectorFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: duong-study-planner-resource-redirector
+      Description: Issues short-lived signed URLs for private study resources
+      Runtime: nodejs22.x
+      Architectures:
+        - arm64
+      Handler: handler.handler
+      Role: !GetAtt RedirectorRole.Arn
+      MemorySize: 256
+      Timeout: 10
+      TracingConfig:
+        Mode: Active
+      LoggingConfig:
+        LogFormat: JSON
+      Environment:
+        Variables:
+          RESOURCE_BUCKET: !Ref ResourceBucket
+          ACCESS_TOKEN_PARAMETER: !Ref AccessTokenParameter
+      Code:
+        S3Bucket: !Ref CodeBucket
+        S3Key: !Ref CodeKey
+
+  RedirectorLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub /aws/lambda/${RedirectorFunction}
+      RetentionInDays: 30
+
+  RedirectorUrl:
+    Type: AWS::Lambda::Url
+    Properties:
+      TargetFunctionArn: !GetAtt RedirectorFunction.Arn
+      AuthType: NONE
+      InvokeMode: BUFFERED
+      Cors:
+        AllowOrigins:
+          - https://duong-study-planner.givingfinishing217.chatgpt.site
+          - http://localhost:3000
+        AllowMethods:
+          - GET
+        AllowHeaders:
+          - "*"
+        MaxAge: 86400
+
+  AllowPublicFunctionUrl:
+    Type: AWS::Lambda::Permission
+    Properties:
+      FunctionName: !Ref RedirectorFunction
+      Action: lambda:InvokeFunctionUrl
+      Principal: "*"
+      FunctionUrlAuthType: NONE
+
+  AllowPublicFunctionInvocation:
+    Type: AWS::Lambda::Permission
+    Properties:
+      FunctionName: !Ref RedirectorFunction
+      Action: lambda:InvokeFunction
+      Principal: "*"
+      InvokedViaFunctionUrl: true
+
+Outputs:
+  ResourceOrigin:
+    Description: Build-time NEXT_PUBLIC_RESOURCE_ORIGIN value
+    Value: !GetAtt RedirectorUrl.FunctionUrl

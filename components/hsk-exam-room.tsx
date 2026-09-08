@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { Icon } from "./icons";
+import { resourceUrl } from "@/lib/resource-url";
 
 type HskFile = {
   title: string;
@@ -72,7 +73,7 @@ export function HskExamRoom({ onComplete }: { onComplete: (result: { examId: str
   const [manualScore, setManualScore] = useState("");
 
   useEffect(() => {
-    fetch("/resources/hsk/manifest.json")
+    fetch(resourceUrl("/resources/hsk/manifest.json"))
       .then((response) => {
         if (!response.ok) throw new Error("Không đọc được kho đề HSK");
         return response.json() as Promise<HskManifest>;
@@ -160,8 +161,8 @@ export function HskExamRoom({ onComplete }: { onComplete: (result: { examId: str
       <div><span className="eyebrow">{group.label}</span><h2>{selectedDocument.title}</h2></div>
       <span className={`hsk-live-timer ${remaining < 300 ? "is-urgent" : ""}`}><Icon name="timer" size={18} />{formatTimer(remaining)}</span>
     </header>
-    {selectedAudio && <div className="panel hsk-live-audio"><span><Icon name="headphones" size={20} /></span><div><small>Audio nghe</small><strong>{selectedAudio.title}</strong></div><audio controls preload="metadata" src={selectedAudio.href}>Trình duyệt chưa hỗ trợ audio.</audio></div>}
-    <div className="panel hsk-pdf-stage"><iframe src={selectedDocument.href} title={`Đề thi ${selectedDocument.title}`} /></div>
+    {selectedAudio && <div className="panel hsk-live-audio"><span><Icon name="headphones" size={20} /></span><div><small>Audio nghe</small><strong>{selectedAudio.title}</strong></div><audio controls preload="metadata" src={resourceUrl(selectedAudio.href)}>Trình duyệt chưa hỗ trợ audio.</audio></div>}
+    <div className="panel hsk-pdf-stage"><iframe src={resourceUrl(selectedDocument.href)} title={`Đề thi ${selectedDocument.title}`} /></div>
     <div className="panel hsk-live-submit"><div><strong>Làm xong rồi?</strong><span>Nộp bài rồi đối chiếu đáp án và nhập điểm.</span></div><button className="button primary" onClick={() => setMode("score")}>Nộp bài<Icon name="arrow-right" size={17} /></button></div>
   </section>;
 
@@ -171,8 +172,8 @@ export function HskExamRoom({ onComplete }: { onComplete: (result: { examId: str
     <h2>Đối chiếu đáp án và lưu kết quả</h2>
     <p>{selectedDocument.title}</p>
     <div className="hsk-score-actions">
-      {relatedAnswer && <a className="button secondary" href={relatedAnswer.href} target="_blank" rel="noreferrer"><Icon name="file" size={17} />Mở đáp án</a>}
-      <a className="button ghost" href={selectedDocument.href} target="_blank" rel="noreferrer"><Icon name="external-link" size={17} />Mở đề riêng</a>
+      {relatedAnswer && <a className="button secondary" href={resourceUrl(relatedAnswer.href)} target="_blank" rel="noreferrer"><Icon name="file" size={17} />Mở đáp án</a>}
+      <a className="button ghost" href={resourceUrl(selectedDocument.href)} target="_blank" rel="noreferrer"><Icon name="external-link" size={17} />Mở đề riêng</a>
     </div>
     <label className="hsk-score-input"><span>Điểm tự chấm · thang 100</span><input type="number" min="0" max="100" inputMode="numeric" value={manualScore} onChange={(event) => setManualScore(event.target.value)} placeholder="Ví dụ: 82" /></label>
     <div className="hsk-score-footer"><button className="button ghost" onClick={() => setMode("setup")}>Không lưu</button><button className="button primary" disabled={!manualScore.trim()} onClick={saveScore}><Icon name="check" size={17} />Lưu kết quả</button></div>

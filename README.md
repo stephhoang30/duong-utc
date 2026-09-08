@@ -18,7 +18,7 @@ npm run typecheck
 npm run build
 ```
 
-Bản build tĩnh nằm trong thư mục `out/`. Toàn bộ dữ liệu cá nhân được lưu bằng `localStorage` trên trình duyệt; ứng dụng hiện không dùng máy chủ hay tài khoản đăng nhập.
+Bản build tĩnh nằm trong thư mục `out/`. Toàn bộ dữ liệu cá nhân được lưu bằng `localStorage` trên trình duyệt.
 
 ## Thư viện tiếng Trung
 
@@ -34,6 +34,12 @@ Sau khi bổ sung hoặc thay đổi tệp HSK, chạy:
 node scripts/generate-hsk-manifest.mjs
 ```
 
-Các tài nguyên lớn chỉ được tải khi người dùng mở PDF hoặc phát audio, nên không làm nặng lần tải trang đầu. Khi triển khai, host cần hỗ trợ khoảng 10 GB tệp tĩnh và HTTP range requests để tua audio/PDF mượt.
+Các tài nguyên lớn chỉ được tải khi người dùng mở PDF hoặc phát audio, nên không làm nặng lần tải trang đầu.
+
+## Lưu trữ production
+
+Trang tĩnh được deploy riêng, còn thư mục `public/resources/` được đồng bộ vào bucket S3 private. Lambda redirector tại `infrastructure/resource-redirector/` xác thực khóa truy cập từ SSM Parameter Store rồi tạo URL S3 có chữ ký sống trong 5 phút. Vì trình duyệt tải trực tiếp từ S3 nên PDF/audio lớn vẫn hỗ trợ HTTP range requests và không đi xuyên qua Lambda.
+
+Build production cần hai biến trong `.env.example`. Không commit giá trị khóa thật; lấy khóa SecureString từ SSM chỉ trong bước build.
 
 Trang HTML trước khi chuyển đổi được giữ tại `legacy/index.html` để đối chiếu nội dung.

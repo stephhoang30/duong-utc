@@ -1,3 +1,5 @@
+import { resourceUrl } from "@/lib/resource-url";
+
 export type LibrarySubject = "calculus" | "algebra" | "philosophy" | "digital" | "physical" | "chinese";
 
 export type LibraryChapter = {
@@ -44,7 +46,7 @@ export const librarySubjectMeta: Record<LibrarySubject, { label: string; tone: s
 
 const boyaChapters: LibraryChapter[] = Array.from({ length: 30 }, (_, index) => ({
   label: `Bài ${index + 1}`,
-  url: `/resources/boya1/pdfs/lesson-${String(index + 1).padStart(2, "0")}.pdf`,
+  url: resourceUrl(`/resources/boya1/pdfs/lesson-${String(index + 1).padStart(2, "0")}.pdf`),
 })).filter((chapter) => chapter.label !== "Bài 21");
 
 export const libraryBooks: LibraryBook[] = [
@@ -57,7 +59,7 @@ export const libraryBooks: LibraryBook[] = [
     access: "open",
     accessLabel: "Giáo trình mở",
     description: "Hàm số, giới hạn, đạo hàm và tích phân — phù hợp nội dung nền tảng của Giải tích 1.",
-    readUrl: "/resources/library/pdfs/calculus-volume-1.pdf",
+    readUrl: resourceUrl("/resources/library/pdfs/calculus-volume-1.pdf"),
     sourceUrl: "https://openstax.org/details/books/calculus-volume-1",
     sourceLabel: "OpenStax · Rice University",
     license: "CC BY-NC-SA 4.0 · Access for free at openstax.org",
@@ -72,7 +74,7 @@ export const libraryBooks: LibraryBook[] = [
     access: "open",
     accessLabel: "Giáo trình mở",
     description: "Hệ phương trình, không gian vector, ánh xạ tuyến tính, định thức và trị riêng; có nhiều bài tập tự học.",
-    readUrl: "/resources/library/pdfs/linear-algebra-hefferon.pdf",
+    readUrl: resourceUrl("/resources/library/pdfs/linear-algebra-hefferon.pdf"),
     sourceUrl: "https://hefferon.net/linearalgebra/",
     sourceLabel: "Jim Hefferon · Saint Michael’s College",
     license: "CC BY-SA hoặc GNU FDL",
@@ -87,7 +89,7 @@ export const libraryBooks: LibraryBook[] = [
     access: "open",
     accessLabel: "Giáo trình mở",
     description: "Nhập môn AI từ tìm kiếm, ra quyết định, học tăng cường đến học máy và logic.",
-    readUrl: "/resources/library/pdfs/introduction-to-ai-cs188.pdf",
+    readUrl: resourceUrl("/resources/library/pdfs/introduction-to-ai-cs188.pdf"),
     sourceUrl: "https://inst.eecs.berkeley.edu/~cs188/textbook/",
     sourceLabel: "UC Berkeley · CS 188",
     license: "CC BY-SA 4.0",
@@ -102,7 +104,7 @@ export const libraryBooks: LibraryBook[] = [
     access: "personal",
     accessLabel: "Tài liệu của Dương",
     description: "Bản đầy đủ dành cho bậc đại học hệ không chuyên lý luận chính trị, xuất bản năm 2021.",
-    readUrl: "/resources/library/pdfs/triet-hoc-mac-lenin.pdf",
+    readUrl: resourceUrl("/resources/library/pdfs/triet-hoc-mac-lenin.pdf"),
     sourceUrl: "https://nxbctqg.org.vn/giao-trinh-triet-hoc-mac-lenin-danh-cho-bac-dai-hoc-he-khong-chuyen-ly-luan-chinh-tri-.html",
     sourceLabel: "Bản PDF Dương cung cấp · NXB Chính trị quốc gia Sự thật",
     license: "Tài liệu cá nhân của Dương",
@@ -117,7 +119,7 @@ export const libraryBooks: LibraryBook[] = [
     access: "public",
     accessLabel: "Tài liệu chính thức",
     description: "Hướng dẫn dựa trên bằng chứng về vận động, thể lực và cách xây dựng thói quen tập luyện an toàn.",
-    readUrl: "/resources/library/pdfs/physical-activity-guidelines-2nd.pdf",
+    readUrl: resourceUrl("/resources/library/pdfs/physical-activity-guidelines-2nd.pdf"),
     sourceUrl: "https://odphp.health.gov/our-work/nutrition-physical-activity/physical-activity-guidelines/current-guidelines",
     sourceLabel: "Office of Disease Prevention and Health Promotion · HHS",
     license: "Tài liệu chính thức được phát hành miễn phí",
@@ -148,7 +150,7 @@ export const libraryBooks: LibraryBook[] = [
     access: "personal",
     accessLabel: "Tài liệu của Dương",
     description: "Bộ bài tập gộp để luyện ngay sau khi học từng bài.",
-    readUrl: "/resources/boya1/pdfs/bai-tap-boya-1-30.pdf",
+    readUrl: resourceUrl("/resources/boya1/pdfs/bai-tap-boya-1-30.pdf"),
     sourceUrl: "/chinese",
     sourceLabel: "Kho tài liệu BOYA trong planner",
     license: "Tài liệu cá nhân do Dương cung cấp",
@@ -163,7 +165,7 @@ export const libraryBooks: LibraryBook[] = [
     access: "personal",
     accessLabel: "Tài liệu của Dương",
     description: "Luyện nét, chữ Hán và ghi nhớ mặt chữ song song với bài học.",
-    readUrl: "/resources/boya1/pdfs/vo-luyen-viet.pdf",
+    readUrl: resourceUrl("/resources/boya1/pdfs/vo-luyen-viet.pdf"),
     sourceUrl: "/chinese",
     sourceLabel: "Kho tài liệu BOYA trong planner",
     license: "Tài liệu cá nhân do Dương cung cấp",

@@ -7,6 +7,7 @@ import { SectionHeading } from "./ui";
 import { boyaResources, chineseSourceLinks, getBoyaLessonAudio, getBoyaLessonPdf, hskMilestones, hskSources, localBoyaLibrary, type BoyaResourceCategory } from "@/lib/chinese-resources";
 import { usePlanner } from "@/lib/planner-context";
 import type { BoyaResourceStatus } from "@/lib/types";
+import { resourceUrl } from "@/lib/resource-url";
 
 const filters: { value: "all" | BoyaResourceCategory; label: string }[] = [
   { value: "all", label: "Tất cả" },
@@ -108,8 +109,8 @@ export function BoyaLibrary() {
           </div>
           <div className="prerequisite-files">
             <span>Bài tiền đề</span>
-            {[1, 2, 3].map((part) => <a key={part} href={`/resources/boya1/pdfs/prerequisite-${String(part).padStart(2, "0")}.pdf`} target="_blank"><Icon name="file" size={15} />Phần {part}</a>)}
-            <a href="/resources/boya1/pdfs/net-co-ban.pdf" target="_blank"><Icon name="file" size={15} />Các nét cơ bản</a>
+            {[1, 2, 3].map((part) => <a key={part} href={resourceUrl(`/resources/boya1/pdfs/prerequisite-${String(part).padStart(2, "0")}.pdf`)} target="_blank"><Icon name="file" size={15} />Phần {part}</a>)}
+            <a href={resourceUrl("/resources/boya1/pdfs/net-co-ban.pdf")} target="_blank"><Icon name="file" size={15} />Các nét cơ bản</a>
           </div>
         </div>
       </section>

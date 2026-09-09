@@ -347,10 +347,11 @@ h2, h3 { font-family: var(--font-display); }
 .mini-task { position: relative; display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: 7px; padding: 9px; border-radius: 11px; background: var(--tone-soft); border: 1px solid color-mix(in srgb, var(--tone) 18%, transparent); }
 .mini-class { display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: 7px; padding: 9px; border: 1px solid color-mix(in srgb, var(--course-color) 22%, transparent); border-radius: 11px; background: var(--course-soft); }
 .mini-class > span { color: var(--course-color); }
-.mini-class small, .mini-class strong, .mini-class em { display: block; }
+.mini-class small, .mini-class strong, .mini-class em, .mini-class code { display: block; }
 .mini-class small { color: var(--course-color); font-size: 8px; font-weight: 800; }
 .mini-class strong { margin-top: 3px; font-size: 10px; line-height: 1.35; overflow-wrap: anywhere; }
 .mini-class em { margin-top: 4px; color: var(--muted); font-size: 8px; font-style: normal; }
+.mini-class code { margin-top: 5px; color: var(--muted); font-family: var(--font-body); font-size: 7.5px; line-height: 1.35; overflow-wrap: anywhere; }
 .mini-check { width: 17px; height: 17px; margin-top: 1px; padding: 0; border-radius: 6px; }
 .mini-task small, .mini-task strong { display: block; }
 .mini-task small { color: var(--tone); font-size: 8px; font-weight: 800; }
@@ -375,37 +376,67 @@ h2, h3 { font-family: var(--font-display); }
 .timetable-row > div:last-child > small { color: var(--muted); font-size: 9.5px; }
 
 /* Planner calendar and separate To-do */
+.utc-semester-summary { margin-bottom: 14px; padding: 20px; }
+.utc-semester-summary > header { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-bottom: 15px; }
+.utc-semester-summary > header h2 { margin: 4px 0 0; font-size: 22px; }
+.utc-semester-summary > header a { display: inline-flex; align-items: center; gap: 6px; flex: none; color: var(--primary); font-size: var(--fs-caption); font-weight: 800; }
+.utc-semester-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.utc-semester-grid article { min-width: 0; display: grid; grid-template-columns: 34px minmax(0, 1fr); align-items: center; gap: 10px; padding: 11px; border: 1px solid var(--line); border-radius: 13px; background: var(--paper-soft); }
+.utc-semester-grid article > span { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 10px; color: var(--primary); background: var(--primary-soft); }
+.utc-semester-grid small, .utc-semester-grid strong { display: block; }
+.utc-semester-grid small { color: var(--muted); font-size: var(--fs-micro); }
+.utc-semester-grid strong { margin-top: 2px; font-size: var(--fs-caption); line-height: 1.35; overflow-wrap: anywhere; }
+.utc-semester-summary > footer { display: flex; align-items: flex-start; gap: 8px; margin-top: 12px; padding: 10px 12px; border-radius: 11px; color: var(--butter-3); background: var(--butter-1); font-size: var(--fs-caption); font-weight: 700; line-height: 1.45; }
+.utc-semester-summary > footer svg { flex: none; margin-top: 1px; }
 .planner-view-tabs { width: fit-content; display: flex; gap: 5px; margin-bottom: 14px; padding: 4px; border: 1px solid var(--line); border-radius: 15px; background: color-mix(in srgb, var(--paper) 80%, transparent); }
 .planner-view-tabs button { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 0 15px; border: 0; border-radius: 11px; color: var(--muted); background: transparent; font-size: var(--fs-small); font-weight: 800; }
 .planner-view-tabs button.active { color: var(--primary-dark); background: var(--paper); box-shadow: var(--shadow-sm); }
-.planner-calendar-layout { display: grid; grid-template-columns: minmax(0, 1.38fr) minmax(300px, .62fr); gap: 15px; margin-bottom: 20px; }
+.planner-calendar-layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: 15px; margin-bottom: 20px; }
 .planner-month-calendar, .planner-day-agenda { min-width: 0; padding: 20px; }
 .planner-calendar-heading { display: grid; grid-template-columns: 44px minmax(0, 1fr) 44px; align-items: center; gap: 12px; margin-bottom: 18px; text-align: center; }
 .planner-calendar-heading h2 { margin: 2px 0 0; font-size: 24px; text-transform: capitalize; }
+.planner-calendar-scroll { min-width: 0; overflow-x: auto; padding-bottom: 3px; scrollbar-width: thin; }
 .planner-weekdays, .planner-month-days { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 7px; }
 .planner-weekdays span { padding: 4px; color: var(--muted); font-size: var(--fs-caption); font-weight: 800; text-align: center; }
-.planner-month-days > button, .planner-calendar-blank { min-width: 0; aspect-ratio: 1.16; }
-.planner-month-days > button { position: relative; display: grid; place-items: center; align-content: center; gap: 8px; padding: 5px; border: 1px solid transparent; border-radius: 13px; color: var(--ink-soft); background: var(--paper-soft); font-size: var(--fs-small); font-weight: 750; }
+.planner-month-days > button, .planner-calendar-blank { min-width: 0; min-height: 126px; }
+.planner-month-days > button { position: relative; display: flex; flex-direction: column; align-items: stretch; gap: 6px; padding: 8px; border: 1px solid transparent; border-radius: 13px; color: var(--ink-soft); background: var(--paper-soft); text-align: left; }
 .planner-month-days > button:hover { border-color: var(--line-strong); }
 .planner-month-days > button.today::after { content: ""; position: absolute; top: 6px; right: 6px; width: 6px; height: 6px; border-radius: 50%; background: var(--rose); }
-.planner-month-days > button.selected { color: var(--on-primary); border-color: var(--primary); background: var(--primary); }
-.planner-month-days > button i { height: 6px; display: flex; gap: 3px; }
-.planner-month-days > button i b { width: 6px; height: 6px; border-radius: 50%; background: var(--course-color); }
-.planner-month-days > button.selected i b { box-shadow: 0 0 0 1px color-mix(in srgb, var(--paper) 80%, transparent); }
+.planner-month-days > button.selected { border-color: var(--primary); background: var(--primary-soft); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--primary) 24%, transparent); }
+.planner-day-number { width: 27px; height: 27px; display: grid; place-items: center; flex: none; border-radius: 9px; font-size: var(--fs-caption); font-weight: 850; }
+.planner-month-days > button.selected .planner-day-number { color: var(--on-primary); background: var(--primary); }
+.planner-day-events { display: grid; gap: 4px; }
+.planner-day-event { min-width: 0; display: block; padding: 5px 6px; border-left: 3px solid var(--course-color); border-radius: 7px; color: var(--ink); background: var(--course-soft); }
+.planner-day-event strong, .planner-day-event small { display: block; overflow-wrap: anywhere; }
+.planner-day-event strong { color: var(--course-color); font-size: 8.5px; line-height: 1.28; }
+.planner-day-event small { margin-top: 2px; color: var(--muted); font-size: 7.5px; line-height: 1.25; }
 .planner-month-calendar > footer { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-top: 16px; }
 .planner-month-calendar .calendar-legend { margin-top: 0; justify-content: flex-end; }
+.planner-undated-classes { margin-top: 16px; padding: 15px; border: 1px dashed color-mix(in srgb, var(--gold) 42%, var(--line)); border-radius: 15px; background: color-mix(in srgb, var(--gold-soft) 62%, var(--paper)); }
+.planner-undated-classes > header { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; }
+.planner-undated-classes > header h3 { margin: 3px 0 0; font-size: var(--fs-ui); }
+.planner-undated-classes > header > strong { min-width: 54px; padding: 5px 8px; border-radius: 999px; color: var(--gold); background: var(--paper); font-size: var(--fs-micro); text-align: center; }
+.planner-undated-classes > p { margin: 7px 0 12px; color: var(--muted); font-size: var(--fs-caption); }
+.planner-undated-classes > div { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px; }
+.planner-undated-classes article { min-width: 0; padding: 10px; border: 1px solid color-mix(in srgb, var(--gold) 18%, var(--line)); border-radius: 11px; background: var(--paper); }
+.planner-undated-classes article span, .planner-undated-classes article strong, .planner-undated-classes article small { display: block; }
+.planner-undated-classes article span { color: var(--gold); font-size: var(--fs-micro); font-weight: 800; }
+.planner-undated-classes article strong { margin-top: 3px; font-size: var(--fs-caption); line-height: 1.35; overflow-wrap: anywhere; }
+.planner-undated-classes article small { margin-top: 4px; color: var(--muted); font-size: var(--fs-micro); line-height: 1.35; overflow-wrap: anywhere; }
 .planner-day-agenda > header { margin-bottom: 16px; }
 .planner-day-agenda > header h2 { margin: 4px 0 0; font-size: 22px; line-height: 1.25; text-transform: capitalize; }
+.planner-day-agenda > div { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
 .planner-calendar-event { --event-border: color-mix(in srgb, var(--course-color) 28%, var(--line)); display: grid; grid-template-columns: 58px minmax(0, 1fr); gap: 13px; padding: 14px; border: 1px solid var(--event-border); border-radius: 14px; background: var(--course-soft); }
-.planner-calendar-event + .planner-calendar-event { margin-top: 9px; }
 .planner-calendar-event time { padding-right: 11px; border-right: 1px solid var(--event-border); font-style: normal; }
 .planner-calendar-event time strong, .planner-calendar-event time span { display: block; }
 .planner-calendar-event time strong { color: var(--course-color); font-size: var(--fs-caption); }
 .planner-calendar-event time span { color: var(--muted); font-size: var(--fs-micro); }
-.planner-calendar-event div > span { color: var(--course-color); font-size: var(--fs-micro); font-weight: 800; text-transform: uppercase; }
+.planner-calendar-event-body > span { color: var(--course-color); font-size: var(--fs-micro); font-weight: 800; text-transform: uppercase; }
 .planner-calendar-event h3 { margin: 3px 0; font-size: var(--fs-small); }
 .planner-calendar-event p { display: flex; align-items: center; gap: 5px; margin: 0; color: var(--muted); font-size: var(--fs-caption); }
+.planner-calendar-event-body > small { display: block; margin-top: 6px; color: var(--muted); font-size: var(--fs-micro); line-height: 1.35; overflow-wrap: anywhere; }
 .planner-day-empty { min-height: 260px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--muted); text-align: center; }
+.planner-day-agenda .planner-day-empty { grid-column: 1 / -1; }
 .planner-day-empty svg { color: var(--primary); }
 .planner-day-empty strong { margin-top: 10px; color: var(--ink); font-size: var(--fs-small); }
 .planner-day-empty span { max-width: 230px; margin-top: 4px; font-size: var(--fs-caption); }
@@ -645,6 +676,7 @@ h2, h3 { font-family: var(--font-display); }
   :root { --sidebar: 218px; }
   .dashboard-grid, .planner-lower-grid { grid-template-columns: 1fr; }
   .planner-calendar-layout { grid-template-columns: 1fr; }
+  .utc-semester-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .metrics-grid { grid-template-columns: repeat(2, 1fr); }
   .week-board { grid-template-columns: repeat(4, 1fr); }
   .day-column { min-height: 250px; }
@@ -699,15 +731,18 @@ h2, h3 { font-family: var(--font-display); }
   .planner-toolbar { align-items: stretch; flex-direction: column; }
   .planner-view-tabs { width: 100%; }
   .planner-view-tabs button { min-width: 0; flex: 1; padding-inline: 9px; }
+  .utc-semester-summary { padding: 16px; }
+  .utc-semester-summary > header { align-items: flex-start; flex-direction: column; }
+  .utc-semester-grid { grid-template-columns: 1fr; }
   .planner-month-calendar, .planner-day-agenda { padding: 14px; }
   .planner-calendar-heading { margin-bottom: 12px; }
   .planner-calendar-heading h2 { font-size: 20px; }
-  .planner-weekdays, .planner-month-days { gap: 4px; }
-  .planner-month-days > button, .planner-calendar-blank { aspect-ratio: 1; }
-  .planner-month-days > button { gap: 4px; border-radius: 9px; font-size: var(--fs-caption); }
-  .planner-month-days > button i b { width: 4px; height: 4px; }
+  .planner-weekdays, .planner-month-days { min-width: 840px; gap: 5px; }
+  .planner-month-days > button, .planner-calendar-blank { min-height: 126px; }
+  .planner-month-days > button { gap: 4px; border-radius: 9px; }
   .planner-month-calendar > footer { align-items: flex-start; flex-direction: column; }
   .planner-month-calendar .calendar-legend { justify-content: flex-start; }
+  .planner-undated-classes > div, .planner-day-agenda > div { grid-template-columns: 1fr; }
   .planner-day-empty { min-height: 180px; }
   .week-switcher { justify-content: space-between; }
   .week-switcher > div { min-width: 0; }

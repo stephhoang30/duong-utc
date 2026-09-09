@@ -8,7 +8,7 @@ import { semesterSchedule, subjects } from "@/lib/data";
 import { formatDate, startOfWeek, todayKey } from "@/lib/date";
 import { usePlanner } from "@/lib/planner-context";
 import type { StudyTask, SubjectId } from "@/lib/types";
-import { utcCourseLabels, utcSemesterClasses } from "@/lib/utc-data";
+import { utcSemesterClasses, utcSemesterNotice } from "@/lib/utc-data";
 
 function toKey(date: Date) {
   const year = date.getFullYear();
@@ -85,6 +85,22 @@ export default function PlannerPage() {
         </form>
       )}
 
+      <section className="panel utc-semester-summary" aria-label="Thông tin học kỳ một của Dương">
+        <header>
+          <div><span className="eyebrow">Thông báo 810/TB-ĐHGTVT</span><h2>Học kỳ I · {utcSemesterNotice.program}</h2></div>
+          <a href="https://qldt.utc.edu.vn/congthongtin/Index.aspx#lichhoc" target="_blank" rel="noreferrer">Mở cổng UTC <Icon name="external-link" size={15} /></a>
+        </header>
+        <div className="utc-semester-grid">
+          <article><span><Icon name="book" size={17} /></span><div><small>Thời gian học</small><strong>{utcSemesterNotice.studyPeriod}</strong></div></article>
+          <article><span><Icon name="exam" size={17} /></span><div><small>Thời gian thi</small><strong>{utcSemesterNotice.examPeriod}</strong></div></article>
+          <article><span><Icon name="check" size={17} /></span><div><small>Điều chỉnh đăng ký</small><strong>{utcSemesterNotice.registrationPeriod}</strong></div></article>
+          <article><span><Icon name="calendar" size={17} /></span><div><small>Nộp học phí</small><strong>{utcSemesterNotice.tuitionPeriod}</strong></div></article>
+          <article><span><Icon name="language" size={17} /></span><div><small>Chuẩn ngoại ngữ</small><strong>{utcSemesterNotice.languageStandard}</strong></div></article>
+          <article><span><Icon name="layers" size={17} /></span><div><small>Lớp trực tuyến</small><strong>{utcSemesterNotice.onlineClassroom}</strong></div></article>
+        </div>
+        <footer><Icon name="pin" size={17} /><span>Lịch có thể được UTC điều chỉnh. Nộp học phí trễ hạn sẽ không được dự thi kết thúc học phần.</span></footer>
+      </section>
+
       <div className="planner-view-tabs" role="tablist" aria-label="Chọn cách xem thời khóa biểu">
         <button role="tab" aria-selected={scheduleView === "month"} className={scheduleView === "month" ? "active" : ""} onClick={() => setScheduleView("month")}><Icon name="calendar" size={18} />Calendar tháng</button>
         <button role="tab" aria-selected={scheduleView === "week"} className={scheduleView === "week" ? "active" : ""} onClick={() => setScheduleView("week")}><Icon name="layers" size={18} />Lịch tuần</button>
@@ -112,7 +128,7 @@ export default function PlannerPage() {
                 {classEvents.map((event) => (
                   <div key={`${event.start}-${event.title}`} className={`mini-class course-${event.kind}`}>
                     <span><Icon name="book" size={13} /></span>
-                    <div><small>{event.start}–{event.end} · {utcCourseLabels[event.kind]}</small><strong>{event.title}</strong><em>{event.place}</em></div>
+                    <div><small>{event.start}–{event.end} · {event.periods}</small><strong>{event.title}</strong><em>{event.format} · {event.place}</em><code>{event.className}</code></div>
                   </div>
                 ))}
                 {classEvents.length === 0 && <span className="day-empty">Không có lịch học</span>}

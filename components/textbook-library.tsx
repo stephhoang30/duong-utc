@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Icon } from "@/components/icons";
+import { PdfBookReader } from "@/components/pdf-book-reader";
 import {
   libraryBooks,
   librarySubjectMeta,
@@ -40,7 +41,6 @@ export function TextbookLibrary() {
   const [filter, setFilter] = useState<Filter>("all");
   const [selectedId, setSelectedId] = useState(libraryBooks[0].id);
   const [chapterIndex, setChapterIndex] = useState(0);
-  const [activeViewerKey, setActiveViewerKey] = useState<string | null>(null);
   const [savedIds, setSavedIds] = useState<string[]>([]);
   const viewerRef = useRef<HTMLElement>(null);
 
@@ -65,7 +65,6 @@ export function TextbookLibrary() {
   const selectedBook = filteredBooks.find((book) => book.id === selectedId) ?? filteredBooks[0] ?? libraryBooks[0];
   const selectedUrl = selectedBook.chapters?.[chapterIndex]?.url ?? selectedBook.readUrl;
   const viewerKey = `${selectedBook.id}:${selectedUrl}`;
-  const viewerIsOpen = activeViewerKey === viewerKey;
 
   useEffect(() => {
     if (filteredBooks.length && !filteredBooks.some((book) => book.id === selectedId)) {
@@ -111,7 +110,7 @@ export function TextbookLibrary() {
         <section className="library-catalog panel" aria-label="Danh mục giáo trình">
           <div className="library-catalog-heading">
             <div><span className="eyebrow">Danh mục</span><h2>{filteredBooks.length} giáo trình</h2></div>
-            <small>Nguồn đã kiểm tra</small>
+            <small><Icon name="check" size={13} /> Đã lưu PDF</small>
           </div>
           <div className="library-book-list">
             {filteredBooks.map((book) => <BookCard key={book.id} book={book} active={selectedBook.id === book.id} saved={savedIds.includes(book.id)} onOpen={() => openBook(book)} onSave={() => toggleSaved(book.id)} />)}
@@ -127,7 +126,6 @@ export function TextbookLibrary() {
             </div>
             <div className="library-reader-actions">
               {selectedBook.chapters && <label><span className="sr-only">Chọn bài BOYA</span><select value={chapterIndex} onChange={(event) => setChapterIndex(Number(event.target.value))}>{selectedBook.chapters.map((chapter, index) => <option key={chapter.label} value={index}>{chapter.label}</option>)}</select></label>}
-              {!viewerIsOpen && <button className="button primary small" onClick={() => setActiveViewerKey(viewerKey)}><Icon name="play" size={16} />Đọc ngay</button>}
               <a className="button ghost small" href={selectedUrl} target="_blank" rel="noreferrer"><Icon name="external-link" size={16} />Toàn màn hình</a>
               <a className="button ghost small" href={selectedUrl} download><Icon name="download" size={16} />Tải PDF</a>
             </div>
@@ -141,18 +139,7 @@ export function TextbookLibrary() {
           </div>
           <p className="library-reader-description">{selectedBook.description}</p>
 
-          <div className="library-pdf-shell">
-            {viewerIsOpen ? (
-              <iframe key={selectedUrl} src={`${selectedUrl}#page=1&view=FitH&toolbar=1`} title={`Đọc ${selectedBook.title}`} loading="eager" />
-            ) : (
-              <div className="library-pdf-placeholder">
-                <span className="library-pdf-placeholder-icon"><Icon name="file" size={30} /></span>
-                <strong>PDF đã được lưu trong planner</strong>
-                <p>Chỉ tải khi Dương bấm đọc để trang thư viện mở nhanh và không phụ thuộc website bên ngoài.</p>
-                <button className="button primary" onClick={() => setActiveViewerKey(viewerKey)}><Icon name="play" size={17} />Mở PDF</button>
-              </div>
-            )}
-          </div>
+          <PdfBookReader key={viewerKey} title={selectedBook.title} url={selectedUrl} />
 
           <footer className="library-source">
             <div><Icon name="check" size={17} /><span><strong>{selectedBook.sourceLabel}</strong><small>{selectedBook.license}</small></span></div>

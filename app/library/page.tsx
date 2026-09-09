@@ -4,7 +4,7 @@ import { PageHeader } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "Thư viện giáo trình",
-  description: "Giáo trình theo các môn Dương đang học, mở và đọc trực tiếp trong planner.",
+  description: "Trình đọc giáo trình PDF hai trang, có tìm kiếm toàn văn và ghi nhớ trang đang đọc.",
 };
 
 export default function LibraryPage() {
@@ -12,8 +12,8 @@ export default function LibraryPage() {
     <div className="page library-page">
       <PageHeader
         eyebrow="Thư viện"
-        title="Giáo trình của Dương"
-        description="PDF đã lưu trong planner, tải nhanh và đọc không cần mở website khác."
+        title="Góc đọc sách của Dương"
+        description="Mở giáo trình như một cuốn sách, đọc hai trang song song và tìm ngay nội dung cần học trong PDF."
         sticker="bookmark"
         stickerTone="gold"
       />

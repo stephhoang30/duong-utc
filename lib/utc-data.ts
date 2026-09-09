@@ -84,6 +84,18 @@ export const utcSemesterClasses: UtcClassEvent[] = eventSeeds
   .flatMap(({ dates, ...event }) => dates.map((date) => ({ date, ...event })))
   .sort((a, b) => `${a.date} ${a.start}`.localeCompare(`${b.date} ${b.start}`));
 
+const utcClassNamePrefixes: Record<UtcCourseKind, string> = {
+  physical: "Giáo dục thể chất ",
+  philosophy: "Triết học Mác–Lênin-",
+  digital: "Công nghệ số và ứng dụng trí tuệ nhân tạo-",
+  calculus: "Giải tích-",
+  algebra: "Đại số tuyến tính-",
+};
+
+export function getUtcClassCode(event: Pick<UtcClassEvent, "className" | "kind">) {
+  return event.className.replace(utcClassNamePrefixes[event.kind], "");
+}
+
 export const utcUndatedClasses: UtcUndatedClass[] = [
   { code: "ANHA2.4-35-1-26(N01)", name: "Tiếng Anh A2-35-1-26(N01)", format: "Lý thuyết", startDate: "2026-09-07", endDate: "2026-09-20" },
   { code: "IT0.007.3-1-1-26(N.17.TH1)", name: "Công nghệ số và ứng dụng trí tuệ nhân tạo-1-1-26(N.17.TH1)", format: "Thực hành", startDate: "2026-10-12", endDate: "2026-11-01" },

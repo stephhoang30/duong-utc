@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import { Icon } from "./icons";
 import { formatDate, todayKey } from "@/lib/date";
-import { utcCourseLabels, utcSemesterClasses, utcUndatedClasses, type UtcClassEvent } from "@/lib/utc-data";
+import { getUtcClassCode, utcCourseLabels, utcSemesterClasses, utcUndatedClasses, type UtcClassEvent } from "@/lib/utc-data";
 
 function dateKey(year: number, month: number, day: number) {
   return `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
@@ -16,7 +16,7 @@ function CalendarClass({ event }: { event: UtcClassEvent }) {
       <span>{event.format} · {event.periods}</span>
       <h3>{event.title}</h3>
       <p><Icon name="location" size={14} />{event.place}</p>
-      <small>{event.className}</small>
+      <small><strong>Lớp</strong> {getUtcClassCode(event)}</small>
     </div>
   </article>;
 }
@@ -62,7 +62,6 @@ export function PlannerCalendar() {
         <div><span className="eyebrow">Thời khóa biểu</span><h2>{monthLabel}</h2></div>
         <button className="icon-button" onClick={() => moveMonth(1)} aria-label="Tháng sau"><Icon name="arrow-right" /></button>
       </header>
-      <p className="planner-calendar-hint"><Icon name="book" size={15} /> Mỗi thẻ hiển thị giờ học, môn, loại lớp và phòng. Chọn ngày để xem mã lớp cùng số tiết đầy đủ.</p>
       <div className="planner-calendar-scroll">
         <div className="planner-weekdays" aria-hidden="true">{["T2", "T3", "T4", "T5", "T6", "T7", "CN"].map((day) => <span key={day}>{day}</span>)}</div>
         <div className="planner-month-days" role="grid">
@@ -76,7 +75,7 @@ export function PlannerCalendar() {
                 {events.map((event) => <span key={`${event.start}-${event.className}`} className={`planner-day-event course-${event.kind}`}>
                   <time>{event.start}–{event.end}</time>
                   <strong>{utcCourseLabels[event.kind]}</strong>
-                  <small>{event.format} · {event.place}</small>
+                  <small>{event.place}</small>
                 </span>)}
               </span>
             </button>;

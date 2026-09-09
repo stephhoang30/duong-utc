@@ -128,7 +128,7 @@ export default function PlannerPage() {
                 {classEvents.map((event) => (
                   <div key={`${event.start}-${event.title}`} className={`mini-class course-${event.kind}`}>
                     <span><Icon name="book" size={13} /></span>
-                    <div><small>{event.start}–{event.end} · {event.periods}</small><strong>{event.title}</strong><em>{event.format} · {event.place}</em><code>Lớp {getUtcClassCode(event)}</code></div>
+                    <div><small>{event.start}–{event.end}</small><strong>{event.title}</strong><em>{event.format} · {event.place}</em><code>Lớp {getUtcClassCode(event)}</code></div>
                   </div>
                 ))}
                 {classEvents.length === 0 && <span className="day-empty">Không có lịch học</span>}

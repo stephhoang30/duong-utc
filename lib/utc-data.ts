@@ -121,11 +121,11 @@ export const utcSemesterNotice = {
 } as const;
 
 export const utcCourseLabels: Record<UtcCourseKind, string> = {
-  physical: "GDTC F1",
-  philosophy: "Triết học",
-  digital: "Công nghệ số & AI",
+  physical: "GDTC",
+  philosophy: "Triết",
+  digital: "CNS & AI",
   calculus: "Giải tích",
-  algebra: "Đại số tuyến tính",
+  algebra: "Đại số",
 };
 
 export const utcGuideNavigation = [

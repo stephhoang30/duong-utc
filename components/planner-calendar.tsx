@@ -13,7 +13,7 @@ function CalendarClass({ event }: { event: UtcClassEvent }) {
   return <article className={`planner-calendar-event course-${event.kind}`}>
     <time><strong>{event.start}</strong><span>{event.end}</span></time>
     <div className="planner-calendar-event-body">
-      <span>{event.format} · {event.periods}</span>
+      <span>{event.format}</span>
       <h3>{event.title}</h3>
       <p><Icon name="location" size={14} />{event.place}</p>
       <small><strong>Lớp</strong> {getUtcClassCode(event)}</small>
@@ -73,9 +73,8 @@ export function PlannerCalendar() {
               <span className="planner-day-number">{day}</span>
               <span className="planner-day-events">
                 {events.map((event) => <span key={`${event.start}-${event.className}`} className={`planner-day-event course-${event.kind}`}>
-                  <time>{event.start}–{event.end}</time>
-                  <strong>{utcCourseLabels[event.kind]}</strong>
-                  <small>{event.place}</small>
+                  <span className="planner-day-event-main"><time>{event.start}</time><strong>{utcCourseLabels[event.kind]}</strong></span>
+                  <small title={`Lớp ${getUtcClassCode(event)}`}>{getUtcClassCode(event)}</small>
                 </span>)}
               </span>
             </button>;

@@ -17,7 +17,6 @@ export default function DashboardPage() {
   );
   const todayTasks = pending.filter((task) => task.dueDate <= today);
   const focusTasks = (todayTasks.length ? todayTasks : pending).slice(0, 4);
-  const dueCards = state.flashcards.filter((card) => card.dueDate <= today).length;
   const completedTasks = state.tasks.filter((task) => task.done).length;
   const taskProgress = state.tasks.length ? Math.round((completedTasks / state.tasks.length) * 100) : 0;
   const chineseProgress = Math.round((state.completedChineseLessons.length / chineseLessons.length) * 100);
@@ -57,8 +56,8 @@ export default function DashboardPage() {
         </article>
         <article className="metric-card">
           <span className="metric-icon tone-rose"><Icon name="review" /></span>
-          <div><strong>{dueCards}</strong><span>thẻ cần ôn hôm nay</span></div>
-          <Link href="/review">Ôn ngay <Icon name="arrow-right" size={14} /></Link>
+          <div><strong>BOYA 1</strong><span>ôn tập & học từ mới</span></div>
+          <Link href="/review">Mở từ vựng <Icon name="arrow-right" size={14} /></Link>
         </article>
         <article className="metric-card">
           <span className="metric-icon tone-jade"><Icon name="flame" /></span>

@@ -123,7 +123,7 @@ export default function ChinesePage() {
         </section>
         <section className="panel chinese-next-actions">
           <SectionHeading icon="review" title="Giữ nhịp hôm nay" />
-          <Link href="/review" className="action-tile tone-rose"><span><Icon name="review" /></span><div><strong>Ôn flashcard tiếng Trung</strong><small>{state.flashcards.filter((card) => card.deck === "chinese").length} thẻ đang có</small></div><Icon name="arrow-right" size={17} /></Link>
+          <Link href="/review" className="action-tile tone-rose"><span><Icon name="review" /></span><div><strong>Ôn tập & học từ mới</strong><small>Từ vựng BOYA 1 · 5 mức ghi nhớ</small></div><Icon name="arrow-right" size={17} /></Link>
           <Link href="/exams" className="action-tile tone-jade"><span><Icon name="exam" /></span><div><strong>Làm HSK 1 mini test</strong><small>6 câu · khoảng 6 phút</small></div><Icon name="arrow-right" size={17} /></Link>
           <Link href="/notes?subject=chinese" className="action-tile tone-blue"><span><Icon name="notebook" /></span><div><strong>Mở sổ tay tiếng Trung</strong><small>Ghi mẫu câu và lỗi phát âm</small></div><Icon name="arrow-right" size={17} /></Link>
         </section>

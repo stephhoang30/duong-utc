@@ -93,7 +93,7 @@ const navigation: { href: string; label: string; short: string; icon: IconName }
   { href: "/", label: "Tổng quan", short: "Trang chủ", icon: "home" },
   { href: "/planner", label: "Kế hoạch", short: "Kế hoạch", icon: "calendar" },
   { href: "/notes", label: "Sổ tay", short: "Sổ tay", icon: "notebook" },
-  { href: "/review", label: "Ôn bài", short: "Ôn bài", icon: "review" },
+  { href: "/review", label: "Từ vựng", short: "Từ vựng", icon: "review" },
   { href: "/exams", label: "Phòng thi", short: "Bài thi", icon: "exam" },
   { href: "/chinese", label: "Tiếng Trung", short: "中文", icon: "language" },
   { href: "/library", label: "Thư viện", short: "Sách", icon: "bookmark" },

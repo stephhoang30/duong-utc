@@ -62,6 +62,7 @@ export function PlannerCalendar() {
         <div><span className="eyebrow">Thời khóa biểu</span><h2>{monthLabel}</h2></div>
         <button className="icon-button" onClick={() => moveMonth(1)} aria-label="Tháng sau"><Icon name="arrow-right" /></button>
       </header>
+      <p className="planner-calendar-hint"><Icon name="book" size={15} /> Mỗi thẻ hiển thị giờ học, môn, loại lớp và phòng. Chọn ngày để xem mã lớp cùng số tiết đầy đủ.</p>
       <div className="planner-calendar-scroll">
         <div className="planner-weekdays" aria-hidden="true">{["T2", "T3", "T4", "T5", "T6", "T7", "CN"].map((day) => <span key={day}>{day}</span>)}</div>
         <div className="planner-month-days" role="grid">
@@ -73,8 +74,9 @@ export function PlannerCalendar() {
               <span className="planner-day-number">{day}</span>
               <span className="planner-day-events">
                 {events.map((event) => <span key={`${event.start}-${event.className}`} className={`planner-day-event course-${event.kind}`}>
-                  <strong>{event.start} · {utcCourseLabels[event.kind]}</strong>
-                  <small>{event.place}</small>
+                  <time>{event.start}–{event.end}</time>
+                  <strong>{utcCourseLabels[event.kind]}</strong>
+                  <small>{event.format} · {event.place}</small>
                 </span>)}
               </span>
             </button>;
@@ -92,7 +94,7 @@ export function PlannerCalendar() {
     </div>
 
     <aside className="panel planner-day-agenda" aria-live="polite">
-      <header><span className="eyebrow">Lịch trong ngày</span><h2>{formatDate(selectedDate, { weekday: "long", day: "numeric", month: "long" })}</h2></header>
+      <header><span className="eyebrow">Chi tiết lớp học · {selectedEvents.length} buổi</span><h2>{formatDate(selectedDate, { weekday: "long", day: "numeric", month: "long" })}</h2></header>
       <div>{selectedEvents.length ? selectedEvents.map((event) => <CalendarClass key={`${event.start}-${event.title}`} event={event} />) : <div className="planner-day-empty"><Icon name="calendar" size={27} /><strong>Không có buổi học</strong><span>Dương có thể dành ngày này cho To-do hoặc nghỉ ngơi.</span></div>}</div>
     </aside>
   </section>;
